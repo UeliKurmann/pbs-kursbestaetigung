@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Aufbaukurs</name>
+	<language>de</language>
+	<description>Im Kurs erwerben die Teilnehmenden die Kompetenzen, um
+		Lager und Aktivitäten für Kinder und Jugendliche zu planen,
+		durchzuführen und das Programm langfristig zu gestalten. Der Kurs
+		befähigt die Teilnehmenden zudem zur Leitung und Entwicklung eines
+		Teams und führt zur Anerkennung als J+S Lagerleiter.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">
+				<value>Leitungskompetenz:</value>
+			</text>
+			<inhalt>
+				<text>
+					<value>Langfristige Planung, Durchführung und Auswertung von
+						ausgewogenen Aktivitäten, Weekends und Lagern für Kinder und
+						Jugendliche
+					</value>
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+					<value>Methoden zur Präsentation sowie der Team- und
+						Sitzungsleitung
+					</value>
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+					<value>Analyse möglicher Gefahren in Aktivitäten und Erstellung
+						eines Sicherheitskonzepts für ein Lager
+					</value>
+				</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Methodik:</value>
+			</text>
+			<inhalt>
+				<text>
+					<value>Entwicklungsstand und Bedürfnisse der Kinder und
+						Jugendlichen sowie Möglichkeiten zur Förderung deren Mitbestimmung
+					</value>
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+					<value>Möglichkeiten zur Förderung des persönlichen Fortschrittes
+						und der Integration von Kindern und Jugendlichen
+					</value>
+				</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Gesundheitsförderung:</value>
+				<text>
+					<value>Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Konfliktmanagement:</value>
+				<text>
+					<value>Strategien für den Umgang mit Kindern mit herausforderndem Verhalten 
+					</value>
+				</text>
+			</text>
+		</inhalt>
+
+	</inhalte>
+</kurs>

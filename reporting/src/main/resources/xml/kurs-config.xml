@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs-config>
+	<titel>Kursbestätigung</titel>
+	<inhalt>Inhalt</inhalt>
+	<intro style="bold">
+		<value>${anrede} ${vorname} ${name},</value>
+		<text>
+			<value>geboren am ${geburtstag}, aus ${wohnort} hat folgenden
+				Ausbildungskurs erfolgreich absolviert:
+			</value>
+		</text>
+	</intro>
+	<tabKurs>Kurs:</tabKurs>
+	<tabOrt>Ort:</tabOrt>
+	<tabDatum>Dauer:</tabDatum>
+	<tabOrganisator>Organisator:</tabOrganisator>
+	<abschluss>${today}, Pfadibewegung Schweiz, Leitung Kernaufgabe
+		Ausbildung und Betreuung
+	</abschluss>
+	<verantwortlicher>Philippe Keller</verantwortlicher>
+</kurs-config>

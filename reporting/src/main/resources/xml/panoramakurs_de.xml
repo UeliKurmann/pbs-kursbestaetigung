@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Panoramakurs</name>
+	<language>de</language>
+	<description>Im Kurs erwerben die Teilnehmenden grundlegende Projekt-
+		und Methodenkompetenz, erweitern ihre Selbstkompetenz und setzen sich
+		fokussiert mit den Werten der Pfadibewegung und aktuellen
+		Gesellschaftsthemen auseinander.
+	</description>
+	<inhalte>
+
+		<inhalt>
+			<text style="bold">
+				<value>Projektmanagement:</value>
+				<text>
+					<value>Projektphasen und Grundlagen für Projekte in der Pfadi
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Personalentwicklung:</value>
+				<text>
+					<value>Phasen in Gruppenprozessen
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Kommunikation:</value>
+				<text>
+					<value>Kommunikationsmodelle, Grundlagen zu Feedback und Strategien
+						zur Konfliktbewältigung
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Methodik:</value>
+				<text>
+					<value>Entwicklungsstand der verschiedenen Altersgruppen,
+						Bedürfnisse und Anforderungen an ein alters- und
+						bedürfnisgerechtes Programm für Kinder, Jugendliche und junge
+						Erwachsene
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Diversity:</value>
+				<text>
+					<value>Chancengleichheit der Geschlechter, Integration von Menschen
+						mit einer Behinderung und Menschen mit einem anderen kulturellen
+						oder sozialen Hintergrund
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Gesundheitsförderung:</value>
+				<text>
+					<value>Massnahmen zur Gesundheitsförderung, zum Umgang mit
+						Suchtmitteln sowie zur Prävention von Gewalt und sexueller
+						Ausbeutung
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Selbstwirksamkeit:</value>
+				<text>
+					<value>Persönliche Standortbestimmung
+					</value>
+				</text>
+			</text>
+		</inhalt>
+
+	</inhalte>
+</kurs>

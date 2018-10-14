@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Leitpfadikurs</name>
+	<language>de</language>
+	<description>
+	Im Kurs erwerben die Teilnehmenden die Kompetenzen, um die Verantwortung für kleinere Aktivitäten für Kinder und Jugendliche im Alter von 10 bis 14 Jahren zu übernehmen und das Leben und den Zusammenhalt in der Gruppe aktiv zu gestalten.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">
+				<value>Leitungskompetenz:</value>
+			</text>
+			<inhalt>
+				<text>
+					<value>
+					Vorbildfunktion als angehende Leitungsperson und Möglichkeiten zur Förderung der Gruppenkultur
+					</value>
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+					<value>
+					Befähigung zum Erkennen von möglichen Gefahren während Aktivitäten und richtigem Verhalten in Notfällen
+					</value>
+				</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Methodik:</value>
+			</text>
+			<inhalt>
+				<text>
+					<value>
+					Vielseitigkeit von Aktivitäten für Kinder- und Jugendliche (Prinzip Kopf, Herz, Hand nach Pestalozzi)
+					</value>
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+					<value>
+					Möglichkeiten zur kreativen Einbettung der Aktivitäten (z.B. Rahmengeschichten)
+					</value>
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+					<value>
+					Methoden zur Organisation von kurzen Aktivitäten in kleinen Gruppen
+					</value>
+				</text>
+			</inhalt>
+		</inhalt>
+	</inhalte>
+</kurs>

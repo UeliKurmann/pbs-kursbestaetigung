@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Spektrumkurs</name>
+	<language>de</language>
+	<description>
+		Im Kurs erwerben die Teilnehmenden grundlegende Kenntnisse zur Leitung
+		eines Verbandes (Region/Kanton/Bund). Die Schwerpunkte liegen in der
+		langfristigen Entwicklung.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">
+				<value>Organisationsentwicklung:</value>
+				<text>
+					<value>
+						Instrumente zur Beurteilung und zur langfristigen Entwicklung der
+						Verbandskultur, der Verbandsstrukturen, der Verbandsstrategie und
+						der Prozesse
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Projektmanagement:</value>
+				<text>
+					<value>
+						Projektphasen und Grundlagen für langfristige Projekte in der Pfadi
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Innovation:</value>
+				<text>
+					<value>
+						Entwicklung und Beurteilung von neuen Ideen sowie Initiierung, Begleitung und
+						Durchführung von Veränderungen
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Personalentwicklung:</value>
+				<text>
+					<value>
+						Förderung, Betreuung und Weiterbildung von Mitarbeitenden sowie Koordination
+						der Tätigkeiten von Ehrenamtlichen und Angestellten
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Konfliktmanagement:</value>
+				<text>
+					<value>
+						Strategien zur Konfliktbewältigung
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Kommunikation:</value>
+				<text>
+					<value>
+						Kommunizieren mit Behörden, Medien und anderen Verbänden
+					</value>
+				</text>
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">
+				<value>Selbstwirksamkeit:</value>
+				<text>
+					<value>
+						Reflexion der unterschiedlichen Rollen in der Funktion
+					</value>
+				</text>
+			</text>
+		</inhalt>
+	</inhalte>
+</kurs>

@@ -1,0 +1,1 @@
+curl -H "Content-Type:application/json" -XPOST -d @demo.json http://localhost:8080/kurs/renderer/pdf/basiskurs/de > test.pdf

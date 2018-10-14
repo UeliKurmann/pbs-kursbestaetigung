@@ -1,0 +1,32 @@
+.classpath
+/target/
+.project
+./settings
+.RData
+.Rhistory
+DBs/*.tgz
+DBs/ffv_20160603_PATCHED
+input.csv
+stats-all.csv
+all.csv
+Cartography/*.zip
+*/Results/*.pdf
+Analytics/Part 3/Results
+Analytics/Part 2/*.csv
+Analytics/Part 3/*.csv
+DBs/ffv_20160706
+sketch_*/data/*.csv
+Visualizations/sketch_*/data
+Visualizations/sketch_*/*.tif
+Analytics/Part 3/Results 2016-06-xx
+DBs/ffv_20160721
+Analytics/Part 3/*.pdf
+DBs/*.csv
+*.tif.zip
+Neuerungen_Sommerflugplan_2016.pdf
+Sommerflugplan_2016.pdf
+Weltkarte_1617.pdf
+Visualizations/d3-heatmap/data/data*.csv
+Visualizations/scroll_demo
+tmp/starter-template
+starter-template.zip

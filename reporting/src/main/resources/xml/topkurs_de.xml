@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Topkurs</name>
+	<language>de</language>
+	<description>
+	Im Kurs erwerben die Teilnehmenden die notwendigen Kompetenzen, um einen Ausbildungskurs zu leiten und einen Verein (Pfadiabteilung) zu betreuen. Der Kurs führt zu den Anerkennungen als J+S-Coach und als J+S-Experte.
+	</description>
+
+	<inhalte>
+		<inhalt>
+			<text style="bold">
+				<value>Didaktik:</value>
+				<text>
+					<value>
+					Planung, Gestaltung und Durchführung von methodisch vielfältigen Ausbildungskursen mit vorgegebenen Lernzielen. Erkennen des Ausbildungsbedarfs der Kursteilnehmenden und Unterstützung ihres Lernprozesses.
+					</value>
+				</text>
+			</text>
+		</inhalt>
+				<inhalt>
+			<text style="bold">
+				<value>Selbstwirksamkeit:</value>
+				<text>
+					<value>
+					 Reflexion des eigenen Lernens und Lehrens und sowie der Auftrittskompetenz
+					</value>
+				</text>
+			</text>
+		</inhalt>
+				<inhalt>
+			<text style="bold">
+				<value>Qualitätssicherung:</value>
+				<text>
+					<value>
+					Beurteilung von Programm und Aktivitäten bezüglich Sicherheit, Methodik, Altersgerechtigkeit und Vielfalt nach Vorgaben von J+S und der Pfadibewegung Schweiz 
+					</value>
+				</text>
+			</text>
+		</inhalt>
+				<inhalt>
+			<text style="bold">
+				<value>Personalentwicklung:</value>
+				<text>
+					<value>
+					Betreuung und Förderung des Leitungsteams sowie Qualifikation von Kursteilnehmenden
+					</value>
+				</text>
+			</text>
+		</inhalt>
+				<inhalt>
+			<text style="bold">
+				<value>Kommunikation:</value>
+				<text>
+					<value>
+					Situations- und zielgruppengerechte Rückmeldungen
+					</value>
+				</text>
+			</text>
+		</inhalt>
+				<inhalt>
+			<text style="bold">
+				<value>Konfliktmanagement:</value>
+				<text>
+					<value>
+					Strategien und Instrumente zur Konfliktbewältigung
+					</value>
+				</text>
+			</text>
+		</inhalt>
+				<inhalt>
+			<text style="bold">
+				<value>Organisationsentwicklung:</value>
+				<text>
+					<value>
+					Gestaltung des Coaching-Prozesses sowie Analyse und Entwicklung des Netzwerks
+					</value>
+				</text>
+			</text>
+		</inhalt>
+				<inhalt>
+			<text style="bold">
+				<value>Gesundheitsförderung:</value>
+				<text>
+					<value>
+					Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung
+					</value>
+				</text>
+			</text>
+		</inhalt>
+	</inhalte>
+</kurs>

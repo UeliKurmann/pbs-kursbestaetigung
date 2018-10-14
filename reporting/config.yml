@@ -1,0 +1,7 @@
+logging:
+  level: INFO
+  loggers:
+    ch.smartness.pbs: DEBUG
+   
+template: Hello, %s!
+defaultName: Stranger
