@@ -103,7 +103,6 @@ public class PdfDocumentImpl implements PdfDocument {
 	@Override
 	public void addHeaderLogo() throws PdfDocumentException {
 		try {
-			// document.add(createLogo());
 			document.add(ElementFactory.createLogo(os, pdfWriter));
 		} catch (Exception e) {
 			throw PdfDocumentException.create("Could not create logo.", e);
