@@ -5,7 +5,7 @@ import java.io.InputStream;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
-public class Accessor {
+public class XMLAccessor {
 	
 	public static XMLKursbeschreibung readKursbeschreibung(InputStream xmlDocument) throws Exception{
 		JAXBContext jaxbContext = JAXBContext.newInstance(XMLKursbeschreibung.class, XMLKursbeschreibung.Inhalte.class, XMLKursbeschreibung.InhaltElement.class, XMLText.class, XMLTextStyle.class);

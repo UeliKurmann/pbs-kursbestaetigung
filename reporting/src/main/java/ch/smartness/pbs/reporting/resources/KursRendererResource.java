@@ -16,7 +16,7 @@ import com.google.common.io.Resources;
 
 import ch.smartness.pbs.reporting.uc.kursbestaetigung.KursDokumentGenerator;
 import ch.smartness.pbs.reporting.uc.kursbestaetigung.KursParameter;
-import ch.smartness.pbs.reporting.uc.kursbestaetigung.xml.Accessor;
+import ch.smartness.pbs.reporting.uc.kursbestaetigung.xml.XMLAccessor;
 import ch.smartness.pbs.reporting.uc.kursbestaetigung.xml.XMLKursConfig;
 import ch.smartness.pbs.reporting.uc.kursbestaetigung.xml.XMLKursbeschreibung;
 
@@ -76,9 +76,9 @@ public class KursRendererResource {
     }
     
     public byte[] renderPdf(String kurs, String lang, KursParameterJson kpj) throws Exception{
-    	XMLKursConfig config = Accessor.readKursConfig(KursRendererResource.class.getClassLoader().getResourceAsStream("xml/kurs-config.xml"));
+    	XMLKursConfig config = XMLAccessor.readKursConfig(KursRendererResource.class.getClassLoader().getResourceAsStream("xml/kurs-config.xml"));
 		String name = "xml/"+kurs+"_"+lang+".xml";
-		XMLKursbeschreibung beschreibung = Accessor.readKursbeschreibung(KursRendererResource.class.getClassLoader().getResourceAsStream(name));
+		XMLKursbeschreibung beschreibung = XMLAccessor.readKursbeschreibung(KursRendererResource.class.getClassLoader().getResourceAsStream(name));
 		
 		KursParameter parameter = new KursParameter();
 		
