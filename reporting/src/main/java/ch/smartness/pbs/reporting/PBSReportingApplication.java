@@ -32,8 +32,8 @@ public class PBSReportingApplication extends Application<PBSReportingConfigurati
 		environment.jersey().register(resource);
 		
 
-		final TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
-		environment.healthChecks().register("template", healthCheck);
+		final TemplateHealthCheck healthCheck = new TemplateHealthCheck();
+		environment.healthChecks().register("reporing", healthCheck);
 		environment.jersey().register(resource);	
 
 	}
