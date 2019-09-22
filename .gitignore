@@ -1,7 +1,8 @@
 .classpath
 /target/
 .project
-./settings
+.settings/
+./settings/
 .RData
 .Rhistory
 DBs/*.tgz
