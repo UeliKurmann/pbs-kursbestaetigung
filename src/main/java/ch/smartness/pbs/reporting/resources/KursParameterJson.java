@@ -1,6 +1,7 @@
 package ch.smartness.pbs.reporting.resources;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.ws.rs.FormParam;
 
 public class KursParameterJson {
 
@@ -19,6 +20,7 @@ public class KursParameterJson {
 		return name;
 	}
 
+	@FormParam("name")
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -28,6 +30,7 @@ public class KursParameterJson {
 		return vorname;
 	}
 
+	@FormParam("vorname")
 	public void setVorname(String vorname) {
 		this.vorname = vorname;
 	}
@@ -37,6 +40,7 @@ public class KursParameterJson {
 		return wohnort;
 	}
 
+	@FormParam("wohnort")
 	public void setWohnort(String wohnort) {
 		this.wohnort = wohnort;
 	}
@@ -46,6 +50,7 @@ public class KursParameterJson {
 		return dauer;
 	}
 
+	@FormParam("dauer")
 	public void setDauer(String dauer) {
 		this.dauer = dauer;
 	}
@@ -55,6 +60,7 @@ public class KursParameterJson {
 		return kursOrt;
 	}
 
+	@FormParam("kursOrt")
 	public void setKursOrt(String kursOrt) {
 		this.kursOrt = kursOrt;
 	}
@@ -64,6 +70,7 @@ public class KursParameterJson {
 		return organisator;
 	}
 
+	@FormParam("organisator")
 	public void setOrganisator(String organisator) {
 		this.organisator = organisator;
 	}
@@ -73,6 +80,7 @@ public class KursParameterJson {
 		return geburtstag;
 	}
 
+	@FormParam("geburtstag")
 	public void setGeburtstag(String geburtstag) {
 		this.geburtstag = geburtstag;
 	}
@@ -82,6 +90,7 @@ public class KursParameterJson {
 		return this.anrede;
 	}
 
+	@FormParam("anrede")
 	public void setAnrede(String anrede) {
 		this.anrede = anrede;
 	}
