@@ -19,7 +19,7 @@
   <li><a href="/kurs/renderer/demo/pdf/topkurs/de">Topkurs</a></li>
 </ul>
 
-<form id="form">
+<form action="/kurs/renderer/pdf/basiskurs/de" id="form" target="_blank" method="POST">
     <label for="name">Name</label><input type="text" id="name" name="name" value="Rengel">
     <label for="vorname">Vorname</label><input type="text" id="vorname" name="vorname" value="Heinrich">
     <label for="wohnort">Wohnort</label><input type="text" id="wohnort" name="wohnort" value="Oberdorf">
@@ -28,44 +28,8 @@
     <label for="organisator">Organisator</label><input type="text" id="organisator" name="organisator" value="Pfadibewegung Schweiz (PBS)">
     <label for="geburtstag">Geburtstag</label><input type="text" id="geburtstag" name="geburtstag" value="09.08.1977">
     <label for="anrede">Anrede</label><input type="text" id="anrede" name="anrede" value="Herr">
-    <div><button>Absenden</button></div>
+    <div><button type="submit">Absenden</button></div>
 </form>
-
-<script>
-    function submit() {
-        var formData = new FormData(document.querySelector('#form'));
-        var object = {};
-        formData.forEach(function (value, key) {
-            object[key] = value;
-        });
-        var json = JSON.stringify(object);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/kurs/renderer/pdf/basiskurs/de', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.responseType = 'blob';
-        xhr.onload = function (event) {
-            var blob = xhr.response;
-            var contentDispo = xhr.getResponseHeader('Content-Disposition');
-            // https://stackoverflow.com/a/23054920/
-            var fileName = contentDispo.match(/filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/)[1];
-            saveBlob(blob, fileName);
-        };
-        xhr.send(json);
-    }
-
-    function saveBlob(blob, fileName) {
-        var a = document.createElement('a');
-        a.href = window.URL.createObjectURL(blob);
-        a.download = fileName;
-        a.dispatchEvent(new MouseEvent('click'));
-    }
-
-    var element = document.querySelector('#form');
-    element.addEventListener('submit', function (event) {
-        event.preventDefault();
-        submit();
-    });
-</script>
 
 </body>
 </html>
