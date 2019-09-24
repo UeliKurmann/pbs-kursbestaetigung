@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
+import java.util.Arrays;
 
 import com.lowagie.text.BadElementException;
 import com.lowagie.text.Cell;
@@ -25,6 +26,8 @@ import ch.smartness.pbs.reporting.core.PdfText;
 import ch.smartness.pbs.reporting.core.PdfText.Style;
 
 public class ElementFactory {
+
+	private static final String NEW_LINE = "\n";
 
 	public static Table createNameValueTable(NameValue... pairs) throws BadElementException {
 		Table table = new Table(2);
@@ -48,10 +51,18 @@ public class ElementFactory {
 		cell.setWidth(50);
 		table.addCell(cell);
 
-		Cell cell2 = new Cell(value);
+		Cell cell2 = new Cell(cleanupMultilineValues(value));
 		cell2.setBorder(0);
 		cell2.setWidth(120);
 		table.addCell(cell2);
+	}
+
+	private static String cleanupMultilineValues(String value) {
+		StringBuilder sb = new StringBuilder();
+		if(value != null) {
+			Arrays.stream(value.split(NEW_LINE)).forEach(line -> sb.append(line.trim()).append(NEW_LINE));
+		}
+		return sb.toString();
 	}
 
 	public static List createList(ListElement... elements) {
