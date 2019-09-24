@@ -26,85 +26,79 @@ import javax.ws.rs.core.Response;
 @Path("/kurs/renderer")
 @Produces(MediaType.APPLICATION_JSON)
 public class KursRendererResource {
-    
 
-    public KursRendererResource() {
-       
-    }
+	public KursRendererResource() {
 
-    @GET
-    @Path("/ping")
-    @Produces(MediaType.TEXT_PLAIN)
-    @Timed
-    public String ping() {
-        return "pong";
-    }
-    
-    @GET
-    @Path("/demo")
-    @Produces(MediaType.TEXT_HTML)
-    @Timed
-    public String demo() throws IOException{
-    	return Resources.toString(KursRendererResource.class.getClassLoader().getResource("assets/demo.html"), Charsets.UTF_8);
-    }
-    
-    @GET
-    @Path("/demo/json")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Timed
-    public KursParameterJson getDemoParameter(){
-    	return createDemoParameter();
-    }
+	}
 
-    @GET
-    @Path("/demo/pdf/{kurs}/{lang}")
-    @Produces("application/pdf")
-    @Timed
-    public Response getPdfDemo(@PathParam("kurs") String kurs, @PathParam("lang") String lang) throws Exception {
-    	KursParameterJson parameter = createDemoParameter();
-		
+	@GET
+	@Path("/ping")
+	@Produces(MediaType.TEXT_PLAIN)
+	@Timed
+	public String ping() {
+		return "pong";
+	}
 
-        return Response.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + kurs + ".pdf\"")
-                .entity(renderPdf(kurs, lang, parameter))
-                .build();
-    }
+	@GET
+	@Path("/demo")
+	@Produces(MediaType.TEXT_HTML)
+	@Timed
+	public String demo() throws IOException {
+		return Resources.toString(KursRendererResource.class.getClassLoader().getResource("assets/demo.html"),
+				Charsets.UTF_8);
+	}
 
-    @POST
-    @Path("/pdf/{kurs}/{lang}")
-    @Produces("application/pdf")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Timed
-    public Response getPdfFromJson(@PathParam("kurs") String kurs, @PathParam("lang") String lang, KursParameterJson kpj) throws Exception {
-        System.out.println(kpj);
+	@GET
+	@Path("/demo/json")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Timed
+	public KursParameterJson getDemoParameter() {
+		return createDemoParameter();
+	}
 
-        return Response.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + kurs + ".pdf\"")
-                .entity(renderPdf(kurs, lang, kpj))
-                .build();
-    }
+	@GET
+	@Path("/demo/pdf/{kurs}/{lang}")
+	@Produces("application/pdf")
+	@Timed
+	public Response getPdfDemo(@PathParam("kurs") String kurs, @PathParam("lang") String lang) throws Exception {
+		KursParameterJson parameter = createDemoParameter();
 
-    @POST
-    @Path("/pdf/{kurs}/{lang}")
-    @Produces("application/pdf")
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Timed
-    public Response getPdfFromUrlencoded(@PathParam("kurs") String kurs, @PathParam("lang") String lang, @BeanParam KursParameterJson kpj) throws Exception {
-        System.out.println(kpj);
+		return Response.ok().header(HttpHeaders.CONTENT_DISPOSITION, createContentDisposition(kurs))
+				.entity(renderPdf(kurs, lang, parameter)).build();
+	}
 
-        return Response.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + kurs + ".pdf\"")
-                .entity(renderPdf(kurs, lang, kpj))
-                .build();
-    }
-    
-    public byte[] renderPdf(String kurs, String lang, KursParameterJson kpj) throws Exception{
-    	XMLKursConfig config = XMLAccessor.readKursConfig(KursRendererResource.class.getClassLoader().getResourceAsStream("xml/kurs-config.xml"));
-		String name = "xml/"+kurs+"_"+lang+".xml";
-		XMLKursbeschreibung beschreibung = XMLAccessor.readKursbeschreibung(KursRendererResource.class.getClassLoader().getResourceAsStream(name));
-		
+	@POST
+	@Path("/pdf/{kurs}/{lang}")
+	@Produces("application/pdf")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Timed
+	public Response getPdfFromJson(@PathParam("kurs") String kurs, @PathParam("lang") String lang,
+			KursParameterJson kpj) throws Exception {
+		return Response.ok().header(HttpHeaders.CONTENT_DISPOSITION, createContentDisposition(kurs))
+				.entity(renderPdf(kurs, lang, kpj)).build();
+	}
+
+	@POST
+	@Path("/pdf/{kurs}/{lang}")
+	@Produces("application/pdf")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Timed
+	public Response getPdfFromUrlencoded(@PathParam("kurs") String kurs, @PathParam("lang") String lang,
+			@BeanParam KursParameterJson kpj) throws Exception {
+
+		return Response.ok().header(HttpHeaders.CONTENT_DISPOSITION, createContentDisposition(kurs))
+				.entity(renderPdf(kurs, lang, kpj)).build();
+	}
+
+	public byte[] renderPdf(String kurs, String lang, KursParameterJson kpj) throws Exception {
+		XMLKursConfig config = XMLAccessor
+				.readKursConfig(KursRendererResource.class.getClassLoader().getResourceAsStream("xml/kurs-config.xml"));
+		String name = createKursTemplateName(kurs, lang);
+		XMLKursbeschreibung beschreibung = XMLAccessor
+				.readKursbeschreibung(KursRendererResource.class.getClassLoader().getResourceAsStream(name));
+
 		KursParameter parameter = new KursParameter();
-		
+
 		parameter.setDauer(kpj.getDauer());
 		parameter.setKursOrt(kpj.getKursOrt());
 		parameter.setOrganisator(kpj.getOrganisator());
@@ -114,13 +108,17 @@ public class KursRendererResource {
 		parameter.setVorname(kpj.getVorname());
 		parameter.setWohnort(kpj.getWohnort());
 		parameter.setGeburtstag(kpj.getGeburtstag());
-		
-		return new KursDokumentGenerator().render(config, beschreibung, parameter).toByteArray();	
-    }
-    
-    private KursParameterJson createDemoParameter() {
+
+		return new KursDokumentGenerator().render(config, beschreibung, parameter).toByteArray();
+	}
+
+	private String createKursTemplateName(String kurs, String lang) {
+		return String.format("xml/%s_%s.xml", kurs, lang);
+	}
+
+	private KursParameterJson createDemoParameter() {
 		KursParameterJson parameter = new KursParameterJson();
-		
+
 		parameter.setDauer("28.09.2017 - 29.09.2017");
 		parameter.setKursOrt("Solothurn");
 		parameter.setOrganisator("Pfadibewegung Schweiz (PBS)");
@@ -131,5 +129,9 @@ public class KursRendererResource {
 		parameter.setWohnort("Oberdorf");
 		parameter.setGeburtstag("09.08.1977");
 		return parameter;
+	}
+
+	private String createContentDisposition(String kurs) {
+		return String.format("attachment; filename=\"%s.pdf\"", kurs);
 	}
 }
