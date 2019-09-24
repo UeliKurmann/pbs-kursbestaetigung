@@ -9,6 +9,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 
 import com.codahale.metrics.annotation.Timed;
@@ -20,6 +21,7 @@ import ch.smartness.pbs.reporting.uc.kursbestaetigung.KursParameter;
 import ch.smartness.pbs.reporting.uc.kursbestaetigung.xml.XMLAccessor;
 import ch.smartness.pbs.reporting.uc.kursbestaetigung.xml.XMLKursConfig;
 import ch.smartness.pbs.reporting.uc.kursbestaetigung.xml.XMLKursbeschreibung;
+import javax.ws.rs.core.Response;
 
 @Path("/kurs/renderer")
 @Produces(MediaType.APPLICATION_JSON)
@@ -58,11 +60,14 @@ public class KursRendererResource {
     @Path("/demo/pdf/{kurs}/{lang}")
     @Produces("application/pdf")
     @Timed
-    public byte[] getPdfDemo(@PathParam("kurs") String kurs, @PathParam("lang") String lang) throws Exception {
-        KursParameterJson parameter = createDemoParameter();
+    public Response getPdfDemo(@PathParam("kurs") String kurs, @PathParam("lang") String lang) throws Exception {
+    	KursParameterJson parameter = createDemoParameter();
+		
 
-
-        return renderPdf(kurs, lang, parameter);
+        return Response.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + kurs + ".pdf\"")
+                .entity(renderPdf(kurs, lang, parameter))
+                .build();
     }
 
     @POST
@@ -70,10 +75,13 @@ public class KursRendererResource {
     @Produces("application/pdf")
     @Consumes(MediaType.APPLICATION_JSON)
     @Timed
-    public byte[] getPdfFromJson(@PathParam("kurs") String kurs, @PathParam("lang") String lang, KursParameterJson kpj) throws Exception {
+    public Response getPdfFromJson(@PathParam("kurs") String kurs, @PathParam("lang") String lang, KursParameterJson kpj) throws Exception {
         System.out.println(kpj);
 
-        return renderPdf(kurs, lang, kpj);
+        return Response.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + kurs + ".pdf\"")
+                .entity(renderPdf(kurs, lang, kpj))
+                .build();
     }
 
     @POST
@@ -81,10 +89,13 @@ public class KursRendererResource {
     @Produces("application/pdf")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Timed
-    public byte[] getPdfFromUrlencoded(@PathParam("kurs") String kurs, @PathParam("lang") String lang, @BeanParam KursParameterJson kpj) throws Exception {
+    public Response getPdfFromUrlencoded(@PathParam("kurs") String kurs, @PathParam("lang") String lang, @BeanParam KursParameterJson kpj) throws Exception {
         System.out.println(kpj);
 
-        return renderPdf(kurs, lang, kpj);
+        return Response.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + kurs + ".pdf\"")
+                .entity(renderPdf(kurs, lang, kpj))
+                .build();
     }
     
     public byte[] renderPdf(String kurs, String lang, KursParameterJson kpj) throws Exception{

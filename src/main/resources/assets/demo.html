@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Kurs Renderer</title>
+<style>label { display: block; }</style>
 </head>
 <body>
 <h1>Kurs Renderer: Demo</h1>
@@ -17,6 +18,18 @@
   <li><a href="/kurs/renderer/demo/pdf/spektrumkurs/de">Spektrumkurs</a></li>
   <li><a href="/kurs/renderer/demo/pdf/topkurs/de">Topkurs</a></li>
 </ul>
+
+<form action="/kurs/renderer/pdf/basiskurs/de" id="form" target="_blank" method="POST">
+    <label for="name">Name</label><input type="text" id="name" name="name" value="Rengel">
+    <label for="vorname">Vorname</label><input type="text" id="vorname" name="vorname" value="Heinrich">
+    <label for="wohnort">Wohnort</label><input type="text" id="wohnort" name="wohnort" value="Oberdorf">
+    <label for="dauer">Kursdauer</label><input type="text" id="dauer" name="dauer" value="28.09.2017 - 29.09.2017">
+    <label for="kursOrt">Kursort</label><input type="text" id="kursOrt" name="kursOrt" value="Solothurn">
+    <label for="organisator">Organisator</label><input type="text" id="organisator" name="organisator" value="Pfadibewegung Schweiz (PBS)">
+    <label for="geburtstag">Geburtstag</label><input type="text" id="geburtstag" name="geburtstag" value="09.08.1977">
+    <label for="anrede">Anrede</label><input type="text" id="anrede" name="anrede" value="Herr">
+    <div><button type="submit">Absenden</button></div>
+</form>
 
 </body>
 </html>
