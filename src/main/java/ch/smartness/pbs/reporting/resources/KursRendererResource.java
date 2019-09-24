@@ -2,6 +2,7 @@ package ch.smartness.pbs.reporting.resources;
 
 import java.io.IOException;
 
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -52,27 +53,38 @@ public class KursRendererResource {
     public KursParameterJson getDemoParameter(){
     	return createDemoParameter();
     }
-    
+
     @GET
     @Path("/demo/pdf/{kurs}/{lang}")
     @Produces("application/pdf")
     @Timed
     public byte[] getPdfDemo(@PathParam("kurs") String kurs, @PathParam("lang") String lang) throws Exception {
-    	KursParameterJson parameter = createDemoParameter();
-		
-		
-		return renderPdf(kurs, lang, parameter);
+        KursParameterJson parameter = createDemoParameter();
+
+
+        return renderPdf(kurs, lang, parameter);
     }
-    
+
     @POST
     @Path("/pdf/{kurs}/{lang}")
     @Produces("application/pdf")
     @Consumes(MediaType.APPLICATION_JSON)
     @Timed
-    public byte[] getPdf(@PathParam("kurs") String kurs, @PathParam("lang") String lang, KursParameterJson kpj) throws Exception {
-    	System.out.println(kpj);
-    	
-		return renderPdf(kurs, lang, kpj);
+    public byte[] getPdfFromJson(@PathParam("kurs") String kurs, @PathParam("lang") String lang, KursParameterJson kpj) throws Exception {
+        System.out.println(kpj);
+
+        return renderPdf(kurs, lang, kpj);
+    }
+
+    @POST
+    @Path("/pdf/{kurs}/{lang}")
+    @Produces("application/pdf")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Timed
+    public byte[] getPdfFromUrlencoded(@PathParam("kurs") String kurs, @PathParam("lang") String lang, @BeanParam KursParameterJson kpj) throws Exception {
+        System.out.println(kpj);
+
+        return renderPdf(kurs, lang, kpj);
     }
     
     public byte[] renderPdf(String kurs, String lang, KursParameterJson kpj) throws Exception{
