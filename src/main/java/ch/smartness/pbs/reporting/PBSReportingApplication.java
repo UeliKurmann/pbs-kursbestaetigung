@@ -4,7 +4,7 @@ import ch.smartness.pbs.reporting.core.Factory;
 import ch.smartness.pbs.reporting.core.TemplateEngine;
 import ch.smartness.pbs.reporting.health.TemplateHealthCheck;
 import ch.smartness.pbs.reporting.pdf.PdfDocumentImpl;
-import ch.smartness.pbs.reporting.resources.KursRendererResource;
+import ch.smartness.pbs.reporting.resources.BenevoleRendererResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -28,7 +28,7 @@ public class PBSReportingApplication extends Application<PBSReportingConfigurati
 
 	@Override
 	public void run(final PBSReportingConfiguration configuration, final Environment environment) {
-		final KursRendererResource resource = new KursRendererResource();
+		final BenevoleRendererResource resource = new BenevoleRendererResource();
 		environment.jersey().register(resource);
 		
 
