@@ -77,7 +77,7 @@
 				<version>2.4.1</version>
 				<configuration>
 					<createDependencyReducedPom>true</createDependencyReducedPom>
-					<name>benevole-renderer</name>
+					<finalName>benevole-renderer</finalName>
 					<transformers>
 						<transformer
 							implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
