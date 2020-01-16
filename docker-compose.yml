@@ -1,8 +1,5 @@
-server:
-  image: maven:3.6.2-jdk-8
-  volumes:
-    - '.:/app'
-  command: bash -c "cd /app && mvn clean install && java -jar target/reporting-0.0.1-SNAPSHOT.jar server config.yml"
+app:
+  build: .
   ports:
-    - "8080:8080"
     - "8081:8081"
+    - "8080:8080"
