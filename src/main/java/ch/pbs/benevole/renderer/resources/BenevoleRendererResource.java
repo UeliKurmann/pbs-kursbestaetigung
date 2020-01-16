@@ -4,7 +4,6 @@ import static ch.pbs.benevole.renderer.resources.Renderer.renderPdf;
 
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -21,17 +20,6 @@ public class BenevoleRendererResource {
 
 	public BenevoleRendererResource() {
 		// default constructor.
-	}
-
-	@GET
-	@Path("/demo/pdf/{kurs}/{lang}")
-	@Produces("application/pdf")
-	@Timed
-	public Response getPdfDemo(@PathParam("kurs") String kurs, @PathParam("lang") String lang) throws Exception {
-		KursParameterJson parameter = TestData.createDemoParameter();
-		return Response.ok()//
-				.header(HttpHeaders.CONTENT_DISPOSITION, createContentDisposition(kurs)) //
-				.entity(renderPdf(kurs, lang, parameter)).build();
 	}
 
 	@POST
