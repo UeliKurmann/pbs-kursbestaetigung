@@ -1,9 +1,7 @@
 package ch.pbs.benevole.renderer.pdf;
 
 import java.awt.Color;
-import java.io.IOException;
 import java.io.OutputStream;
-import java.net.URL;
 import java.util.Arrays;
 
 import com.lowagie.text.BadElementException;
@@ -87,14 +85,6 @@ public class ElementFactory {
 			}
 		}
 		return list;
-	}
-
-	public static Image createLogo() throws BadElementException, IOException {
-		URL resource = ElementFactory.class.getClassLoader().getResource("pbsassets/pbslogo.png");
-		Image image = Image.getInstance(resource);
-		image.setAlignment(Image.RIGHT);
-		image.scaleToFit(270, 200);
-		return image;
 	}
 
 	public static Image createLogo(OutputStream os, PdfWriter pdfWriter) throws Exception {
