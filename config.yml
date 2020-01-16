@@ -1,4 +1,4 @@
 logging:
   level: INFO
   loggers:
-    ch.smartness.pbs: DEBUG
+    ch.pbs.benevole.renderer: INFO
