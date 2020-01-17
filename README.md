@@ -12,6 +12,10 @@ Health Check
 
 To see your applications health enter url `http://localhost:8081/healthcheck`
 
+Prometheus
+---
+Prometheus scrap url `http://localhost:8081/prometheus`
+
 Service 
 ---
     GET   /benevole/check/ping (ch.pbs.benevole.renderer.resources.BenevoleHealthCheckResource)
@@ -19,3 +23,8 @@ Service
     GET   /benevole/demo/json (ch.pbs.benevole.renderer.resources.BenevoleDemoResource)
     GET   /benevole/demo/pdf/{kurs}/{lang} (ch.pbs.benevole.renderer.resources.BenevoleDemoResource)
     POST  /kurs/renderer/pdf/{kurs}/{lang} (ch.pbs.benevole.renderer.resources.BenevoleRendererResource)
+
+Docker
+---
+Start mit `docker-compose -p benevole up -d`
+Die Ports sind in docker-compose.yml definiert.
