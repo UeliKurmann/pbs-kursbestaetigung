@@ -1,5 +1,7 @@
 package ch.pbs.benevole.renderer;
 
+import com.expediagroup.dropwizard.prometheus.PrometheusBundle;
+
 import ch.pbs.benevole.renderer.core.Factory;
 import ch.pbs.benevole.renderer.core.TemplateEngine;
 import ch.pbs.benevole.renderer.health.TemplateHealthCheck;
@@ -26,6 +28,9 @@ public class PBSBenevoleRenderApplication extends Application<PBSBenevoleRenderC
 	public void initialize(final Bootstrap<PBSBenevoleRenderConfiguration> bootstrap) {
 		Factory.get().configPdfDocument(()-> PdfDocumentImpl.create());
 		Factory.get().configTemplateEngine(()-> new TemplateEngine());
+		
+		bootstrap.addBundle(new PrometheusBundle<>(PBSBenevoleRenderConfiguration::getPrometheusBundleConfig));
+	      
 	}
 
 	@Override

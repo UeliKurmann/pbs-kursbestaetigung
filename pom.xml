@@ -56,6 +56,11 @@
 			<version>1.60</version>
 		</dependency>
 		<dependency>
+			<groupId>com.expediagroup</groupId>
+			<artifactId>dropwizard-prometheus-bundle</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<type>jar</type>
