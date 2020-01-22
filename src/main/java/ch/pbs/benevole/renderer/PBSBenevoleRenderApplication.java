@@ -6,6 +6,7 @@ import ch.pbs.benevole.renderer.core.Factory;
 import ch.pbs.benevole.renderer.core.TemplateEngine;
 import ch.pbs.benevole.renderer.health.TemplateHealthCheck;
 import ch.pbs.benevole.renderer.pdf.PdfDocumentImpl;
+import ch.pbs.benevole.renderer.resources.BackwardCompatibilityResource;
 import ch.pbs.benevole.renderer.resources.BenevoleDemoResource;
 import ch.pbs.benevole.renderer.resources.BenevoleHealthCheckResource;
 import ch.pbs.benevole.renderer.resources.BenevoleRendererResource;
@@ -39,6 +40,7 @@ public class PBSBenevoleRenderApplication extends Application<PBSBenevoleRenderC
 		environment.jersey().register(resource);
 		environment.jersey().register(BenevoleDemoResource.class);
 		environment.jersey().register(BenevoleHealthCheckResource.class);
+		environment.jersey().register(BackwardCompatibilityResource.class);
 		
 		final TemplateHealthCheck healthCheck = new TemplateHealthCheck();
 		environment.healthChecks().register("renderer", healthCheck);

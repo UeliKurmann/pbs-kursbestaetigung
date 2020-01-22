@@ -11,7 +11,7 @@ import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung;
 public class Renderer {
 
 	public static byte[] renderPdf(String kurs, String lang, KursParameterJson kpj) throws Exception {
-		XMLKursConfig config = XMLAccessor.readKursConfig(loadConfing());
+		XMLKursConfig config = XMLAccessor.readKursConfig(loadConfing(lang));
 		String name = createKursTemplateName(kurs, lang);
 		XMLKursbeschreibung beschreibung = XMLAccessor.readKursbeschreibung(loadKursTemplate(name));
 
@@ -34,8 +34,8 @@ public class Renderer {
 		return BenevoleRendererResource.class.getClassLoader().getResourceAsStream(name);
 	}
 
-	private static InputStream loadConfing() {
-		return BenevoleRendererResource.class.getClassLoader().getResourceAsStream("xml/kurs-config.xml");
+	private static InputStream loadConfing(String lang) {
+		return BenevoleRendererResource.class.getClassLoader().getResourceAsStream("xml/kurs-config-"+lang+".xml");
 	}
 
 	private static String createKursTemplateName(String kurs, String lang) {

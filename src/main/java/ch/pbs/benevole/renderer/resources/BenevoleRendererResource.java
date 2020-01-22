@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 
 import com.codahale.metrics.annotation.Timed;
 
-@Path("/kurs/renderer")
+@Path("/benevole/renderer")
 @Produces(MediaType.APPLICATION_JSON)
 public class BenevoleRendererResource {
 
