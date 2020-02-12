@@ -3,29 +3,22 @@ package ch.pbs.benevole.renderer.uc.kursbestaetigung.xml;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlValue;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class XMLText {
 
-	@XmlElement(required = false)
-	private XMLText text;
 
-	@XmlElement(required = true)
+	@XmlValue
 	private String value;
 
 	@XmlAttribute(required = false)
 	private XMLTextStyle style;
-
-	public XMLText getText() {
-		return text;
-	}
-
-	public void setText(XMLText text) {
-		this.text = text;
-	}
+	
+	@XmlAttribute(required = false)
+	private boolean newline;
 
 	public void setValue(String value) {
 		this.value = value;
@@ -41,6 +34,10 @@ public class XMLText {
 
 	public XMLTextStyle getStyle() {
 		return style;
+	}
+	
+	public boolean isNewline() {
+		return newline;
 	}
 
 }

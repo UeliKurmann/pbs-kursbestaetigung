@@ -8,20 +8,16 @@ public class PdfText {
 	
 	private String value;
 	private Style style;
-	private PdfText pdfText;
+	private boolean newline;
 	
-	private PdfText(String value, Style style, PdfText pdfText){
+	private PdfText(String value, Style style, boolean newline){
 		this.value = value;
 		this.style = style;
-		this.pdfText = pdfText;
+		this.newline = newline;
 	}
 	
-	public static PdfText create(String value, Style style){
-		return new PdfText(value, style, null);
-	}
-	
-	public static PdfText create(String value, Style style, PdfText next){
-		return new PdfText(value, style, next);
+	public static PdfText create(String value, Style style, boolean newline){
+		return new PdfText(value, style, newline);
 	}
 	
 	public String getValue() {
@@ -32,16 +28,12 @@ public class PdfText {
 		return style;
 	}
 	
-	public PdfText getNext() {
-		return pdfText;
-	}
-	
-	public void setNext(PdfText pdfText) {
-		this.pdfText = pdfText;
-	}
-	
 	void setValue(String value) {
 		this.value = value;
+	}
+	
+	public boolean isNewline() {
+		return newline;
 	}
 
 }

@@ -2,66 +2,44 @@
 <kurs>
 	<name>Basiskurs</name>
 	<language>de</language>
-	<description>Im Kurs erwerben die Teilnehmenden die Kompetenzen, um Aktivitäten für Kinder und Jugendliche zu planen, durchzuführen und das Programm mittelfristig in einem Leitungsteam zu gestalten. Der Kurs führt zur Anerkennung als J+S Leiter.
-	</description>
+	<description>Im Kurs erwerben die Teilnehmenden die Kompetenzen, um Aktivitäten für Kinder und Jugendliche zu planen, durchzuführen und das Programm mittelfristig in einem Leitungsteam zu gestalten. Der Kurs führt zur Anerkennung als J+S Leiter.</description>
 	<inhalte>
 		<inhalt>
-			<text style="bold">
-				<value>Leitungskompetenz:</value>
-			</text>
+			<text style="bold">Leitungskompetenz:</text>
 			<inhalt>
-				<text>
-					<value>Mittelfristige Planung, Durchführung und Auswertung von
+				<text>Mittelfristige Planung, Durchführung und Auswertung von
 						ausgewogenen Aktivitäten und Weekends für Kinder und Jugendliche
-					</value>
 				</text>
 			</inhalt>
 			<inhalt>
-				<text>
-					<value>Analyse möglicher Gefahren in Aktivitäten und Erstellung
+				<text>Analyse möglicher Gefahren in Aktivitäten und Erstellung
 						eines Sicherheitskonzeptes
-					</value>
 				</text>
 			</inhalt>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Methodik:</value>
-			</text>
+			<text style="bold">Methodik:</text>
 			<inhalt>
-				<text>
-					<value>Möglichkeiten zur Förderung des persönlichen Fortschrittes
+				<text>Möglichkeiten zur Förderung des persönlichen Fortschrittes
 						von Kinder und Jugendlichen
-					</value>
 				</text>
 			</inhalt>
 			<inhalt>
-				<text>
-					<value>Entwicklungsstand und Bedürfnisse der Kinder und
+				<text>Entwicklungsstand und Bedürfnisse der Kinder und
 						Jugendlichen sowie Möglichkeiten zur Förderung deren
 						Mitbestimmung
-					</value>
 				</text>
 			</inhalt>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Gesundheitsförderung:</value>
-				<text>
-					<value>Psychisches, physisches und soziales Wohlbefinden der Kinder
-						und Jugendlichen
-					</value>
-				</text>
-			</text>
+			<text style="bold">Gesundheitsförderung:</text>
+			<text>Psychisches, physisches und soziales Wohlbefinden der Kinder
+						und Jugendlichen</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Selbstwirksamkeit:</value>
-				<text>
-					<value>Vorbildfunktion als Leitungsperson und Selbstreflexion
+			<text style="bold">Selbstwirksamkeit:</text>
+			<text>Vorbildfunktion als Leitungsperson und Selbstreflexion
 						hinsichtlich eigener Stärken und Schwächen
-					</value>
-				</text>
 			</text>
 		</inhalt>
 

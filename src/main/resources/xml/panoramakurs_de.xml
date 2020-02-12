@@ -8,77 +8,43 @@
 		Gesellschaftsthemen auseinander.
 	</description>
 	<inhalte>
-
 		<inhalt>
-			<text style="bold">
-				<value>Projektmanagement:</value>
-				<text>
-					<value>Projektphasen und Grundlagen für Projekte in der Pfadi
-					</value>
-				</text>
-			</text>
+			<text style="bold">Projektmanagement:</text>
+			<text>Projektphasen und Grundlagen für Projekte in der Pfadi</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Personalentwicklung:</value>
-				<text>
-					<value>Phasen in Gruppenprozessen
-					</value>
-				</text>
-			</text>
+			<text style="bold">Personalentwicklung:</text>
+			<text>Phasen in Gruppenprozessen</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Kommunikation:</value>
-				<text>
-					<value>Kommunikationsmodelle, Grundlagen zu Feedback und Strategien
-						zur Konfliktbewältigung
-					</value>
-				</text>
-			</text>
+			<text style="bold">Kommunikation:</text>
+			<text>Kommunikationsmodelle, Grundlagen zu Feedback und Strategien zur Konfliktbewältigung</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Methodik:</value>
-				<text>
-					<value>Entwicklungsstand der verschiedenen Altersgruppen,
+			<text style="bold">Methodik:</text>
+			<text>Entwicklungsstand der verschiedenen Altersgruppen,
 						Bedürfnisse und Anforderungen an ein alters- und
 						bedürfnisgerechtes Programm für Kinder, Jugendliche und junge
 						Erwachsene
-					</value>
-				</text>
 			</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Diversity:</value>
-				<text>
-					<value>Chancengleichheit der Geschlechter, Integration von Menschen
+			<text style="bold">Diversity:</text>
+				<text>Chancengleichheit der Geschlechter, Integration von Menschen
 						mit einer Behinderung und Menschen mit einem anderen kulturellen
 						oder sozialen Hintergrund
-					</value>
 				</text>
-			</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Gesundheitsförderung:</value>
-				<text>
-					<value>Massnahmen zur Gesundheitsförderung, zum Umgang mit
+			<text style="bold">Gesundheitsförderung:</text>
+			<text>Massnahmen zur Gesundheitsförderung, zum Umgang mit
 						Suchtmitteln sowie zur Prävention von Gewalt und sexueller
 						Ausbeutung
-					</value>
-				</text>
 			</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Selbstwirksamkeit:</value>
-				<text>
-					<value>Persönliche Standortbestimmung
-					</value>
-				</text>
-			</text>
+			<text style="bold">Selbstwirksamkeit:</text>
+			<text>Persönliche Standortbestimmung</text>
 		</inhalt>
 
 	</inhalte>

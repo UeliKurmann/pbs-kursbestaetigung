@@ -12,9 +12,10 @@ import ch.pbs.benevole.renderer.core.PdfText;
 import ch.pbs.benevole.renderer.core.PdfText.Style;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursConfig;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung;
+import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung.InhaltElement;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLText;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLTextStyle;
-import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung.InhaltElement;
+import jersey.repackaged.com.google.common.collect.Lists;
 
 public class KursDokumentGenerator {
 
@@ -29,7 +30,9 @@ public class KursDokumentGenerator {
 
 		document.addHeaderLogo();
 		document.addH1(kursConfig.getTitel());
+		
 		document.addText(toPdfText(kursConfig.getIntro()));
+		
 		document.addTable(//
 				NameValue.create(kursConfig.getTabKurs(), kursbeschreibung.getName()), //
 				NameValue.create(kursConfig.getTabOrt(), parameter.getKursOrt()), //
@@ -40,7 +43,7 @@ public class KursDokumentGenerator {
 		document.addH2(kursConfig.getInhalt());
 
 		List<ListElement> elements = new ArrayList<>();
-		for (InhaltElement inhaltElement : kursbeschreibung.getInhalte().getInhalt()) {
+		for (InhaltElement inhaltElement : kursbeschreibung.getInhalte()) {
 			elements.add(ListElement.create(toPdfText(inhaltElement.getText()), t(inhaltElement.getSubInhalt())));
 		}
 
@@ -48,6 +51,7 @@ public class KursDokumentGenerator {
 		document.addEmptyParagraph();
 		document.addText(kursConfig.getAbschluss());
 		document.addEmptyParagraph();
+		document.addSignatureLogo();
 		document.addText(kursConfig.getVerantwortlicher());
 
 		
@@ -58,23 +62,19 @@ public class KursDokumentGenerator {
 		java.util.List<ListElement> elements = new ArrayList<>();
 		if (subInhalt != null) {
 			for (InhaltElement i : subInhalt) {
-				elements.add(ListElement.create(toPdfText(i.getText())));
+				elements.add(ListElement.create(Lists.newArrayList(toPdfText(i.getText()))));
 			}
 		}
 		return elements.toArray(new ListElement[0]);
 	}
 	
-	private static PdfText toPdfText(XMLText text){
-		PdfText result = PdfText.create(text.getValue(), toStyle(text.getStyle()));
-		PdfText current = result;
-		while(text.getText() != null){
-			XMLText y = text.getText();
-			PdfText x = PdfText.create(y.getValue(), toStyle(y.getStyle()));
-			current.setNext(x);
-			current = x;
-			text = y;
+	private static List<PdfText> toPdfText(List<XMLText> texts) {
+		List<PdfText> result = Lists.newArrayList();
+		for(XMLText text:texts) {
+			result.add(PdfText.create(text.getValue(), toStyle(text.getStyle()), text.isNewline()));
 		}
 		return result;
+		
 	}
 	
 	private static Style toStyle(XMLTextStyle s){

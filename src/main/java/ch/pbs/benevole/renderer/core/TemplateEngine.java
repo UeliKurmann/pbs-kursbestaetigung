@@ -36,11 +36,7 @@ public class TemplateEngine {
 	}
 
 	public PdfText process(PdfText p) {
-		PdfText output = p;
-		while (output != null) {
-			output.setValue(process(output.getValue()));
-			output = output.getNext();
-		}
+		p.setValue(process(p.getValue()));
 		return p;
 	}
 

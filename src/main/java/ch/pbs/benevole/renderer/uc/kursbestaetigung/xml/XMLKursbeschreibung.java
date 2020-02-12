@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "kurs")
@@ -44,32 +45,22 @@ public class XMLKursbeschreibung implements Serializable {
 		this.description = description;
 	}
 
-	public Inhalte getInhalte() {
+	public List<InhaltElement> getInhalte() {
 		return inhalte;
 	}
 
-	public void setInhalte(Inhalte inhalte) {
+	public void setInhalte(List<InhaltElement> inhalte) {
 		this.inhalte = inhalte;
 	}
 
 	@XmlElement(required = true)
 	private String description;
 
-	@XmlElement(required = true)
-	private Inhalte inhalte;
+	@XmlElementWrapper(name="inhalte")
+	@XmlElement(name="inhalt", required = true)
+	private List<InhaltElement> inhalte;
 
-	@XmlRootElement(name = "inhalte")
-	public static class Inhalte implements Serializable {
-		
-		private static final long serialVersionUID = 1L;
-
-		@XmlElement
-		private List<InhaltElement> inhalt;
-		
-		public List<InhaltElement> getInhalt() {
-			return inhalt;
-		}
-	}
+	
 
 	@XmlAccessorType(XmlAccessType.FIELD)
 	@XmlRootElement(name = "inhalt")
@@ -78,12 +69,12 @@ public class XMLKursbeschreibung implements Serializable {
 		private static final long serialVersionUID = 1L;
 
 		@XmlElement(required = true, name = "text")
-		private XMLText text;
+		private List<XMLText> text;
 
 		@XmlElement(required = false, name="inhalt")
 		private List<InhaltElement> subInhalt;
 
-		public XMLText getText() {
+		public List<XMLText> getText() {
 			return text;
 		}
 

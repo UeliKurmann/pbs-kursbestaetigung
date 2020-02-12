@@ -10,71 +10,30 @@
 	</description>
 	<inhalte>
 		<inhalt>
-			<text style="bold">
-				<value>Qualitätssicherung:</value>
-				<text>
-					<value>
-						Beurteilung von Programm und Aktivitäten bezüglich
-						Sicherheit, Methodik, Altersgerechtigkeit und Vielfalt nach
-						Vorgaben von J+S und der Pfadibewegung Schweiz
-					</value>
-				</text>
-			</text>
+			<text style="bold">Qualitätssicherung:</text>
+			<text>Beurteilung von Programm und Aktivitäten bezüglich
+				  Sicherheit, Methodik, Altersgerechtigkeit und Vielfalt nach
+				  Vorgaben von J+S und der Pfadibewegung Schweiz</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Personalentwicklung:</value>
-				<text>
-					<value>
-						Betreuung und Förderung des Leitungsteams
-					</value>
-				</text>
-			</text>
+			<text style="bold">Personalentwicklung:</text>
+			<text>Betreuung und Förderung des Leitungsteams</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Kommunikation:</value>
-				<text>
-					<value>
-						Situations- und zielgruppengerechte Rückmeldungen
-					</value>
-				</text>
-			</text>
+			<text style="bold">Kommunikation:</text>
+			<text>Situations- und zielgruppengerechte Rückmeldungen</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Konfliktmanagement:</value>
-				<text>
-					<value>
-						Strategien und Instrumente zur
-						Konfliktbewältigung
-					</value>
-				</text>
-			</text>
+			<text style="bold">Konfliktmanagement:</text>
+			<text>Strategien und Instrumente zur Konfliktbewältigung</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Organisationsentwicklung:</value>
-				<text>
-					<value>
-						Gestaltung des Coaching-Prozesses sowie
-						Analyse und Entwicklung des Netzwerks
-					</value>
-				</text>
-			</text>
+			<text style="bold">Organisationsentwicklung:</text>
+			<text>Gestaltung des Coaching-Prozesses sowie Analyse und Entwicklung des Netzwerks</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Gesundheitsförderung:</value>
-				<text>
-					<value>
-						Massnahmen zur Gesundheitsförderung, zum Umgang
-						mit Suchtmitteln sowie
-						zur Prävention von Gewalt und sexueller
-						Ausbeutung
-					</value>
-				</text>
-			</text>
+			<text style="bold">Gesundheitsförderung:</text>
+			<text>Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung</text>
 		</inhalt>
 	</inhalte>
 </kurs>

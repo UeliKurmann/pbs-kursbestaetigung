@@ -9,78 +9,39 @@
 	</description>
 	<inhalte>
 		<inhalt>
-			<text style="bold">
-				<value>Organisationsentwicklung:</value>
-				<text>
-					<value>
-						Instrumente zur Beurteilung und zur langfristigen Entwicklung der
+			<text style="bold">Organisationsentwicklung:</text>
+			<text>Instrumente zur Beurteilung und zur langfristigen Entwicklung der
 						Verbandskultur, der Verbandsstrukturen, der Verbandsstrategie und
 						der Prozesse
-					</value>
-				</text>
 			</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Projektmanagement:</value>
-				<text>
-					<value>
-						Projektphasen und Grundlagen für langfristige Projekte in der Pfadi
-					</value>
-				</text>
-			</text>
+			<text style="bold">Projektmanagement:</text>
+			<text>Projektphasen und Grundlagen für langfristige Projekte in der Pfadi</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Innovation:</value>
-				<text>
-					<value>
-						Entwicklung und Beurteilung von neuen Ideen sowie Initiierung, Begleitung und
+			<text style="bold">Innovation:</text>
+			<text>Entwicklung und Beurteilung von neuen Ideen sowie Initiierung, Begleitung und
 						Durchführung von Veränderungen
-					</value>
-				</text>
 			</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Personalentwicklung:</value>
-				<text>
-					<value>
-						Förderung, Betreuung und Weiterbildung von Mitarbeitenden sowie Koordination
+			<text style="bold">Personalentwicklung:</text>
+			<text>Förderung, Betreuung und Weiterbildung von Mitarbeitenden sowie Koordination
 						der Tätigkeiten von Ehrenamtlichen und Angestellten
-					</value>
-				</text>
 			</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Konfliktmanagement:</value>
-				<text>
-					<value>
-						Strategien zur Konfliktbewältigung
-					</value>
-				</text>
-			</text>
+			<text style="bold">Konfliktmanagement:</text>
+			<text>Strategien zur Konfliktbewältigung</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Kommunikation:</value>
-				<text>
-					<value>
-						Kommunizieren mit Behörden, Medien und anderen Verbänden
-					</value>
-				</text>
-			</text>
+			<text style="bold">Kommunikation:</text>
+			<text>Kommunizieren mit Behörden, Medien und anderen Verbänden</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">
-				<value>Selbstwirksamkeit:</value>
-				<text>
-					<value>
-						Reflexion der unterschiedlichen Rollen in der Funktion
-					</value>
-				</text>
-			</text>
+			<text style="bold">Selbstwirksamkeit:</text>
+			<text>Reflexion der unterschiedlichen Rollen in der Funktion</text>
 		</inhalt>
 	</inhalte>
 </kurs>

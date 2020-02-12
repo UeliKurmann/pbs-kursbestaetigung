@@ -8,9 +8,12 @@ import static ch.pbs.benevole.renderer.pdf.ElementFactory.createNameValueTable;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
+import com.google.common.collect.Lists;
 import com.google.common.io.Files;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
@@ -25,8 +28,8 @@ import ch.pbs.benevole.renderer.core.NameValue;
 import ch.pbs.benevole.renderer.core.PdfDocument;
 import ch.pbs.benevole.renderer.core.PdfDocumentException;
 import ch.pbs.benevole.renderer.core.PdfText;
-import ch.pbs.benevole.renderer.core.TemplateEngine;
 import ch.pbs.benevole.renderer.core.PdfText.Style;
+import ch.pbs.benevole.renderer.core.TemplateEngine;
 
 public class PdfDocumentImpl implements PdfDocument {
 
@@ -72,13 +75,13 @@ public class PdfDocumentImpl implements PdfDocument {
 	}
 
 	@Override
-	public void addText(PdfText text) throws PdfDocumentException {
-		add(ElementFactory.toParagraph(engine.process(text)));
+	public void addText(List<PdfText> text) throws PdfDocumentException {
+		add(ElementFactory.toParagraph(text.stream().map(t -> engine.process(t)).collect(Collectors.toList())));
 	}
 
 	@Override
 	public void addText(String text) throws PdfDocumentException {
-		addText(PdfText.create(text, Style.normal));
+		addText(Lists.newArrayList(PdfText.create(text, Style.normal, false)));
 	}
 
 	@Override
@@ -109,6 +112,15 @@ public class PdfDocumentImpl implements PdfDocument {
 		}
 	}
 
+	@Override
+	public void addSignatureLogo() throws PdfDocumentException {
+		try {
+			document.add(ElementFactory.createSignature(os, pdfWriter));
+		} catch (Exception e) {
+			throw PdfDocumentException.create("Could not create logo.", e);
+		}
+	}
+	
 	private void add(Element e) throws PdfDocumentException {
 		try {
 			document.add(e);

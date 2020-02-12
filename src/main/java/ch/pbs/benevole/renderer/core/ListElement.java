@@ -1,20 +1,22 @@
 package ch.pbs.benevole.renderer.core;
 
+import java.util.List;
+
 public class ListElement {
 
-	private PdfText value;
+	private List<PdfText> value;
 	private ListElement[] subListElements;
 	
-	private ListElement(PdfText value, ListElement... subListElements){
+	private ListElement(List<PdfText> value, ListElement... subListElements){
 		this.subListElements = subListElements;
 		this.value = value;
 	}
 	
-	public static ListElement create(PdfText value, ListElement... subListElements){
+	public static ListElement create(List<PdfText> value, ListElement... subListElements){
 		return new ListElement(value, subListElements);
 	}
 	
-	public PdfText getValue() {
+	public List<PdfText> getValue() {
 		return value;
 	}
 	

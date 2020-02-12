@@ -3,6 +3,7 @@ package ch.pbs.benevole.renderer.core;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.function.Supplier;
 
 public interface PdfDocument {
@@ -11,7 +12,7 @@ public interface PdfDocument {
 
 	void addH2(String text) throws PdfDocumentException;
 
-	void addText(PdfText text) throws PdfDocumentException;
+	void addText(List<PdfText> text) throws PdfDocumentException;
 
 	void addText(String text) throws PdfDocumentException;
 
@@ -28,5 +29,7 @@ public interface PdfDocument {
 	ByteArrayOutputStream getOutputStream();
 	
 	void addContext(String name, Supplier<String> valueSupplier);
+
+	void addSignatureLogo() throws PdfDocumentException;
 
 }

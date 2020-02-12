@@ -8,7 +8,7 @@ import javax.xml.bind.Unmarshaller;
 public class XMLAccessor {
 	
 	public static XMLKursbeschreibung readKursbeschreibung(InputStream xmlDocument) throws Exception{
-		JAXBContext jaxbContext = JAXBContext.newInstance(XMLKursbeschreibung.class, XMLKursbeschreibung.Inhalte.class, XMLKursbeschreibung.InhaltElement.class, XMLText.class, XMLTextStyle.class);
+		JAXBContext jaxbContext = JAXBContext.newInstance(XMLKursbeschreibung.class, XMLKursbeschreibung.InhaltElement.class, XMLText.class, XMLTextStyle.class);
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 		return (XMLKursbeschreibung)unmarshaller.unmarshal(xmlDocument);
 	}

@@ -1,10 +1,12 @@
 package ch.pbs.benevole.renderer.uc.kursbestaetigung.xml;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "kurs-config")
@@ -19,8 +21,9 @@ public class XMLKursConfig implements Serializable {
 	@XmlElement(required = true)
 	private String inhalt;
 
-	@XmlElement(required = true, name="intro")
-	private XMLText intro;
+	@XmlElementWrapper(name ="intro")
+	@XmlElement(name="text")
+	private List<XMLText> intro;
 
 	@XmlElement(required = true)
 	private String tabKurs;
@@ -56,11 +59,11 @@ public class XMLKursConfig implements Serializable {
 		this.inhalt = inhalt;
 	}
 
-	public XMLText getIntro() {
+	public List<XMLText> getIntro() {
 		return intro;
 	}
 
-	public void setIntro(XMLText intro) {
+	public void setIntro(List<XMLText> intro) {
 		this.intro = intro;
 	}
 
