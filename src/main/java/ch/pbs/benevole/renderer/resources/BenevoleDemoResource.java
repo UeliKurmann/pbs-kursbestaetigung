@@ -17,30 +17,34 @@ import com.google.common.io.Resources;
 
 @Path("/benevole/demo")
 public class BenevoleDemoResource {
-	
+
 	@GET
 	@Path("/json")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Timed
 	public KursParameterJson getDemoParameter() {
-		return TestData.createDemoParameter();
+		return TestData.createDemoParameterDe();
 	}
-	
+
 	@GET
 	@Path("/index")
 	@Produces(MediaType.TEXT_HTML)
 	@Timed
 	public String demo() throws IOException {
-		return Resources.toString(BenevoleRendererResource.class.getClassLoader().getResource("assets/demo.html"),
-				Charsets.UTF_8);
+		return Resources.toString(BenevoleRendererResource.class.getClassLoader().getResource("assets/demo.html"), Charsets.UTF_8);
 	}
-	
+
 	@GET
 	@Path("/pdf/{kurs}/{lang}")
 	@Produces("application/pdf")
 	@Timed
 	public Response getPdfDemo(@PathParam("kurs") String kurs, @PathParam("lang") String lang) throws Exception {
-		KursParameterJson parameter = TestData.createDemoParameter();
+		KursParameterJson parameter = null;
+		if ("de".equals(lang)) {
+			parameter = TestData.createDemoParameterDe();
+		} else if ("fr".equals(lang)) {
+			parameter = TestData.createDemoParameterFr();
+		}
 		return Response.ok()//
 				.entity(renderPdf(kurs, lang, parameter)).build();
 	}

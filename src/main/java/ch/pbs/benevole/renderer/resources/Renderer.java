@@ -2,6 +2,7 @@ package ch.pbs.benevole.renderer.resources;
 
 import java.io.InputStream;
 
+import ch.pbs.benevole.renderer.core.Language;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.KursDokumentGenerator;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.KursParameter;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLAccessor;
@@ -27,7 +28,7 @@ public class Renderer {
 		parameter.setWohnort(kpj.getWohnort());
 		parameter.setGeburtstag(kpj.getGeburtstag());
 
-		return new KursDokumentGenerator().render(config, beschreibung, parameter).toByteArray();
+		return new KursDokumentGenerator().render(Language.valueOf(lang), config, beschreibung, parameter).toByteArray();
 	}
 
 	private static InputStream loadKursTemplate(String name) {

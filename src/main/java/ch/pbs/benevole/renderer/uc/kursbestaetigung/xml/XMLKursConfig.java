@@ -42,7 +42,7 @@ public class XMLKursConfig implements Serializable {
 	private List<XMLText> abschluss;
 	
 	@XmlElement(required = true)
-	private String verantwortlicher;
+	private XMLText verantwortlicher;
 
 	public String getTitel() {
 		return titel;
@@ -108,11 +108,11 @@ public class XMLKursConfig implements Serializable {
 		this.abschluss = abschluss;
 	}
 
-	public String getVerantwortlicher() {
+	public XMLText getVerantwortlicher() {
 		return verantwortlicher;
 	}
 
-	public void setVerantwortlicher(String verantwortlicher) {
+	public void setVerantwortlicher(XMLText verantwortlicher) {
 		this.verantwortlicher = verantwortlicher;
 	}
 	

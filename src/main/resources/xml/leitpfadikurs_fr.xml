@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Cours de responsable de patrouille</name>
+	<language>fr</language>
+	<description>
+	Dans ce cours, les participants acquièrent les compétences pour assumer la responsabilité de petites activités, destinées à des enfants et jeunes de 10 à 14 ans, ainsi que pour promouvoir activement la vie et la cohésion au sein du groupe.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Compétence de gestion:</text>
+			<inhalt>
+				<text>Gestion de petits groupes pendant de courtes activités et promotion de la vie en groupe.</text>
+			</inhalt>
+			<inhalt>
+				<text>Aptitude à reconnaître des dangers lors des activités et connaissance de la bonne attitude à adopter en cas d’urgence</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Méthodologie:</text>
+			<inhalt>
+				<text>	
+					Polyvalence des activités proposées aux enfants et aux jeunes (principe tête, cœur, main selon Pestalozzi)
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+					Planification d'activités courtes de manière créative (par exemple à l'aide d'un fil conducteur). 
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+				 	Méthodes d’organisation de courtes activités en petits groupes	
+				</text>
+			</inhalt>
+		</inhalt>
+	</inhalte>
+</kurs>

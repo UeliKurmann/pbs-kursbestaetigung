@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.function.Supplier;
 
+import ch.pbs.benevole.renderer.core.PdfText.Alignement;
+
 public interface PdfDocument {
 
 	void addH1(String text) throws PdfDocumentException;
@@ -30,6 +32,6 @@ public interface PdfDocument {
 	
 	void addContext(String name, Supplier<String> valueSupplier);
 
-	void addSignatureLogo() throws PdfDocumentException;
+	void addSignatureLogo(Alignement right) throws PdfDocumentException;
 
 }

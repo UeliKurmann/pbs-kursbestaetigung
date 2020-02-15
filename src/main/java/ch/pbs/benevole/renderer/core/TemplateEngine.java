@@ -2,6 +2,7 @@ package ch.pbs.benevole.renderer.core;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Supplier;
@@ -15,6 +16,11 @@ public class TemplateEngine {
 	public TemplateEngine() {
 		context.put("today", () -> {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+			return sdf.format(new Date());
+		});
+		
+		context.put("todayFrench", () -> {
+			SimpleDateFormat sdf = new SimpleDateFormat("dd MMMMM yyyy", Locale.FRENCH);
 			return sdf.format(new Date());
 		});
 	}

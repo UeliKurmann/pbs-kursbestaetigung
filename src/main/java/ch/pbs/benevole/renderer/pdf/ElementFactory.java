@@ -15,6 +15,7 @@ import com.lowagie.text.ListItem;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.Phrase;
 import com.lowagie.text.Table;
+import com.lowagie.text.alignment.HorizontalAlignment;
 import com.lowagie.text.pdf.PdfImportedPage;
 import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfWriter;
@@ -22,6 +23,7 @@ import com.lowagie.text.pdf.PdfWriter;
 import ch.pbs.benevole.renderer.core.ListElement;
 import ch.pbs.benevole.renderer.core.NameValue;
 import ch.pbs.benevole.renderer.core.PdfText;
+import ch.pbs.benevole.renderer.core.PdfText.Alignement;
 import ch.pbs.benevole.renderer.core.PdfText.Style;
 
 public class ElementFactory {
@@ -30,7 +32,7 @@ public class ElementFactory {
 
 	public static Table createNameValueTable(NameValue... pairs) throws BadElementException {
 		Table table = new Table(2);
-		table.setAlignment(Table.ALIGN_CENTER);
+		table.setHorizontalAlignment(HorizontalAlignment.CENTER);
 		table.setWidth(75);
 		table.setWidths(new float[] { 1, 3 });
 		table.setBorderWidth(0);
@@ -102,11 +104,15 @@ public class ElementFactory {
 		return image;
 	}
 
-	public static Image createSignature(OutputStream os, PdfWriter pdfWriter) throws Exception {
+	public static Image createSignature(Alignement alignement, OutputStream os, PdfWriter pdfWriter) throws Exception {
 
 		URL resource = ElementFactory.class.getClassLoader().getResource("pbsassets/signature.png");
 		Image image = Image.getInstance(resource);
-		image.setAlignment(Image.LEFT);
+		if(alignement == Alignement.left) {
+			image.setAlignment(Image.LEFT);
+		}else {
+			image.setAlignment(Image.RIGHT);
+		}
 		image.scaleToFit(150, 100);
 		return image;
 	}
@@ -155,6 +161,12 @@ public class ElementFactory {
 			} else {
 				p.add(new Phrase(t.getValue(), createAbsatzFont()));
 			}
+			if(t.getAlignement() == Alignement.left) {
+				p.setAlignment(Paragraph.ALIGN_LEFT);
+			}else {
+				p.setAlignment(Paragraph.ALIGN_RIGHT);
+			}
+			
 			if (t.isNewline()) {
 				p.add(new Phrase("\n"));
 			} else {
