@@ -14,6 +14,6 @@
 	<tabOrt>Ort:</tabOrt>
 	<tabDatum>Dauer:</tabDatum>
 	<tabOrganisator>Organisator:</tabOrganisator>
-	<abschluss>${today}, Pfadibewegung Schweiz, Leitung Kernaufgabe Ausbildung und Betreuung</abschluss>
+	<abschluss><text>${today}, Pfadibewegung Schweiz, Leitung Kernaufgabe Ausbildung und Betreuung</text></abschluss>
 	<verantwortlicher>Philippe Keller</verantwortlicher>
 </kurs-config>

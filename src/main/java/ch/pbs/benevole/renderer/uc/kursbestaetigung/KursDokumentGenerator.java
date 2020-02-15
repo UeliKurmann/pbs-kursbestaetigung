@@ -49,7 +49,7 @@ public class KursDokumentGenerator {
 
 		document.addList(elements.toArray(new ListElement[0]));
 		document.addEmptyParagraph();
-		document.addText(kursConfig.getAbschluss());
+		document.addText(toPdfText(kursConfig.getAbschluss()));
 		document.addEmptyParagraph();
 		document.addSignatureLogo();
 		document.addText(kursConfig.getVerantwortlicher());

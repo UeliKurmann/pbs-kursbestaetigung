@@ -37,8 +37,9 @@ public class XMLKursConfig implements Serializable {
 	@XmlElement(required = true)
 	private String tabOrganisator;
 	
-	@XmlElement(required = true)
-	private String abschluss;
+	@XmlElementWrapper(name ="abschluss")
+	@XmlElement(name="text", required = true)
+	private List<XMLText> abschluss;
 	
 	@XmlElement(required = true)
 	private String verantwortlicher;
@@ -99,11 +100,11 @@ public class XMLKursConfig implements Serializable {
 		this.tabOrganisator = tabOrganisator;
 	}
 
-	public String getAbschluss() {
+	public List<XMLText> getAbschluss() {
 		return abschluss;
 	}
 
-	public void setAbschluss(String abschluss) {
+	public void setAbschluss(List<XMLText> abschluss) {
 		this.abschluss = abschluss;
 	}
 

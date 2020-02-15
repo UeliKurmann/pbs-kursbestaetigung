@@ -2,16 +2,13 @@
 <kurs>
 	<name>AL-Kurs</name>
 	<language>de</language>
-	<description>Im Kurs erwerben die Teilnehmenden grundlegende Kenntnisse
-		zur Leitung eines Vereins (Pfadiabteilung). Die Schwerpunkte liegen in
-		der Betreuung und der inhaltlichen Führung von Leitungsteams, der
-		langfristigen Entwicklung des Vereins sowie der Bewältigung
-		organisatorischer Aufgaben.
+	<description>
+	Im Kurs erwerben die Teilnehmenden grundlegende Kenntnisse zur Leitung eines Vereins (Pfadiabteilung). Die Schwerpunkte liegen in der Betreuung und der inhaltlichen Führung von Leitungsteams, der langfristigen Entwicklung des Vereins sowie der Bewältigung organisatorischer Aufgaben.
 	</description>
 	<inhalte>
 		<inhalt>
 			<text style="bold">Organisationsentwicklung:</text>
-			<text>Instrumente zur Beurteilung und langfristigen Entwicklung der Vereinskultur, -strukturen und -strategie. </text>
+			<text>Instrumente zur Beurteilung und langfristigen Entwicklung der Vereinskultur, -strukturen und -strategie.</text>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Projektmanagement:</text>
@@ -37,6 +34,5 @@
 			<text style="bold">Gesundheitsförderung:</text>
 			<text>Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung</text>
 		</inhalt>
-
 	</inhalte>
 </kurs>

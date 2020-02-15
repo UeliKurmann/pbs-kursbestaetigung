@@ -2,10 +2,8 @@
 <kurs>
 	<name>Panoramakurs</name>
 	<language>de</language>
-	<description>Im Kurs erwerben die Teilnehmenden grundlegende Projekt-
-		und Methodenkompetenz, erweitern ihre Selbstkompetenz und setzen sich
-		fokussiert mit den Werten der Pfadibewegung und aktuellen
-		Gesellschaftsthemen auseinander.
+	<description>
+	Im Kurs erwerben die Teilnehmenden grundlegende Projekt- und Methodenkompetenz, erweitern ihre Selbstkompetenz und setzen sich fokussiert mit den Werten der Pfadibewegung und aktuellen Gesellschaftsthemen auseinander.
 	</description>
 	<inhalte>
 		<inhalt>
@@ -22,30 +20,23 @@
 		</inhalt>
 		<inhalt>
 			<text style="bold">Methodik:</text>
-			<text>Entwicklungsstand der verschiedenen Altersgruppen,
-						Bedürfnisse und Anforderungen an ein alters- und
-						bedürfnisgerechtes Programm für Kinder, Jugendliche und junge
-						Erwachsene
-			</text>
+			<text>Entwicklungsstand der verschiedenen Altersgruppen, Bedürfnisse und Anforderungen an ein alters- und bedürfnisgerechtes Programm für Kinder, Jugendliche und junge Erwachsene</text>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Diversity:</text>
-				<text>Chancengleichheit der Geschlechter, Integration von Menschen
-						mit einer Behinderung und Menschen mit einem anderen kulturellen
-						oder sozialen Hintergrund
+				<text>
+				Chancengleichheit der Geschlechter, Integration von Menschen mit einer Behinderung und Menschen mit einem anderen kulturellen oder sozialen Hintergrund
 				</text>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Gesundheitsförderung:</text>
-			<text>Massnahmen zur Gesundheitsförderung, zum Umgang mit
-						Suchtmitteln sowie zur Prävention von Gewalt und sexueller
-						Ausbeutung
+			<text>
+			Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung
 			</text>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Selbstwirksamkeit:</text>
 			<text>Persönliche Standortbestimmung</text>
 		</inhalt>
-
 	</inhalte>
 </kurs>

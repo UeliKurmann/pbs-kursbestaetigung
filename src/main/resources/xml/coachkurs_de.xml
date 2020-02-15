@@ -2,18 +2,15 @@
 <kurs>
 	<name>Coachkurs</name>
 	<language>de</language>
-	<description>Im Kurs erwerben die Teilnehmenden die notwendigen
-		Kompetenzen, um einen Verein (Pfadiabteilung) zu betreuen (z.B. das
-		Jahres- oder Lagerprogramm auf seine Qualität zu prüfen und das
-		Leitungsteam beratend unterstützen). Der Kurs führt zur Anerkennung
-		als J+S-Coach.
+	<description>
+	Im Kurs erwerben die Teilnehmenden die notwendigen Kompetenzen, um einen Verein (Pfadiabteilung) zu betreuen (z.B. das Jahres- oder Lagerprogramm auf seine Qualität zu prüfen und das Leitungsteam beratend unterstützen). Der Kurs führt zur Anerkennung als J+S-Coach.
 	</description>
 	<inhalte>
 		<inhalt>
 			<text style="bold">Qualitätssicherung:</text>
-			<text>Beurteilung von Programm und Aktivitäten bezüglich
-				  Sicherheit, Methodik, Altersgerechtigkeit und Vielfalt nach
-				  Vorgaben von J+S und der Pfadibewegung Schweiz</text>
+			<text>
+			Beurteilung von Programm und Aktivitäten bezüglich Sicherheit, Methodik, Altersgerechtigkeit und Vielfalt nach Vorgaben von J+S und der Pfadibewegung Schweiz 
+			</text>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Personalentwicklung:</text>

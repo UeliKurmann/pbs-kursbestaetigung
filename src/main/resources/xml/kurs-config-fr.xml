@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs-config>
+	<titel>Attestation de cours</titel>
+	<inhalt>Contenus</inhalt>
+	<intro >
+		<text newline="true">
+		Le Mouvement Scout de Suisse est avec 47'000 membres la plus grande organisation pour la jeunesse de Suisse. En tant que membre du mouvement scout mondial, il offre aux enfants et aux jeunes un pendant à l’école et à la formation, adapté à leur âge et porteur de sens. Aux scouts, des jeunes en train de grandir acquièrent des compétences grâce à de nombreuses expériences qui leur permettent de s’engager activement au sein de la société et de modeler leur futur de manière responsable.
+		</text>
+		<text newline="true"></text>
+		<text style="bold">${anrede} ${vorname} ${name},</text>
+		<text>né le ${geburtstag} résidant ${wohnort}, a suivi avec succès la formation suivante:</text>
+	</intro>
+	<tabKurs>Cours:</tabKurs>
+	<tabOrt>Lieu:</tabOrt>
+	<tabDatum>Durée:</tabDatum>
+	<tabOrganisator>Organisateur:</tabOrganisator>
+	<abschluss>
+	   <text newline="true">Berne, le ${today},</text>
+	   <text>Responsable Formation & Encadrement,</text></abschluss>
+	<verantwortlicher>Keller Philippe</verantwortlicher>
+</kurs-config>

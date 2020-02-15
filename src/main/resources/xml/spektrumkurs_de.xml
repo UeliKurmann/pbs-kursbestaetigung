@@ -3,16 +3,13 @@
 	<name>Spektrumkurs</name>
 	<language>de</language>
 	<description>
-		Im Kurs erwerben die Teilnehmenden grundlegende Kenntnisse zur Leitung
-		eines Verbandes (Region/Kanton/Bund). Die Schwerpunkte liegen in der
-		langfristigen Entwicklung.
+		Im Kurs erwerben die Teilnehmenden grundlegende Kenntnisse zur Leitung eines Verbandes (Region/Kanton/Bund). Die Schwerpunkte liegen in der langfristigen Entwicklung.
 	</description>
 	<inhalte>
 		<inhalt>
 			<text style="bold">Organisationsentwicklung:</text>
-			<text>Instrumente zur Beurteilung und zur langfristigen Entwicklung der
-						Verbandskultur, der Verbandsstrukturen, der Verbandsstrategie und
-						der Prozesse
+			<text>
+			Instrumente zur Beurteilung und zur langfristigen Entwicklung der Verbandskultur, der Verbandsstrukturen, der Verbandsstrategie und der Prozesse 
 			</text>
 		</inhalt>
 		<inhalt>
@@ -21,15 +18,11 @@
 		</inhalt>
 		<inhalt>
 			<text style="bold">Innovation:</text>
-			<text>Entwicklung und Beurteilung von neuen Ideen sowie Initiierung, Begleitung und
-						Durchführung von Veränderungen
-			</text>
+			<text>Entwicklung und Beurteilung von neuen Ideen sowie Initiierung, Begleitung und Durchführung von Veränderungen</text>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Personalentwicklung:</text>
-			<text>Förderung, Betreuung und Weiterbildung von Mitarbeitenden sowie Koordination
-						der Tätigkeiten von Ehrenamtlichen und Angestellten
-			</text>
+			<text>Förderung, Betreuung und Weiterbildung von Mitarbeitenden sowie Koordination der Tätigkeiten von Ehrenamtlichen und Angestellten</text>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Konfliktmanagement:</text>

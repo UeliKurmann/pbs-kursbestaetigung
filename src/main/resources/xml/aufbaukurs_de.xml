@@ -2,48 +2,38 @@
 <kurs>
 	<name>Aufbaukurs</name>
 	<language>de</language>
-	<description>Im Kurs erwerben die Teilnehmenden die Kompetenzen, um
-		Lager und Aktivitäten für Kinder und Jugendliche zu planen,
-		durchzuführen und das Programm langfristig zu gestalten. Der Kurs
-		befähigt die Teilnehmenden zudem zur Leitung und Entwicklung eines
-		Teams und führt zur Anerkennung als J+S Lagerleiter.
+	<description>
+	Im Kurs erwerben die Teilnehmenden die Kompetenzen, um Lager und Aktivitäten für Kinder und Jugendliche zu planen, durchzuführen und das Programm langfristig zu gestalten. Der Kurs befähigt die Teilnehmenden zudem zur Leitung und Entwicklung eines Teams und führt zur Anerkennung als J+S Lagerleiter.
 	</description>
 	<inhalte>
 		<inhalt>
-			<text style="bold">Leitungskompetenz:</text>
+			<text style="bold">Führungskompetenz:</text>
 			<inhalt>
-				<text>Langfristige Planung, Durchführung und Auswertung von
-						ausgewogenen Aktivitäten, Weekends und Lagern für Kinder und
-						Jugendliche
-				</text>
+				<text>Langfristige Planung, Durchführung und Auswertung von ausgewogenen Aktivitäten, Weekends und Lagern für Kinder und Jugendliche</text>
 			</inhalt>
 			<inhalt>
 				<text>Methoden zur Präsentation sowie der Team- und Sitzungsleitung</text>
 			</inhalt>
 			<inhalt>
-				<text>Analyse möglicher Gefahren in Aktivitäten und Erstellung
-						eines Sicherheitskonzepts für ein Lager</text>
+				<text>Analyse möglicher Gefahren in Aktivitäten und Erstellung eines Sicherheitskonzepts für ein Lager</text>
 			</inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Methodik:</text>
 			<inhalt>
-				<text>Entwicklungsstand und Bedürfnisse der Kinder und
-						Jugendlichen sowie Möglichkeiten zur Förderung deren Mitbestimmung</text>
+				<text>Entwicklungsstand und Bedürfnisse der Kinder und Jugendlichen sowie Möglichkeiten zur Förderung deren Mitbestimmung</text>
 			</inhalt>
 			<inhalt>
-				<text>Möglichkeiten zur Förderung des persönlichen Fortschrittes
-						und der Integration von Kindern und Jugendlichen</text>
+				<text>Möglichkeiten zur Förderung des persönlichen Fortschrittes und der Integration von Kindern und Jugendlichen</text>
 			</inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Gesundheitsförderung:</text>
-			<text>Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung
-			</text>
+			<text>Strategien für den Umgang mit Kindern und Jugendlichen mit herausforderndem Verhalten</text>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Konfliktmanagement:</text>
-			<text>Strategien für den Umgang mit Kindern mit herausforderndem Verhalten</text>
+			<text>Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung</text>
 		</inhalt>
 
 	</inhalte>

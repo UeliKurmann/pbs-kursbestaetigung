@@ -3,7 +3,7 @@
 	<name>Topkurs</name>
 	<language>de</language>
 	<description>
-	Im Kurs erwerben die Teilnehmenden die notwendigen Kompetenzen, um einen Ausbildungskurs zu leiten und einen Verein (Pfadiabteilung) zu betreuen. Der Kurs führt zu den Anerkennungen als J+S-Coach und als J+S-Experte.
+	Im Kurs erwerben die Teilnehmenden die notwendigen Kompetenzen, um einen Ausbildungskurs zu leiten. Der Kurs führt zu der Anerkennung als J+S-Experte.
 	</description>
 
 	<inhalte>
@@ -16,28 +16,12 @@
 			<text>Reflexion des eigenen Lernens und Lehrens und sowie der Auftrittskompetenz</text>
 		</inhalt>
 		<inhalt>
-			<text style="bold">Qualitätssicherung:</text>
-			<text>Beurteilung von Programm und Aktivitäten bezüglich Sicherheit, Methodik, Altersgerechtigkeit und Vielfalt nach Vorgaben von J+S und der Pfadibewegung Schweiz</text>
-		</inhalt>
-		<inhalt>
 			<text style="bold">Personalentwicklung:</text>
 			<text>Betreuung und Förderung des Leitungsteams sowie Qualifikation von Kursteilnehmenden</text>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Kommunikation:</text>
 			<text>Situations- und zielgruppengerechte Rückmeldungen</text>
-		</inhalt>
-		<inhalt>
-			<text style="bold">Konfliktmanagement:</text>
-			<text>Strategien und Instrumente zur Konfliktbewältigung</text>
-		</inhalt>
-		<inhalt>
-			<text style="bold">Organisationsentwicklung:</text>
-			<text>Gestaltung des Coaching-Prozesses sowie Analyse und Entwicklung des Netzwerks</text>
-		</inhalt>
-		<inhalt>
-			<text style="bold">Gesundheitsförderung:</text>
-			<text>Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung</text>
 		</inhalt>
 	</inhalte>
 </kurs>
