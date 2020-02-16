@@ -36,6 +36,12 @@ public class DurationCaluclatorTest {
 	}
 
 	@Test
+	public void oneDateLineWithDuration1() {
+		int actual = testee.calculateDuration("27.09.2017 - 30.09.2018");
+		assertThat(actual, is(equalTo(369)));
+	}
+	
+	@Test
 	public void oneDateLineOneDate() {
 		int actual = testee.calculateDuration("01.03.2020");
 		assertThat(actual, is(equalTo(1)));

@@ -1,7 +1,7 @@
 package ch.pbs.benevole.renderer.uc.kursbestaetigung;
 
+import java.time.Duration;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
@@ -20,7 +20,7 @@ public class DurationCaluclator {
 		} else if (twoDates.length == 2) {
 			LocalDate d1 = LocalDate.parse(twoDates[0].trim(), formatter);
 			LocalDate d2 = LocalDate.parse(twoDates[1].trim(), formatter);
-			int days = Period.between(d1, d2).getDays();
+			int days = (int)Duration.between(d1.atStartOfDay(), d2.atStartOfDay()).toDays();
 			if (days < 0) {
 				throw new IllegalArgumentException("Invalid duration: " + dates);
 			}
