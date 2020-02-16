@@ -8,13 +8,13 @@
 		</text>
 		<text newline="true"></text>
 		<text style="bold">${anrede} ${vorname} ${name},</text>
-		<text>né le ${geburtstag} résidant ${wohnort}, a suivi avec succès la formation suivante:</text>
+		<text>né le ${geburtstag} résidant ${wohnort}, a suivi avec succès la formation suivante :</text>
 	</intro>
-	<tabKurs>Cours:</tabKurs>
-	<tabOrt>Lieu:</tabOrt>
-	<tabDatum>Durée:</tabDatum>
+	<tabKurs>Cours :</tabKurs>
+	<tabOrt>Lieu :</tabOrt>
+	<tabDatum>Durée :</tabDatum>
 	<tabDauer>jours</tabDauer>
-	<tabOrganisator>Organisateur:</tabOrganisator>
+	<tabOrganisator>Organisateur :</tabOrganisator>
 	<abschluss>
 	   <text newline="true" alignement="right">Berne, le ${todayFrench}</text>
 	   <text newline="true"></text>
