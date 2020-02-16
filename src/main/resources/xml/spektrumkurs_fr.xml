@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Cours Spectre</name>
+	<language>fr</language>
+	<description>
+		Dans ce cours, les participants acquièrent les connaissances concernant la direction 
+		d’une association faîtière (région/canton/niveau fédéral) avec une focalisation dans 
+		le développement à long terme.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Développement de l’organisation:</text>
+			<text>
+			Instruments d'évaluation et de développement à long terme de la culture 
+			de l’association, de ses structures, stratégies et processus 
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Gestion de projets:</text>
+			<text>
+			Phases de projets et caractéristiques des projets à long terme au 
+			sein des associations de jeunesse
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Innovation:</text>
+			<text>
+			Développement et évaluation de nouvelles idées ainsi qu’initiation, 
+			mise en œuvre et accompagnement de changements au sein d'une structure associative. 
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Développement du personnel:</text>
+			<text>
+			Promotion, encadrement et formation continue de collaborateurs et coordination des tâches 
+			des bénévoles et du personnel rémunéré
+			</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Gestion de conflit:</text>
+			<text>Stratégies pour gérer et prévenir les conflits</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Communication:</text>
+			<text>Principe de communication avec les autorités, les médias et les autres associations</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Compétence personnelle:</text>
+			<text>Réflexion sur les différents rôles d’une fonction</text>
+		</inhalt>
+	</inhalte>
+</kurs>

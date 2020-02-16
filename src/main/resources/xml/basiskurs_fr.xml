@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Cours de base</name>
+	<language>fr</language>
+	<description>
+	Dans ce cours, les participants acquièrent des compétences leur permettant de planifier et de diriger des activités pour les enfants et les jeunes ainsi que de prévoir le programme à moyen terme au sein d’une équipe d'animation. Ce cours donne droit à une reconnaissance de moniteur J+S.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Compétence de gestion:</text>
+			<inhalt>
+				<text>
+				Planification, gestion et évaluation à moyen terme d’activités et de week-ends équilibrés, pour les enfants et les jeunes
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+				Analyse des risques lors des activités et établissement d’un concept de sécurité
+				</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Méthodologie:</text>
+			<inhalt>
+				<text>
+				Promotion de la progression personnelle d’enfants et de jeunes
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+				Connaissance des étapes du développement et besoins des enfants et des jeunes dans le but d'encourager leur participation active.
+				</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Promotion de la santé:</text>
+			<text>Bien-être psychique, physique et social des enfants et des jeunes</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Compétence personnelle:</text>
+			<text>Capacité à communiquer au sein d'un petit groupe</text>
+		</inhalt>
+
+	</inhalte>
+</kurs>

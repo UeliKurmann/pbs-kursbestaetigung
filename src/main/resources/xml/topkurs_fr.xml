@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Cours Top</name>
+	<language>fr</language>
+	<description>
+	Dans ce cours, les participants acquièrent les compétences nécessaires pour animer un cours de formation. Le cours donne droit à une reconnaissance d’Expert J+S.
+	</description>
+
+	<inhalte>
+		<inhalt>
+		 	<text style="bold">Didactique:</text>
+			<text>Planification, organisation et mise en œuvre de cours de formation avec des méthodes d'animation variées et des objectifs d’apprentissage définis à l’avance. Prise en compte des besoins des apprenantes mise en place de mesures favorisant les processus d'apprentissage</text>
+		</inhalt>
+		<inhalt>
+		 	<text style="bold">Compétence personnelle:</text>
+			<text>Réflexion propre sur sa manière d'agir en temps que formateur ainsi que sa compétence à transmettre un contenu à des apprenants</text>
+		</inhalt>
+		<inhalt>
+		 	<text style="bold">Développement des bénévoles:</text>
+			<text>Soutien au développement des membres d'équipe d'encadrement par le biais de retours formatifs ou sommatifs aux apprenants quant à leurs progrès, sur la base de critères définis</text>
+		</inhalt>
+		<inhalt>
+		 	<text style="bold">Communication:</text>
+			<text>Feedbacks adaptés à la situation et au groupe cible</text>
+		</inhalt>
+	</inhalte>
+</kurs>

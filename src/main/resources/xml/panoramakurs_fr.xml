@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Cours Panorama</name>
+	<language>fr</language>
+	<description>
+	Dans ce cours, les participants acquièrent des compétences concernant la gestion de projet. Ils acquièrent une maîtrise transversale du projet éducatif du scoutisme. Ils élargissent leurs compétences propres et examinent de manière approfondie l’intégration des thèmes sociétaux actuels au scoutisme.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Gestion de projet:</text>
+			<text>Phases de projets et caractéristiques des projets au sein du scoutisme.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Développement personnel:</text>
+			<text>Structure, processus et dynamique de groupe.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Communication:</text>
+			<text>Modèles de communication, théorie du feedback et stratégies pour gérer et prévenir les conflits</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Méthodologie:</text>
+			<text>Étapes de développement des différents groupes d’âge, besoins et exigences d’un programme adapté aux besoins des enfants, des jeunes et des jeunes adultes</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Diversité:</text>
+			<text>Promotion de l'égalité, notamment des genres, de l'intégration des personnes en situation de handicap et des personnes issues de différentes origines culturelles et sociales</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Promotion de la santé:</text>
+			<text>Mesures de promotion de la santé, prévention de la consommation de stupéfiants, des violences et des abus sexuels.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Compétence personnelle:</text>
+			<text>Analyse de ses pratiques et positionnements dans son engagement scout.</text>
+		</inhalt>	
+	</inhalte>
+</kurs>

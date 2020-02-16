@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Cours de coachs</name>
+	<language>fr</language>
+	<description>
+	 Dans ce cours, les participants acquièrent les compétences nécessaires pour participer à l'encadrement d'une association reconnue par Jeunesse+Sport par exemple vérifier la qualité d’un programme annuel ou d’un programme de camp et soutenir les équipes d'encadrement grâce à des conseils. Le cours donne droit à une reconnaissance en tant que coach J+S.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Garantie de qualité:</text>
+			<text>Évaluation du programme et des activités selon les prescriptions de J+S et du Mouvement Scout de Suisse, notamment : de leur variété, de la sécurité et de leur pertinence pédagogique en fonction des participants</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Développement des bénévoles:</text>
+			<text>Encadrement et encouragement des membres des équipes d’encadrement</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Communication:</text>
+			<text>Retours d'évaluation adaptés à la situation.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Gestion de conflit:</text>
+			<text>Stratégies pour gérer et prévenir les conflits</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Développement de l’organisation:</text>
+			<text>Mise en œuvre du processus de coaching, ainsi qu’analyse et développement du réseau</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Promotion de la santé:</text>
+			<text>Mesures de prévention promotion de la santé, prévention de la consommation de stupéfiants, des violences et des abus sexuels</text>
+		</inhalt>
+	</inhalte>
+</kurs>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Cours de responsable d’unité</name>
+	<language>fr</language>
+	<description>
+	Dans ce cours, les participants acquièrent les compétences leur permettant de planifier et mener des camps et activités pour des enfants et des jeunes ainsi que d'établir un programme à long terme. Le cours forme les participants à mener et développer une équipe d'animation. Il donne droit à une reconnaissance de responsable de camp J+S.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Compétence de gestio:</text>
+			<inhalt>
+				<text>Planification à long terme, gestion et évaluation d’activités, week-ends et camps pour enfants et jeunes</text>
+			</inhalt>
+			<inhalt>
+				<text>Méthodes de conduite d'une équipe et de séances</text>
+			</inhalt>
+			<inhalt>
+				<text>Analyse des risques lors des activités et établissement d’un concept de sécurité</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Méthodologie:</text>
+			<inhalt>
+				<text>Connaissance des étapes du développement et besoins des enfants et des jeunes dans le but d'encourager leur participation active.</text>
+			</inhalt>
+			<inhalt>
+				<text>Promotion de la progression personnelle et de l'intégration individuelle des enfants et des jeunes.</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Gestion de conflits:</text>
+			<text>Cadrage pédagogique d'enfants et de jeunes avec un comportement provoquant</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Promotion de la santé:</text>
+			<text>Mesures de promotion de la santé, prévention de la consommation de stupéfiants, des violences et des abus sexuels</text>
+		</inhalt>
+
+	</inhalte>
+</kurs>

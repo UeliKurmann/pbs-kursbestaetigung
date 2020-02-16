@@ -77,7 +77,7 @@ public class ElementFactory {
 			list.add(item);
 			if (element.hasSubListElements()) {
 				List subList = new List(false, 10);
-				subList.setListSymbol("o");
+				subList.setListSymbol("•");
 				subList.setIndentationLeft(15);
 				for (ListElement subElement : element.getSubListElements()) {
 					ListItem o = new ListItem(toParagraph(subElement.getValue()));
@@ -113,7 +113,7 @@ public class ElementFactory {
 		}else {
 			image.setAlignment(Image.RIGHT);
 		}
-		image.scaleToFit(150, 100);
+		image.scaleToFit(130, 100);
 		return image;
 	}
 

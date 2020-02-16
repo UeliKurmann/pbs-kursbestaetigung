@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Cours Futura</name>
+	<language>fr</language>
+	<description>
+	Dans ce cours, les participants acquièrent les compétences pour planifier et diriger des activités pour les enfants et les jeunes et prennent conscience de leur responsabilité en tant qu’encadrant.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Compétence de gestion:</text>
+			<inhalt>
+				<text>Aptitude à reconnaître des dangers lors des activités et connaissance de la bonne attitude à adopter en cas d’urgence</text>
+			</inhalt>
+			<inhalt>
+				<text>Promotion de la progression personnelle d’enfants et de jeunes</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Méthodologie:</text>
+			<inhalt>
+				<text>Planification, gestion et évaluation d’activités équilibrées pour les enfants et les jeunes, équilibrées (utilisation du principe tête, cœur, main selon Pestalozzi)</text>
+			</inhalt>
+			<inhalt>
+				<text>Planification créative d’activités (par exemple à l’aide d’un fil conducteur) ; méthodes adaptées à l’âge et aux besoins des enfants et des jeunes pour les accompagner dans leur développement</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Compétence personnelle:</text>
+			<inhalt>
+				<text>Fonction d’exemple en tant que personne responsable et réflexion personnelle concernant ses propres forces et faiblesses</text>
+			</inhalt>
+			<inhalt>
+				<text>Capacité à communiquer au sein d'un petit groupe</text>
+			</inhalt>
+		</inhalt>
+	</inhalte>
+</kurs>
