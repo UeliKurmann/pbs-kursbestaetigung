@@ -4,6 +4,9 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ch.pbs.benevole.renderer.core.Factory;
 import ch.pbs.benevole.renderer.core.Language;
 import ch.pbs.benevole.renderer.core.ListElement;
@@ -21,6 +24,8 @@ import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLTextStyle;
 import jersey.repackaged.com.google.common.collect.Lists;
 
 public class KursDokumentGenerator {
+
+	private static Logger LOG = LoggerFactory.getLogger(KursDokumentGenerator.class);
 
 	public ByteArrayOutputStream render(Language lang, XMLKursConfig kursConfig, XMLKursbeschreibung kursbeschreibung,
 			KursParameter parameter) throws Exception {
@@ -42,7 +47,7 @@ public class KursDokumentGenerator {
 		document.addTable(//
 				NameValue.create(kursConfig.getTabKurs(), kursbeschreibung.getName()), //
 				NameValue.create(kursConfig.getTabOrt(), parameter.getKursOrt()), //
-				NameValue.create(kursConfig.getTabDatum(), parameter.getDauer()), //
+				NameValue.create(kursConfig.getTabDatum(), createDauerText(parameter, kursConfig)), //
 				NameValue.create(kursConfig.getTabOrganisator(), parameter.getOrganisator()));
 		document.addEmptyParagraph();
 		document.addText(kursbeschreibung.getDescription());
@@ -67,6 +72,22 @@ public class KursDokumentGenerator {
 		document.addText(toPdfText(Lists.newArrayList(kursConfig.getVerantwortlicher())));
 
 		return document.getOutputStream();
+	}
+
+	private String createDauerText(KursParameter parameter, XMLKursConfig config) {
+		String dauer = parameter.getDauer().trim();
+		DurationCaluclator calculator = new DurationCaluclator();
+		int calculateDuration = 0;
+		try {
+			calculateDuration = calculator.calculateDuration(dauer);
+		} catch (Exception e) {
+			LOG.error("Could not calculate duration: " + dauer, e);
+		}
+		if(calculateDuration > 0) {
+			return String.format("%s (%s %s)", dauer, Integer.toString(calculateDuration), config.getTabDauer());
+		}else {
+			return dauer;
+		}
 	}
 
 	protected String processWohnort(String wohnort, Language lang) {
