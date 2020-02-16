@@ -32,6 +32,9 @@ public class XMLKursConfig implements Serializable {
 	private String tabOrt;
 	
 	@XmlElement(required = true)
+	private String tabDauer;
+	
+	@XmlElement(required = true)
 	private String tabDatum;
 	
 	@XmlElement(required = true)
@@ -116,5 +119,12 @@ public class XMLKursConfig implements Serializable {
 		this.verantwortlicher = verantwortlicher;
 	}
 	
+	public void setTabDauer(String tabDauer) {
+		this.tabDauer = tabDauer;
+	}
+	
+	public String getTabDauer() {
+		return tabDauer;
+	}
 	
 }

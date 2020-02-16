@@ -36,11 +36,12 @@ public class Renderer {
 	}
 
 	private static InputStream loadConfing(String lang) {
-		return BenevoleRendererResource.class.getClassLoader().getResourceAsStream("xml/kurs-config-"+lang+".xml");
+		String name = String.format("xml/%1$s/kurs-config-%1$s.xml",lang);
+		return BenevoleRendererResource.class.getClassLoader().getResourceAsStream(name);
 	}
 
 	private static String createKursTemplateName(String kurs, String lang) {
-		return String.format("xml/%s_%s.xml", kurs, lang);
+		return String.format("xml/%1$s/%2$s_%1$s.xml", lang, kurs);
 	}
 
 }
