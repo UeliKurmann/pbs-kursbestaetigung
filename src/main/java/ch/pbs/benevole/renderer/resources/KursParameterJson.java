@@ -1,7 +1,10 @@
 package ch.pbs.benevole.renderer.resources;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.ws.rs.FormParam;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class KursParameterJson {
 
@@ -93,6 +96,11 @@ public class KursParameterJson {
 	@FormParam("anrede")
 	public void setAnrede(String anrede) {
 		this.anrede = anrede;
+	}
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
 	}
 
 }
