@@ -3,55 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <title>Kurs Renderer</title>
-<style>label { display: block; }</style>
+<style>
+  label { border-width:1px; width: 100px;  }
+  input { width: 200px;}
+</style>
+<script type="text/javascript">
+  function OnSubmitForm()
+  {
+    var languageSelect = document.getElementById("lang");
+    var language = languageSelect.options[languageSelect.selectedIndex].value;
+    var kursSelect = document.getElementById("kurs");
+    var kurs = kursSelect.options[kursSelect.selectedIndex].value;
+    document.testform.action ="/benevole/renderer/pdf/"+kurs+"/"+language;
+    return true;
+  }
+  </script>
+  
 </head>
 <body>
 <h1>Benevole Renderer (Version: ${timestamp})</h1>
 <h2>Deutsch</h2>
 <ul>
-  <li><a href="/benevole/demo/pdf/al-kurs/de">AL-Kurs</a></li>
-  <li><a href="/benevole/demo/pdf/aufbaukurs/de">Aufbaukurs</a></li>
-  <li><a href="/benevole/demo/pdf/basiskurs/de">Basiskurs</a></li>
-  <li><a href="/benevole/demo/pdf/coachkurs/de">Coachkurs</a></li>
-  <li><a href="/benevole/demo/pdf/futurakurs/de">Futurakurs</a></li>
   <li><a href="/benevole/demo/pdf/leitpfadikurs/de">Leitpfadikurs</a></li>
+  <li><a href="/benevole/demo/pdf/futurakurs/de">Futurakurs</a></li>
+  <li><a href="/benevole/demo/pdf/basiskurs/de">Basiskurs</a></li>
+  <li><a href="/benevole/demo/pdf/aufbaukurs/de">Aufbaukurs</a></li>
+  <li><a href="/benevole/demo/pdf/al-kurs/de">AL-Kurs</a></li>
   <li><a href="/benevole/demo/pdf/panoramakurs/de">Panoramakurs</a></li>
+  <li><a href="/benevole/demo/pdf/coachkurs/de">Coachkurs</a></li>
   <li><a href="/benevole/demo/pdf/spektrumkurs/de">Spektrumkurs</a></li>
   <li><a href="/benevole/demo/pdf/topkurs/de">Topkurs</a></li>
 </ul>
 <h2>Französisch</h2>
 <ul>
-  <li><a href="/benevole/demo/pdf/al-kurs/fr">AL-Kurs</a></li>
-  <li><a href="/benevole/demo/pdf/aufbaukurs/fr">Aufbaukurs</a></li>
-  <li><a href="/benevole/demo/pdf/basiskurs/fr">Basiskurs</a></li>
-  <li><a href="/benevole/demo/pdf/coachkurs/fr">Coachkurs</a></li>
-  <li><a href="/benevole/demo/pdf/futurakurs/fr">Futurakurs</a></li>
   <li><a href="/benevole/demo/pdf/leitpfadikurs/fr">Leitpfadikurs</a></li>
+  <li><a href="/benevole/demo/pdf/futurakurs/fr">Futurakurs</a></li>
+  <li><a href="/benevole/demo/pdf/basiskurs/fr">Basiskurs</a></li>
+  <li><a href="/benevole/demo/pdf/aufbaukurs/fr">Aufbaukurs</a></li>
+  <li><a href="/benevole/demo/pdf/al-kurs/fr">AL-Kurs</a></li>
   <li><a href="/benevole/demo/pdf/panoramakurs/fr">Panoramakurs</a></li>
+  <li><a href="/benevole/demo/pdf/coachkurs/fr">Coachkurs</a></li>
   <li><a href="/benevole/demo/pdf/spektrumkurs/fr">Spektrumkurs</a></li>
   <li><a href="/benevole/demo/pdf/topkurs/fr">Topkurs</a></li>
 </ul>
 <h2>Italienisch</h2>
 <ul>
-  <li><a href="/benevole/demo/pdf/al-kurs/it">AL-Kurs</a></li>
-  <li><a href="/benevole/demo/pdf/aufbaukurs/it">Aufbaukurs</a></li>
-  <li><a href="/benevole/demo/pdf/basiskurs/it">Basiskurs</a></li>
-  <li><a href="/benevole/demo/pdf/coachkurs/it">Coachkurs</a></li>
-  <li><a href="/benevole/demo/pdf/futurakurs/it">Futurakurs</a></li>
   <li><a href="/benevole/demo/pdf/leitpfadikurs/it">Leitpfadikurs</a></li>
-  <li><a href="/benevole/demo/pdf/panoramakurs/it">Panoramakurs</a></li>
+  <li><a href="/benevole/demo/pdf/futurakurs/it">Futurakurs</a></li>
+  <li><a href="/benevole/demo/pdf/basiskurs/it">Basiskurs</a></li>
+  <li><a href="/benevole/demo/pdf/aufbaukurs/it">Aufbaukurs</a></li>
+  <li><a href="/benevole/demo/pdf/al-kurs/it">AL-Kurs</a></li>
   <li><a href="/benevole/demo/pdf/spektrumkurs/it">Spektrumkurs</a></li>
+  <li><a href="/benevole/demo/pdf/coachkurs/it">Coachkurs</a></li>
+  <li><a href="/benevole/demo/pdf/panoramakurs/it">Panoramakurs</a></li>
   <li><a href="/benevole/demo/pdf/topkurs/it">Topkurs</a></li>
 </ul>
-<form action="/kurs/renderer/pdf/basiskurs/de" id="form" target="_blank" method="POST">
-    <label for="name">Name</label><input type="text" id="name" name="name" value="Rengel">
-    <label for="vorname">Vorname</label><input type="text" id="vorname" name="vorname" value="Heinrich">
-    <label for="wohnort">Wohnort</label><input type="text" id="wohnort" name="wohnort" value="Oberdorf">
-    <label for="dauer">Kursdauer</label><input type="text" id="dauer" name="dauer" value="28.09.2017 - 29.09.2017">
-    <label for="kursOrt">Kursort</label><textarea type="text" id="kursOrt" name="kursOrt">Solothurn</textarea>
-    <label for="organisator">Organisator</label><input type="text" id="organisator" name="organisator" value="Pfadibewegung Schweiz (PBS)">
-    <label for="geburtstag">Geburtstag</label><input type="text" id="geburtstag" name="geburtstag" value="09.08.1977">
-    <label for="anrede">Anrede</label><input type="text" id="anrede" name="anrede" value="Herr">
+<h2>Forumlar</h2>
+<form action="/kurs/renderer/pdf/basiskurs/de" id="testform" name="testform" target="_blank" method="POST" onsubmit="return OnSubmitForm();">
+    <label for="lang">Sprache</label>
+    <select name="lang" id="lang">
+      <option>de</option>
+      <option>fr</option>
+      <option>it</option>
+    </select>
+    <br>
+    <label for="lang">Kurs</label>
+    <select name="kurs" id="kurs">
+      <option>leitpfadikurs</option>
+      <option>futurakurs</option>
+      <option>basiskurs</option>
+      <option>aufbaukurs</option>
+      <option>panoramakurs</option>
+      <option>al-kurs</option>
+      <option>coachkurs</option>
+      <option>spektrumkurs</option>
+      <option>topkurs</option>
+    </select>
+    <br>
+    <label for="anrede">Anrede</label>&nbsp;<input type="text" id="anrede" name="anrede" value="Herr">
+    <br>
+    <label for="name">Name</label>&nbsp;<input type="text" id="name" name="name" value="Rengel">
+    <br>
+    <label for="vorname">Vorname</label>&nbsp;<input type="text" id="vorname" name="vorname" value="Heinrich">
+    <br>
+    <label for="geburtstag">Geburtstag</label>&nbsp;<input type="text" id="geburtstag" name="geburtstag" value="09.08.1977">
+    <br>
+    <label for="wohnort">Wohnort</label>&nbsp;<input type="text" id="wohnort" name="wohnort" value="Oberdorf">
+    <br>
+    <label for="dauer">Kursdauer</label>&nbsp;<input type="text" id="dauer" name="dauer" value="28.09.2017 - 29.09.2017">
+    <br>
+    <label for="kursOrt">Kursort</label>&nbsp;<textarea type="text" id="kursOrt" name="kursOrt">Solothurn</textarea>
+    <br>
+    <label for="organisator">Organisator</label>&nbsp;<input type="text" id="organisator" name="organisator" value="Pfadibewegung Schweiz (PBS)">
+    <br>
     <div><button type="submit">Absenden</button></div>
 </form>
 
