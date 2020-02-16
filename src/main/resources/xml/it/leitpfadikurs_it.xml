@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Corso Capi Pattuglia</name>
+	<language>it</language>
+	<description>
+	Durante il corso i partecipanti acquisiscono le competenze per assumere la responsabilità di piccole attività per bambini e giovani di età compresa tra i 10 ed i 14 anni, imparano inoltre a contribuire attivamente alla coesione del gruppo.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Competenza gestionale e di leadership:</text>
+			<inhalt>
+				<text>
+				Dirigere piccoli gruppi durante brevi attività e promuovere la coesione del gruppo.
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+				Riconoscere possibili pericoli durante le attività e comportarsi correttamente in caso di emergenza.
+				</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Metodica:</text>
+			<inhalt>
+				<text>Realizzare attività diversificate per bambini e giovani.
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>Proporre delle attività a tema (p. es. per mezzo di una storia).
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>Utilizzare metodi per l’organizzazione di brevi attività in piccoli gruppi
+				</text>
+			</inhalt>
+		</inhalt>
+	</inhalte>
+</kurs>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Corso base</name>
+	<language>it</language>
+	<description>
+	Durante il corso i partecipanti acquisiscono le competenze per la pianificazione e l’esecuzione di attività per i bambini ed i giovani, inoltre imparano a dare forma ad un programma di medio termine in collaborazione con un team di animatori. Questo corso porta al riconoscimento quale animatore G+S.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Competenza gestionale e di leadership:</text>
+			<inhalt>
+				<text>
+				Pianificare a medio termine, realizzare e valutare attività e fine settimana equilibrati per bambini e giovani.
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+				Valutare i possibili pericoli durante le attività ed elaborare concetti di sicurezza.
+				</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Metodica:</text>
+			<inhalt>
+				<text>
+				Favorire lo sviluppo personale di bambini e giovani.
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>
+				Valutare lo sviluppo personale e i bisgoni dei bambini e dei giovani, per poter sviluppare la loro partecipazione attiva.
+				</text>
+			</inhalt>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Promozione della salute:</text>
+			<text>Promuovere il benessere fisico, psichico e sociale di bambini e giovani.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Autoefficacia:</text>
+			<text>Fungere da modello quale animatore e riflettere su sé stesso riguardo i propri punti di forza ed i propri punti di debolezza.</text>
+		</inhalt>
+	</inhalte>
+</kurs>

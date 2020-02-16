@@ -44,6 +44,8 @@ public class BenevoleDemoResource {
 			parameter = TestData.createDemoParameterDe();
 		} else if ("fr".equals(lang)) {
 			parameter = TestData.createDemoParameterFr();
+		} else if("it".equals(lang)) {
+			parameter = TestData.createDemoParameterIt();
 		}
 		return Response.ok()//
 				.entity(renderPdf(kurs, lang, parameter)).build();

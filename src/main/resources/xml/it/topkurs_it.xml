@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Corso Top</name>
+	<language>it</language>
+	<description>
+	Durante il corso i partecipanti acquisiscono le competenze necessarie per organizzare e gestire un corso di formazione. Il corso conferisce il riconoscimento quale Esperto G+S. 
+	</description>
+
+	<inhalte>
+		<inhalt>
+		 	<text style="bold">Didattica:</text>
+			<text>Pianificare, organizzare e realizzare corsi di formazione metodologicamente variegati e con scopi didattici predefiniti.  Individuare le necessità di formazione dei partecipanti al corso e supportare il loro processo di apprendimento.</text>
+		</inhalt>
+		<inhalt>
+		 	<text style="bold">Autoefficacia:</text>
+			<text>Riflettere sul proprio modo di imparare, di insegnare e sulla propria capacità di porsi come formatore.</text>
+		</inhalt>
+		<inhalt>
+		 	<text style="bold">Sviluppo del personale:</text>
+			<text>Assitere e supportare il team di direzione del corso, effettuare la valutazione dei partecipanti al corso.</text>
+		</inhalt>
+		<inhalt>
+		 	<text style="bold">Comunicazione:</text>
+			<text>Fornire feed-back adatti alla situazione e ai destinatari.</text>
+		</inhalt>
+	</inhalte>
+</kurs>

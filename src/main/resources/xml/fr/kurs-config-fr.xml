@@ -13,6 +13,7 @@
 	<tabKurs>Cours:</tabKurs>
 	<tabOrt>Lieu:</tabOrt>
 	<tabDatum>Durée:</tabDatum>
+	<tabDauer>jours</tabDauer>
 	<tabOrganisator>Organisateur:</tabOrganisator>
 	<abschluss>
 	   <text newline="true" alignement="right">Berne, le ${todayFrench}</text>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Corso panorama</name>
+	<language>it</language>
+	<description>
+	Durante il corso i partecipanti acquisiscono le competenze base per l’ideazione, la pianificazione, lo svolgimento e la valutazione di progetti, approfondiscono la conoscenza dei metodi educativi, estendono le loro competenze e si confrontano tra loro sui valori del movimento scout e sui temi attuali della società.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Project management:</text>
+			<text>Conoscere e saper applicare le fasi del project management a progetti in ambito scout.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Sviluppo del personale:</text>
+			<text>Gestire le fasi di sviluppo ed evoluzione dei gruppi.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Comunicazione:</text>
+			<text>Sviluppare modelli di comunicazione, saper dare feedback efficaci, utilizzare strategie per il superamento di conflitti.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Metodica:</text>
+			<text>Valutare lo sviluppo personale nei diversi gruppi d’età e capirne i bisogni e le esigenze per sviluppare un programma adeguato all’età di bambini, giovani e giovani adulti.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Diversity management:</text>
+			<text>Promuovere le pari opportunità, l’integrazione di persone con handicap e di persone provenienti da altri background culturali o sociali.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Promozione della salute:</text>
+			<text>Attuare misure per la promozione della salute, prevenire il consumo di sostanze che creano assuefazione e prevenire la violenza e le molestie sessuali.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Autoefficacia:</text>
+			<text>Sviluppare la consapevolezza di sé.</text>
+		</inhalt>
+	</inhalte>
+</kurs>

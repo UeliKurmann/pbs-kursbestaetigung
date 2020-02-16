@@ -31,4 +31,18 @@ public class TestData {
 		parameter.setGeburtstag("09.08.1977");
 		return parameter;
 	}
+	
+	public static KursParameterJson createDemoParameterIt() {
+		KursParameterJson parameter = new KursParameterJson();
+
+		parameter.setDauer("28.09.2017 - 29.09.2017");
+		parameter.setKursOrt("Belinzona");
+		parameter.setOrganisator("Movimento Scout Svizzero (MSS)");
+		parameter.setAnrede("sig.");
+		parameter.setName("Esempio");
+		parameter.setVorname("Ennio");
+		parameter.setWohnort("Locarno");
+		parameter.setGeburtstag("09.08.1977");
+		return parameter;
+	}
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kurs>
+	<name>Corso coach</name>
+	<language>it</language>
+	<description>
+	Durante il corso i partecipanti acquisiscono le competenze necessarie per supportare come coach un’associazione (sezione scout), per esempio valutando la qualità del programma annuale e del campo, e supportando il team animatori. Il corso conferisce il riconoscimento di Coach G+S.
+	</description>
+	<inhalte>
+		<inhalt>
+			<text style="bold">Assicurare la qualità:</text>
+			<text>Valutare il programma e le attività in merito alla sicurezza, alla metodica, all’adeguatezza all’età e alla varietà, secondo le direttive di G+S e del Movimento Scout Svizzero.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Sviluppo del personale:</text>
+			<text>Assistere e supportare il team di animatori.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Comunicazione:</text>
+			<text>Fornire feed-back adatti alla situazione e ai destinatari.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Gestione dei conflitti:</text>
+			<text>Applicare strategie e strumenti per la risoluzione dei conflitti.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Sviluppo dell’organizzazione:</text>
+			<text>Impostare processi di coaching, analizzare e sviluppare la rete di accompagnamento.</text>
+		</inhalt>
+		<inhalt>
+			<text style="bold">Promozione della salute:</text>
+			<text>Attuare misure per la promozione della salute, prevenire il consumo di sostanze che creano assuefazione e prevenire la violenza e le molestie sessuali.</text>
+		</inhalt>
+	</inhalte>
+</kurs>
