@@ -7,9 +7,10 @@
 	</description>
 
 	<inhalte>
-		<inhalt>
+		<inhalt> 
 		 	<text style="bold">Didaktik:</text>
-			<text>Planung, Gestaltung und Durchführung von methodisch vielfältigen Ausbildungskursen mit vorgegebenen Lernzielen. Erkennen des Ausbildungsbedarfs der Kursteilnehmenden und Unterstützung ihres Lernprozesses.</text>
+			<inhalt><text>Planung, Gestaltung und Durchführung von methodisch vielfältigen Ausbildungskursen mit vorgegebenen Lernzielen</text></inhalt>
+			<inhalt><text>Erkennen des Ausbildungsbedarfs der Kursteilnehmenden und Unterstützung ihres Lernprozesses</text></inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Selbstwirksamkeit:</text>
