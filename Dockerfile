@@ -1,7 +1,7 @@
 FROM maven:3.6.3-jdk-8 AS build
 WORKDIR /app
 COPY . /app
-RUN mvn clean install
+RUN mvn clean package
 
 FROM adoptopenjdk:8-jre-hotspot-bionic
 COPY --from=build /app/target/benevole-renderer.jar /app/benevole-renderer.jar
