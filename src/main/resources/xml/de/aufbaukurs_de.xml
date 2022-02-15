@@ -29,11 +29,15 @@
 		</inhalt>
 		<inhalt>
 			<text style="bold">Gesundheitsförderung:</text>
-			<text>Strategien für den Umgang mit Kindern und Jugendlichen mit herausforderndem Verhalten</text>
+			<inhalt>
+				<text>Strategien für den Umgang mit Kindern und Jugendlichen mit herausforderndem Verhalten</text>
+			</inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Konfliktmanagement:</text>
-			<text>Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung</text>
+			<inhalt>
+				<text>Massnahmen zur Gesundheitsförderung, zum Umgang mit Suchtmitteln sowie zur Prävention von Gewalt und sexueller Ausbeutung</text>
+			</inhalt>
 		</inhalt>
 
 	</inhalte>

@@ -3,26 +3,42 @@
 	<name>Topkurs</name>
 	<language>de</language>
 	<description>
-	Im Kurs erwerben die Teilnehmenden die notwendigen Kompetenzen, um einen Ausbildungskurs zu leiten. Der Kurs führt zu der Anerkennung als J+S-Experte.
+		Im Kurs erwerben die Teilnehmenden die notwendigen Kompetenzen, um einen
+		Ausbildungskurs zu leiten. Der Kurs führt zu der Anerkennung als
+		J+S-Experte.
 	</description>
 
 	<inhalte>
-		<inhalt> 
-		 	<text style="bold">Didaktik:</text>
-			<inhalt><text>Planung, Gestaltung und Durchführung von methodisch vielfältigen Ausbildungskursen mit vorgegebenen Lernzielen</text></inhalt>
-			<inhalt><text>Erkennen des Ausbildungsbedarfs der Kursteilnehmenden und Unterstützung ihres Lernprozesses</text></inhalt>
+		<inhalt>
+			<text style="bold">Didaktik:</text>
+			<inhalt>
+				<text>Planung, Gestaltung und Durchführung von methodisch
+					vielfältigen Ausbildungskursen mit vorgegebenen Lernzielen</text>
+			</inhalt>
+			<inhalt>
+				<text>Erkennen des Ausbildungsbedarfs der Kursteilnehmenden und
+					Unterstützung ihres Lernprozesses</text>
+			</inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Selbstwirksamkeit:</text>
-			<text>Reflexion des eigenen Lernens und Lehrens und sowie der Auftrittskompetenz</text>
+			<inhalt>
+				<text>Reflexion des eigenen Lernens und Lehrens und sowie der
+					Auftrittskompetenz</text>
+			</inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Personalentwicklung:</text>
-			<text>Betreuung und Förderung des Leitungsteams sowie Qualifikation von Kursteilnehmenden</text>
+			<inhalt>
+				<text>Betreuung und Förderung des Leitungsteams sowie Qualifikation
+					von Kursteilnehmenden</text>
+			</inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Kommunikation:</text>
-			<text>Situations- und zielgruppengerechte Rückmeldungen</text>
+			<inhalt>
+				<text>Situations- und zielgruppengerechte Rückmeldungen</text>
+			</inhalt>
 		</inhalt>
 	</inhalte>
 </kurs>

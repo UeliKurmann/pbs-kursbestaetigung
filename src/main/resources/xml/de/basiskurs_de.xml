@@ -34,11 +34,15 @@
 		</inhalt>
 		<inhalt>
 			<text style="bold">Gesundheitsförderung:</text>
-			<text>Psychisches, physisches und soziales Wohlbefinden der Kinder und Jugendlichen</text>
+			<inhalt>
+				<text>Psychisches, physisches und soziales Wohlbefinden der Kinder und Jugendlichen</text>
+			</inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Selbstwirksamkeit:</text>
-			<text>Vorbildfunktion als Leitungsperson und Selbstreflexion hinsichtlich eigener Stärken und Schwächen</text>
+			<inhalt>
+				<text>Vorbildfunktion als Leitungsperson und Selbstreflexion hinsichtlich eigener Stärken und Schwächen</text>
+			</inhalt>
 		</inhalt>
 
 	</inhalte>

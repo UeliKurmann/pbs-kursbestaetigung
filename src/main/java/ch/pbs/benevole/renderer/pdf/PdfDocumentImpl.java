@@ -36,19 +36,19 @@ public class PdfDocumentImpl implements PdfDocument {
 
 	private Document document;
 	private ByteArrayOutputStream os;
-	private TemplateEngine engine;
+	private final TemplateEngine engine;
 	private PdfWriter pdfWriter;
 
 	private PdfDocumentImpl() throws PdfDocumentException {
 		this.engine = Factory.get().getTemplateEngine();
 		try {
 			document = new Document();
-			document.setMargins(38, 36, 10, 20);
+			document.setMargins(87, 36, 10, 20);
 			os = new ByteArrayOutputStream();
 			pdfWriter = PdfWriter.getInstance(document, os);
 			setPassword(pdfWriter);
 			document.open();
-		} catch (DocumentException e) {
+		} catch (final DocumentException e) {
 			PdfDocumentException.create("Error creating document.", e);
 		}
 	}
@@ -56,32 +56,32 @@ public class PdfDocumentImpl implements PdfDocument {
 	public static PdfDocument create() {
 		try {
 			return new PdfDocumentImpl();
-		} catch (PdfDocumentException e) {
+		} catch (final PdfDocumentException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	public void setMetadata(String title, String author, String creator) {
+	public void setMetadata(final String title, final String author, final String creator) {
 		addMetaData(document, title, author, creator);
 	}
 
 	@Override
-	public void addH1(String text) throws PdfDocumentException {
-		add(createH1Paragraph(text));
+	public void addH1(final String text) throws PdfDocumentException {
+		add(createH1Paragraph(text.toUpperCase()));
 	}
 
 	@Override
-	public void addH2(String text) throws PdfDocumentException {
-		add(createH2Paragraph(text));
+	public void addH2(final String text) throws PdfDocumentException {
+		add(createH2Paragraph(text.toUpperCase()));
 	}
 
 	@Override
-	public void addText(List<PdfText> text) throws PdfDocumentException {
+	public void addText(final List<PdfText> text) throws PdfDocumentException {
 		add(ElementFactory.toParagraph(text.stream().map(t -> engine.process(t)).collect(Collectors.toList())));
 	}
 
 	@Override
-	public void addText(String text) throws PdfDocumentException {
+	public void addText(final String text) throws PdfDocumentException {
 		addText(Lists.newArrayList(PdfText.create(text, Style.normal, false)));
 	}
 
@@ -91,47 +91,48 @@ public class PdfDocumentImpl implements PdfDocument {
 	}
 
 	@Override
-	public void addTable(NameValue... pairs) throws PdfDocumentException {
+	public void addTable(final NameValue... pairs) throws PdfDocumentException {
 		try {
 			add(createNameValueTable(pairs));
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			throw PdfDocumentException.create("Could not create table.", e);
 		}
 	}
 
 	@Override
-	public void addList(ListElement... elements) throws PdfDocumentException {
+	public void addList(final ListElement... elements) throws PdfDocumentException {
 		add(createList(elements));
 	}
 
 	@Override
 	public void addHeaderLogo() throws PdfDocumentException {
 		try {
+
 			document.add(ElementFactory.createLogo(os, pdfWriter));
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			throw PdfDocumentException.create("Could not create logo.", e);
 		}
 	}
 
 	@Override
-	public void addSignatureLogo(Alignement alignement) throws PdfDocumentException {
+	public void addSignatureLogo(final Alignement alignement) throws PdfDocumentException {
 		try {
 			document.add(ElementFactory.createSignature(alignement, os, pdfWriter));
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			throw PdfDocumentException.create("Could not create logo.", e);
 		}
 	}
-	
-	private void add(Element e) throws PdfDocumentException {
+
+	private void add(final Element e) throws PdfDocumentException {
 		try {
 			document.add(e);
-		} catch (Exception t) {
+		} catch (final Exception t) {
 			throw PdfDocumentException.create("Could not add element.", t);
 		}
 	}
 
 	@Override
-	public void write(File file) throws IOException {
+	public void write(final File file) throws IOException {
 		document.close();
 		Files.write(os.toByteArray(), file);
 	}
@@ -142,12 +143,12 @@ public class PdfDocumentImpl implements PdfDocument {
 		return os;
 	}
 
-	private static void setPassword(PdfWriter pdfWriter) throws DocumentException {
-		byte[] password = UUID.randomUUID().toString().getBytes();
+	private static void setPassword(final PdfWriter pdfWriter) throws DocumentException {
+		final byte[] password = UUID.randomUUID().toString().getBytes();
 		pdfWriter.setEncryption(null, password, PdfWriter.ALLOW_PRINTING, PdfWriter.ENCRYPTION_AES_128);
 	}
 
-	private static void addMetaData(Document document, String title, String author, String creator) {
+	private static void addMetaData(final Document document, final String title, final String author, final String creator) {
 		document.addTitle(title);
 		document.addAuthor(author);
 		document.addCreator(creator);
@@ -155,7 +156,7 @@ public class PdfDocumentImpl implements PdfDocument {
 	}
 
 	@Override
-	public void addContext(String name, Supplier<String> valueSupplier) {
+	public void addContext(final String name, final Supplier<String> valueSupplier) {
 		this.engine.add(name, valueSupplier);
 
 	}

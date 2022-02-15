@@ -27,9 +27,9 @@ public class KursDokumentGenerator {
 
 	private static Logger LOG = LoggerFactory.getLogger(KursDokumentGenerator.class);
 
-	public ByteArrayOutputStream render(Language lang, XMLKursConfig kursConfig, XMLKursbeschreibung kursbeschreibung,
-			KursParameter parameter) throws Exception {
-		PdfDocument document = Factory.get().getPdfDocument();
+	public ByteArrayOutputStream render(final Language lang, final XMLKursConfig kursConfig, final XMLKursbeschreibung kursbeschreibung,
+			final KursParameter parameter) throws Exception {
+		final PdfDocument document = Factory.get().getPdfDocument();
 		document.addContext("name", () -> parameter.getName());
 		document.addContext("vorname", () -> parameter.getVorname());
 
@@ -38,7 +38,6 @@ public class KursDokumentGenerator {
 		document.addContext("geburtstag", () -> parameter.getGeburtstag());
 		document.addContext("anrede", () -> parameter.getAnrede());
 
-		document.addHeaderLogo();
 		document.addEmptyParagraph();
 		document.addH1(kursConfig.getTitel());
 
@@ -53,8 +52,8 @@ public class KursDokumentGenerator {
 		document.addText(kursbeschreibung.getDescription());
 		document.addH2(kursConfig.getInhalt());
 
-		List<ListElement> elements = new ArrayList<>();
-		for (InhaltElement inhaltElement : kursbeschreibung.getInhalte()) {
+		final List<ListElement> elements = new ArrayList<>();
+		for (final InhaltElement inhaltElement : kursbeschreibung.getInhalte()) {
 			elements.add(ListElement.create(toPdfText(inhaltElement.getText()), t(inhaltElement.getSubInhalt())));
 		}
 
@@ -70,27 +69,28 @@ public class KursDokumentGenerator {
 		}
 
 		document.addText(toPdfText(Lists.newArrayList(kursConfig.getVerantwortlicher())));
+		document.addHeaderLogo();
 
 		return document.getOutputStream();
 	}
 
-	private String createDauerText(KursParameter parameter, XMLKursConfig config) {
-		String dauer = parameter.getDauer().trim();
-		DurationCaluclator calculator = new DurationCaluclator();
+	private String createDauerText(final KursParameter parameter, final XMLKursConfig config) {
+		final String dauer = parameter.getDauer().trim();
+		final DurationCaluclator calculator = new DurationCaluclator();
 		int calculateDuration = 0;
 		try {
 			calculateDuration = calculator.calculateDuration(dauer);
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			LOG.error("Could not calculate duration: " + dauer, e);
 		}
-		if(calculateDuration > 0) {
+		if (calculateDuration > 0) {
 			return String.format("%s (%s %s)", dauer, Integer.toString(calculateDuration), config.getTabDauer());
-		}else {
+		} else {
 			return dauer;
 		}
 	}
 
-	protected String processWohnort(String wohnort, Language lang) {
+	protected String processWohnort(final String wohnort, final Language lang) {
 		if (wohnort == null) {
 			return "";
 		}
@@ -107,26 +107,26 @@ public class KursDokumentGenerator {
 		}
 	}
 
-	private static ListElement[] t(List<InhaltElement> subInhalt) {
-		java.util.List<ListElement> elements = new ArrayList<>();
+	private static ListElement[] t(final List<InhaltElement> subInhalt) {
+		final java.util.List<ListElement> elements = new ArrayList<>();
 		if (subInhalt != null) {
-			for (InhaltElement i : subInhalt) {
+			for (final InhaltElement i : subInhalt) {
 				elements.add(ListElement.create(Lists.newArrayList(toPdfText(i.getText()))));
 			}
 		}
 		return elements.toArray(new ListElement[0]);
 	}
 
-	private static List<PdfText> toPdfText(List<XMLText> texts) {
-		List<PdfText> result = Lists.newArrayList();
-		for (XMLText text : texts) {
+	private static List<PdfText> toPdfText(final List<XMLText> texts) {
+		final List<PdfText> result = Lists.newArrayList();
+		for (final XMLText text : texts) {
 			result.add(PdfText.create(text.getValue(), toStyle(text.getStyle()), toAlignement(text.getAlignement()), text.isNewline()));
 		}
 		return result;
 
 	}
 
-	private static Style toStyle(XMLTextStyle s) {
+	private static Style toStyle(final XMLTextStyle s) {
 		if (s == null) {
 			return Style.normal;
 		} else {
@@ -134,7 +134,7 @@ public class KursDokumentGenerator {
 		}
 	}
 
-	private static Alignement toAlignement(XMLTextAlignement s) {
+	private static Alignement toAlignement(final XMLTextAlignement s) {
 		if (s == null) {
 			return Alignement.left;
 		} else {

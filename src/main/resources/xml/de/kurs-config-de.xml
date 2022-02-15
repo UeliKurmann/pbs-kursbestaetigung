@@ -4,7 +4,7 @@
 	<inhalt>Inhalt</inhalt>
 	<intro >
 		<text newline="true">
-		Die Pfadibewegung Schweiz ist mit rund 48'500 Mitgliedern die grösste Kinder- und Jugendorganisation der Schweiz. Als Teil der weltweiten Pfadibewegung bietet sie Kindern und Jugendlichen einen sinnvollen und altersgerechten Ausgleich zu Schule und Ausbildung. In der Pfadi erwerben heranwachsende Jugendliche durch vielfältige Erlebnisse Fähigkeiten, welche ihnen erlauben, sich aktiv in der Gesellschaft zu engagieren und ihre Zukunft verantwortungs- bewusst zu gestalten. 
+		Die Pfadibewegung Schweiz ist mit rund 50'000 Mitgliedern die grösste Kinder- und Jugendorganisation der Schweiz. Als Teil der weltweiten Pfadibewegung bietet sie Kindern und Jugendlichen einen sinnvollen und altersgerechten Ausgleich zu Schule und Ausbildung. In der Pfadi erwerben heranwachsende Jugendliche durch vielfältige Erlebnisse Fähigkeiten, welche ihnen erlauben, sich aktiv in der Gesellschaft zu engagieren und ihre Zukunft verantwortungs- bewusst zu gestalten. 
 		</text>
 		<text newline="true"></text>
 		<text style="bold">${anrede} ${vorname} ${name},</text>
