@@ -1,33 +1,30 @@
 package ch.pbs.benevole.renderer.core;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import ch.pbs.benevole.renderer.core.PdfText;
 import ch.pbs.benevole.renderer.core.PdfText.Style;
 
 public class PdfTextTest {
 
 	@Test
 	public void factoryMethod() {
-		PdfText testee = PdfText.create("someValue", Style.italic, false);
-		assertThat(testee.getValue(), is(equalTo("someValue")));
-		assertThat(testee.getStyle(), is(equalTo(Style.italic)));
+		final PdfText testee = PdfText.create("someValue", Style.italic, false);
+		assertThat(testee.getValue()).isEqualTo("someValue");
+		assertThat(testee.getStyle()).isEqualTo(Style.italic);
 	}
-	
+
 	@Test
 	public void replaceNewLinesWithSingleSpace() {
-		PdfText testee = PdfText.create("a\nb", Style.italic, false);
-		assertThat(testee.getValue(), is(equalTo("a b")));
+		final PdfText testee = PdfText.create("a\nb", Style.italic, false);
+		assertThat(testee.getValue()).isEqualTo("a b");
 	}
-	
+
 	@Test
 	public void replaceMultipleSpacesWithOneSpace() {
-		PdfText testee = PdfText.create("a     b", Style.italic, false);
-		assertThat(testee.getValue(), is(equalTo("a b")));
+		final PdfText testee = PdfText.create("a     b", Style.italic, false);
+		assertThat(testee.getValue()).isEqualTo("a b");
 	}
 
 }

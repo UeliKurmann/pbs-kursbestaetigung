@@ -1,12 +1,10 @@
 package ch.pbs.benevole.renderer.core;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.google.common.collect.Lists;
 
@@ -16,19 +14,20 @@ public class ListElementTest {
 
 	@Test
 	public void hasNoSubListElements() {
-		PdfText pdfText = PdfText.create("hallo", Style.bold, false);
-		ListElement testee = ListElement.create(Lists.newArrayList(pdfText));
-		List<PdfText> actual = testee.getValue();
-		Assert.assertThat(actual.get(0), is(equalTo(pdfText)));
-		Assert.assertFalse(testee.hasSubListElements());
+		final PdfText pdfText = PdfText.create("hallo", Style.bold, false);
+		final ListElement testee = ListElement.create(Lists.newArrayList(pdfText));
+		final List<PdfText> actual = testee.getValue();
+		assertThat(actual.get(0)).isEqualTo(pdfText);
+		assertThat(testee.hasSubListElements()).isFalse();
 	}
 
 	@Test
 	public void hasSubListElements() {
-		PdfText pdfText = PdfText.create("hallo", Style.bold, false);
-		ListElement testee = ListElement.create(Lists.newArrayList(pdfText), ListElement.create(Lists.newArrayList(PdfText.create("a", Style.bold, false))));
-		List<PdfText> actual = testee.getValue();
-		Assert.assertThat(actual.get(0), is(equalTo(pdfText)));
-		Assert.assertTrue(testee.hasSubListElements());
+		final PdfText pdfText = PdfText.create("hallo", Style.bold, false);
+		final ListElement testee = ListElement.create(Lists.newArrayList(pdfText),
+				ListElement.create(Lists.newArrayList(PdfText.create("a", Style.bold, false))));
+		final List<PdfText> actual = testee.getValue();
+		assertThat(actual.get(0)).isEqualTo(pdfText);
+		assertThat(testee.hasSubListElements()).isTrue();
 	}
 }

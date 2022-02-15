@@ -7,6 +7,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.collect.Lists;
+
 import ch.pbs.benevole.renderer.core.Factory;
 import ch.pbs.benevole.renderer.core.Language;
 import ch.pbs.benevole.renderer.core.ListElement;
@@ -21,7 +23,6 @@ import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung.Inha
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLText;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLTextAlignement;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLTextStyle;
-import jersey.repackaged.com.google.common.collect.Lists;
 
 public class KursDokumentGenerator {
 
