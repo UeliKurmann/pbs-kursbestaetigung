@@ -160,7 +160,8 @@ public class ElementFactory {
 	public static Paragraph toParagraph(final java.util.List<PdfText> text) {
 		final Paragraph p = new Paragraph();
 		p.setLeading(14);
-		for (final PdfText t : text) {
+		for (int i = 0; i < text.size(); i++) {
+			final PdfText t = text.get(i);
 			if (t.getStyle() == Style.bold) {
 				p.add(new Phrase(t.getValue(), createAbsatzBoldFont()));
 			} else {
@@ -174,7 +175,7 @@ public class ElementFactory {
 
 			if (t.isNewline()) {
 				p.add(new Phrase("\n"));
-			} else {
+			} else if (text.size() - 1 != i) {
 				p.add(new Phrase(" "));
 			}
 

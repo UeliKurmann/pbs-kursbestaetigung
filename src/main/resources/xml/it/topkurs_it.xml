@@ -3,26 +3,44 @@
 	<name>Corso Top</name>
 	<language>it</language>
 	<description>
-	Durante il corso i partecipanti acquisiscono le competenze necessarie per organizzare e gestire un corso di formazione. Il corso conferisce il riconoscimento quale Esperto G+S. 
+		Durante il corso i partecipanti acquisiscono le competenze necessarie per
+		organizzare e gestire un corso di formazione. Il corso conferisce il
+		riconoscimento quale Esperto G+S.
 	</description>
 
 	<inhalte>
 		<inhalt>
-		 	<text style="bold">Didattica:</text>
-			<inhalt><text>Pianificare, organizzare e realizzare corsi di formazione metodologicamente variegati e con scopi didattici predefiniti</text></inhalt>
-			<inhalt><text>Individuare le necessità di formazione dei partecipanti al corso e supportare il loro processo di apprendimento</text></inhalt>
+			<text style="bold">Didattica:</text>
+			<inhalt>
+				<text>Pianificare, organizzare e realizzare corsi di formazione
+					metodologicamente variegati e con scopi didattici predefiniti
+				</text>
+			</inhalt>
+			<inhalt>
+				<text>Individuare le necessità di formazione dei partecipanti al
+					corso e supportare il loro processo di apprendimento</text>
+			</inhalt>
 		</inhalt>
 		<inhalt>
-		 	<text style="bold">Autoefficacia:</text>
-			<text>Riflettere sul proprio modo di imparare, di insegnare e sulla propria capacità di porsi come formatore</text>
+			<text style="bold">Autoefficacia:</text>
+			<inhalt>
+				<text>Riflettere sul proprio modo di imparare, di insegnare e sulla
+					propria capacità di porsi come formatore</text>
+			</inhalt>
 		</inhalt>
 		<inhalt>
-		 	<text style="bold">Sviluppo del personale:</text>
-			<text>Assitere e supportare il team di direzione del corso, effettuare la valutazione dei partecipanti al corso</text>
+			<text style="bold">Sviluppo del personale:</text>
+			<inhalt>
+				<text>Assitere e supportare il team di direzione del corso,
+					effettuare la valutazione dei partecipanti al corso</text>
+			</inhalt>
 		</inhalt>
 		<inhalt>
-		 	<text style="bold">Comunicazione:</text>
-			<text>Fornire feedback adatti alla situazione e ai destinatari</text>
+			<text style="bold">Comunicazione:</text>
+			<inhalt>
+				<text>Fornire feedback adatti alla situazione e ai destinatari
+				</text>
+			</inhalt>
 		</inhalt>
 	</inhalte>
 </kurs>

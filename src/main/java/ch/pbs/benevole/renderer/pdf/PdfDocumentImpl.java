@@ -43,7 +43,7 @@ public class PdfDocumentImpl implements PdfDocument {
 		this.engine = Factory.get().getTemplateEngine();
 		try {
 			document = new Document();
-			document.setMargins(87, 36, 10, 20);
+			document.setMargins(87, 40, 10, 20);
 			os = new ByteArrayOutputStream();
 			pdfWriter = PdfWriter.getInstance(document, os);
 			setPassword(pdfWriter);

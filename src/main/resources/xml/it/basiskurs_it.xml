@@ -3,19 +3,25 @@
 	<name>Corso base</name>
 	<language>it</language>
 	<description>
-	Durante il corso i partecipanti acquisiscono le competenze per la pianificazione e l’esecuzione di attività per bambini e giovani. Imparano inoltre a dare forma a un programma di medio termine in collaborazione con un team di animatori. Questo corso porta al riconoscimento quale monitor/monitrice G+S.
+		Durante il corso i partecipanti acquisiscono le competenze per la
+		pianificazione e l’esecuzione di attività per bambini e giovani.
+		Imparano inoltre a dare forma a un programma di medio termine in
+		collaborazione con un team di animatori. Questo corso porta al
+		riconoscimento quale monitor/monitrice G+S.
 	</description>
 	<inhalte>
 		<inhalt>
 			<text style="bold">Competenze gestionali e di leadership:</text>
 			<inhalt>
 				<text>
-				Pianificare a medio termine, realizzare e valutare attività e fine settimana equilibrati per bambini e giovani
+					Pianificare a medio termine, realizzare e valutare attività e fine settimana
+					equilibrati per bambini e giovani
 				</text>
 			</inhalt>
 			<inhalt>
 				<text>
-				Valutare i possibili pericoli durante le attività ed elaborare concetti di sicurezza
+					Valutare i possibili pericoli durante le attività ed elaborare concetti di
+					sicurezza
 				</text>
 			</inhalt>
 		</inhalt>
@@ -23,22 +29,29 @@
 			<text style="bold">Metodica:</text>
 			<inhalt>
 				<text>
-				Favorire lo sviluppo personale di bambini e giovani
+					Favorire lo sviluppo personale di bambini e giovani
 				</text>
 			</inhalt>
 			<inhalt>
 				<text>
-				Valutare lo sviluppo personale e i bisgoni di bambini e giovani, per poter sviluppare la loro partecipazione attiva
+					Valutare lo sviluppo personale e i bisgoni di bambini e giovani, per poter
+					sviluppare la loro partecipazione attiva
 				</text>
 			</inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Promozione della salute:</text>
-			<text>Promuovere il benessere fisico, psichico e sociale di bambini e giovani</text>
+			<inhalt>
+				<text>Promuovere il benessere fisico, psichico e sociale di bambini
+					e giovani</text>
+			</inhalt>
 		</inhalt>
 		<inhalt>
 			<text style="bold">Autoefficacia:</text>
-			<text>Fungere da modello quale animatore/animatrice e riflettere su se stesso riguardo i propri punti di forza e di debolezza</text>
+			<inhalt>
+				<text>Fungere da modello quale animatore/animatrice e riflettere su
+					se stesso riguardo i propri punti di forza e di debolezza</text>
+			</inhalt>
 		</inhalt>
 	</inhalte>
 </kurs>
