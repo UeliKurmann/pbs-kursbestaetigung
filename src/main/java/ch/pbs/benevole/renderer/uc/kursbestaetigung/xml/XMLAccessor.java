@@ -1,9 +1,10 @@
 package ch.pbs.benevole.renderer.uc.kursbestaetigung.xml;
 
-import java.io.InputStream;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.Unmarshaller;
+
+import java.io.InputStream;
 
 public class XMLAccessor {
 	

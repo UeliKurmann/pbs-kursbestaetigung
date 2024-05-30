@@ -1,14 +1,5 @@
 package ch.pbs.benevole.renderer.uc.kursbestaetigung;
 
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.google.common.collect.Lists;
-
 import ch.pbs.benevole.renderer.core.Factory;
 import ch.pbs.benevole.renderer.core.Language;
 import ch.pbs.benevole.renderer.core.ListElement;
@@ -23,21 +14,28 @@ import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung.Inha
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLText;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLTextAlignement;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLTextStyle;
+import com.google.common.collect.Lists;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class KursDokumentGenerator {
 
-	private static Logger LOG = LoggerFactory.getLogger(KursDokumentGenerator.class);
+	private static final Logger LOG = LoggerFactory.getLogger(KursDokumentGenerator.class);
 
 	public ByteArrayOutputStream render(final Language lang, final XMLKursConfig kursConfig, final XMLKursbeschreibung kursbeschreibung,
 			final KursParameter parameter) throws Exception {
 		final PdfDocument document = Factory.get().getPdfDocument();
-		document.addContext("name", () -> parameter.getName());
-		document.addContext("vorname", () -> parameter.getVorname());
+		document.addContext("name", parameter::getName);
+		document.addContext("vorname", parameter::getVorname);
 
 		document.addContext("wohnort", () -> processWohnort(parameter.getWohnort(), lang));
 
-		document.addContext("geburtstag", () -> parameter.getGeburtstag());
-		document.addContext("anrede", () -> parameter.getAnrede());
+		document.addContext("geburtstag", parameter::getGeburtstag);
+		document.addContext("anrede", parameter::getAnrede);
 
 		document.addEmptyParagraph();
 		document.addH1(kursConfig.getTitel());
@@ -85,7 +83,7 @@ public class KursDokumentGenerator {
 			LOG.error("Could not calculate duration: " + dauer, e);
 		}
 		if (calculateDuration > 0) {
-			return String.format("%s (%s %s)", dauer, Integer.toString(calculateDuration), config.getTabDauer());
+			return String.format("%s (%s %s)", dauer, calculateDuration, config.getTabDauer());
 		} else {
 			return dauer;
 		}

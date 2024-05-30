@@ -1,12 +1,10 @@
 package ch.pbs.benevole.renderer.core;
 
+import ch.pbs.benevole.renderer.core.PdfText.Alignement;
+
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 import java.util.function.Supplier;
-
-import ch.pbs.benevole.renderer.core.PdfText.Alignement;
 
 public interface PdfDocument {
 
@@ -25,8 +23,6 @@ public interface PdfDocument {
 	void addList(ListElement... elements) throws PdfDocumentException;
 
 	void addHeaderLogo() throws PdfDocumentException;
-
-	void write(File file) throws IOException;
 
 	ByteArrayOutputStream getOutputStream();
 	

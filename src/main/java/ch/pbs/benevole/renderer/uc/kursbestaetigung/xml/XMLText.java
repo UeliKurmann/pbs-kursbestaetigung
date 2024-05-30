@@ -1,10 +1,11 @@
 package ch.pbs.benevole.renderer.uc.kursbestaetigung.xml;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlValue;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlValue;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -14,13 +15,13 @@ public class XMLText {
 	@XmlValue
 	private String value;
 
-	@XmlAttribute(required = false)
+	@XmlAttribute()
 	private XMLTextStyle style;
 	
-	@XmlAttribute(required = false)
+	@XmlAttribute()
 	private XMLTextAlignement alignement;
 	
-	@XmlAttribute(required = false)
+	@XmlAttribute()
 	private boolean newline;
 
 	public void setValue(String value) {

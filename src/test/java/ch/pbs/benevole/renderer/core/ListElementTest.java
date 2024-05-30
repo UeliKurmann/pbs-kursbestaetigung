@@ -1,14 +1,12 @@
 package ch.pbs.benevole.renderer.core;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import ch.pbs.benevole.renderer.core.PdfText.Style;
+import com.google.common.collect.Lists;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
-
-import com.google.common.collect.Lists;
-
-import ch.pbs.benevole.renderer.core.PdfText.Style;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ListElementTest {
 

@@ -1,10 +1,9 @@
 package ch.pbs.benevole.renderer.uc.kursbestaetigung;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
+import ch.pbs.benevole.renderer.core.Language;
 import org.junit.jupiter.api.Test;
 
-import ch.pbs.benevole.renderer.core.Language;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class KursDokumentGeneratorTest {
 

@@ -1,7 +1,5 @@
 package ch.pbs.benevole.renderer;
 
-import com.expediagroup.dropwizard.prometheus.PrometheusBundle;
-
 import ch.pbs.benevole.renderer.core.Factory;
 import ch.pbs.benevole.renderer.core.TemplateEngine;
 import ch.pbs.benevole.renderer.health.TemplateHealthCheck;
@@ -10,9 +8,11 @@ import ch.pbs.benevole.renderer.resources.BackwardCompatibilityResource;
 import ch.pbs.benevole.renderer.resources.BenevoleDemoResource;
 import ch.pbs.benevole.renderer.resources.BenevoleHealthCheckResource;
 import ch.pbs.benevole.renderer.resources.BenevoleRendererResource;
-import io.dropwizard.Application;
-import io.dropwizard.setup.Bootstrap;
-import io.dropwizard.setup.Environment;
+import io.dropwizard.core.Application;
+import io.dropwizard.core.setup.Bootstrap;
+import io.dropwizard.core.setup.Environment;
+import org.dhatim.dropwizard.prometheus.PrometheusBundle;
+
 
 public class PBSBenevoleRenderApplication extends Application<PBSBenevoleRenderConfiguration> {
 
@@ -27,11 +27,9 @@ public class PBSBenevoleRenderApplication extends Application<PBSBenevoleRenderC
 
 	@Override
 	public void initialize(final Bootstrap<PBSBenevoleRenderConfiguration> bootstrap) {
-		Factory.get().configPdfDocument(()-> PdfDocumentImpl.create());
-		Factory.get().configTemplateEngine(()-> new TemplateEngine());
-		
-		bootstrap.addBundle(new PrometheusBundle<>(PBSBenevoleRenderConfiguration::getPrometheusBundleConfig));
-	      
+		Factory.get().configPdfDocument(PdfDocumentImpl::create);
+		Factory.get().configTemplateEngine(TemplateEngine::new);
+		bootstrap.addBundle(new PrometheusBundle());
 	}
 
 	@Override

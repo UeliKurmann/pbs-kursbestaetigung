@@ -1,10 +1,10 @@
 package ch.pbs.benevole.renderer.pdf;
 
-import java.awt.Color;
-import java.io.OutputStream;
-import java.net.URL;
-import java.util.Arrays;
-
+import ch.pbs.benevole.renderer.core.ListElement;
+import ch.pbs.benevole.renderer.core.NameValue;
+import ch.pbs.benevole.renderer.core.PdfText;
+import ch.pbs.benevole.renderer.core.PdfText.Alignement;
+import ch.pbs.benevole.renderer.core.PdfText.Style;
 import com.lowagie.text.BadElementException;
 import com.lowagie.text.Cell;
 import com.lowagie.text.Font;
@@ -20,11 +20,10 @@ import com.lowagie.text.pdf.PdfImportedPage;
 import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfWriter;
 
-import ch.pbs.benevole.renderer.core.ListElement;
-import ch.pbs.benevole.renderer.core.NameValue;
-import ch.pbs.benevole.renderer.core.PdfText;
-import ch.pbs.benevole.renderer.core.PdfText.Alignement;
-import ch.pbs.benevole.renderer.core.PdfText.Style;
+import java.awt.*;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class ElementFactory {
 
@@ -94,9 +93,10 @@ public class ElementFactory {
 		return list;
 	}
 
-	public static Image createLogo(final OutputStream os, final PdfWriter pdfWriter) throws Exception {
-
-		final PdfReader reader = new PdfReader(ElementFactory.class.getClassLoader().getResourceAsStream("pbsassets/pbslogo.pdf"));
+	public static Image createLogo(final PdfWriter pdfWriter) throws Exception {
+		var pbsLogo = ElementFactory.class.getClassLoader().getResourceAsStream("pbsassets/pbslogo.pdf");
+		Objects.requireNonNull(pbsLogo, "logo not found.");
+		final PdfReader reader = new PdfReader(pbsLogo);
 		final PdfImportedPage importedPage = pdfWriter.getImportedPage(reader, 1);
 
 		final Image image = Image.getInstance(importedPage);
@@ -104,13 +104,13 @@ public class ElementFactory {
 
 		image.setAbsolutePosition(30, 30);
 
-		// image.scaleToFit(270, 200);
 		return image;
 	}
 
-	public static Image createSignature(final Alignement alignement, final OutputStream os, final PdfWriter pdfWriter) throws Exception {
+	public static Image createSignature(final Alignement alignement) throws Exception {
 
 		final URL resource = ElementFactory.class.getClassLoader().getResource("pbsassets/signature.png");
+		Objects.requireNonNull(resource, "signature not found.");
 		final Image image = Image.getInstance(resource);
 		if (alignement == Alignement.left) {
 			image.setAlignment(Image.LEFT);
@@ -125,12 +125,6 @@ public class ElementFactory {
 		final Paragraph p = new Paragraph(title, createH1Font());
 
 		p.setSpacingAfter(15);
-		return p;
-	}
-
-	public static Paragraph createParagraph(final String text) {
-		final Paragraph p = new Paragraph(text, createAbsatzFont());
-		// p.setSpacingBefore(0);
 		return p;
 	}
 

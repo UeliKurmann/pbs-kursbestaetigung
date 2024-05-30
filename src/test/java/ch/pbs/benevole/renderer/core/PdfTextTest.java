@@ -1,10 +1,9 @@
 package ch.pbs.benevole.renderer.core;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
+import ch.pbs.benevole.renderer.core.PdfText.Style;
 import org.junit.jupiter.api.Test;
 
-import ch.pbs.benevole.renderer.core.PdfText.Style;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class PdfTextTest {
 

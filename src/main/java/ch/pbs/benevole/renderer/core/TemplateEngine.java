@@ -1,13 +1,13 @@
 package ch.pbs.benevole.renderer.core;
 
+import com.google.common.collect.Maps;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Supplier;
-
-import com.google.common.collect.Maps;
 
 public class TemplateEngine {
 

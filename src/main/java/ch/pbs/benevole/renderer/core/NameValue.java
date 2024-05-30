@@ -2,8 +2,8 @@ package ch.pbs.benevole.renderer.core;
 
 public class NameValue {
 
-	private String name;
-	private String value;
+	private final String name;
+	private final String value;
 	
 	private NameValue(String name, String value){
 		this.name = name;

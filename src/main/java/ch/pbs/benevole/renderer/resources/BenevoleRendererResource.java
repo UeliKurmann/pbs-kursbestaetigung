@@ -1,29 +1,27 @@
 package ch.pbs.benevole.renderer.resources;
 
-import static ch.pbs.benevole.renderer.resources.Renderer.renderPdf;
-
-import javax.ws.rs.BeanParam;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.codahale.metrics.annotation.Counted;
 import com.codahale.metrics.annotation.ResponseMetered;
 import com.codahale.metrics.annotation.Timed;
+import jakarta.ws.rs.BeanParam;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.HttpHeaders;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import static ch.pbs.benevole.renderer.resources.Renderer.renderPdf;
 
 @Path("/benevole/renderer")
 @Produces(MediaType.APPLICATION_JSON)
 public class BenevoleRendererResource {
 
-	private static Logger LOG = LoggerFactory.getLogger(BenevoleRendererResource.class);
+	private static final Logger LOG = LoggerFactory.getLogger(BenevoleRendererResource.class);
 
 	public BenevoleRendererResource() {
 		// default constructor.

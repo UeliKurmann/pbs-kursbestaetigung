@@ -1,11 +1,11 @@
 package ch.pbs.benevole.renderer.uc.kursbestaetigung;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.time.format.DateTimeParseException;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DurationCaluclatorTest {
 

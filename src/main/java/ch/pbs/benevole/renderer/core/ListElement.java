@@ -4,8 +4,8 @@ import java.util.List;
 
 public class ListElement {
 
-	private List<PdfText> value;
-	private ListElement[] subListElements;
+	private final List<PdfText> value;
+	private final ListElement[] subListElements;
 	
 	private ListElement(List<PdfText> value, ListElement... subListElements){
 		this.subListElements = subListElements;
