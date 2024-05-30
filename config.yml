@@ -2,6 +2,3 @@ logging:
   level: INFO
   loggers:
     ch.pbs.benevole.renderer: INFO
-
-prometheusBundleConfig:
-  scrapePath: /prometheus
