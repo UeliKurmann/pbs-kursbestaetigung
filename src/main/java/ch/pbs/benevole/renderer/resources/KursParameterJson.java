@@ -4,12 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.ws.rs.FormParam;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-
-
-import java.io.BufferedReader;
-import java.io.StringReader;
-import java.util.stream.Collectors;
-
 public class KursParameterJson {
 
 	private String name;
@@ -69,7 +63,7 @@ public class KursParameterJson {
 
 	@FormParam("kursOrt")
 	public void setKursOrt(String kursOrt) {
-		this.kursOrt = removeLeadingAndTrailingEmptyLines(kursOrt);
+		this.kursOrt = kursOrt;
 	}
 
 	@JsonProperty
@@ -105,19 +99,6 @@ public class KursParameterJson {
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
-	}
-
-	private String removeLeadingAndTrailingEmptyLines(String str) {
-		return new BufferedReader(new StringReader(str)).lines().dropWhile(String::isBlank).collect(Collectors.collectingAndThen(
-				Collectors.toList(),
-				list -> {
-					int endIndex = list.size();
-					while (endIndex > 0 && list.get(endIndex - 1).isBlank()) {
-						endIndex--;
-					}
-					return String.join("\n", list.subList(0, endIndex));
-				}
-		));
 	}
 
 }

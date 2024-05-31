@@ -22,7 +22,7 @@ public class TestData {
 
 		parameter.setDauer("28.09.2017 - 29.09.2017");
 		parameter.setKursOrt("Lausanne");
-		parameter.setOrganisator("Pfadibewegung Schweiz (PBS)");
+		parameter.setOrganisator("Mouvement Scout de Suisse (MSdS)");
 
 		parameter.setAnrede("M.");
 		parameter.setName("Modèle");
@@ -36,8 +36,8 @@ public class TestData {
 		KursParameterJson parameter = new KursParameterJson();
 
 		parameter.setDauer("28.09.2017 - 29.09.2017");
-		parameter.setKursOrt("\n   \n\t\nBelinzona\n   \n");
-		parameter.setOrganisator("Pfadibewegung Schweiz (PBS)");
+		parameter.setKursOrt("Belinzona");
+		parameter.setOrganisator("Movimento Scout Svizzero (MSS)");
 		parameter.setAnrede("sig.");
 		parameter.setName("Esempio");
 		parameter.setVorname("Ennio");
