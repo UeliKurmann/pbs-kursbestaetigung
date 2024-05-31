@@ -1,13 +1,13 @@
 package ch.pbs.benevole.renderer.resources;
 
+import java.io.InputStream;
+
 import ch.pbs.benevole.renderer.core.Language;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.KursDokumentGenerator;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.KursParameter;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLAccessor;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursConfig;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung;
-
-import java.io.InputStream;
 
 public class Renderer {
 

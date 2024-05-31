@@ -1,7 +1,7 @@
 package ch.pbs.benevole.renderer.resources;
 
 public class TestData {
-	
+
 	public static KursParameterJson createDemoParameterDe() {
 		KursParameterJson parameter = new KursParameterJson();
 
@@ -31,7 +31,7 @@ public class TestData {
 		parameter.setGeburtstag("09.08.1977");
 		return parameter;
 	}
-	
+
 	public static KursParameterJson createDemoParameterIt() {
 		KursParameterJson parameter = new KursParameterJson();
 

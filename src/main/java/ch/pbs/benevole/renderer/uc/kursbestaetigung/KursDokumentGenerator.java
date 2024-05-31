@@ -18,11 +18,19 @@ import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class KursDokumentGenerator {
+
+	private final Map<Language, String> translations = Map.of(Language.it, "Movimento Scout Svizzero (MSS)",
+			Language.fr, "Mouvement Scout de Suisse (MSdS)");
 
 	private static final Logger LOG = LoggerFactory.getLogger(KursDokumentGenerator.class);
 
@@ -44,9 +52,9 @@ public class KursDokumentGenerator {
 
 		document.addTable(//
 				NameValue.create(kursConfig.getTabKurs(), kursbeschreibung.getName()), //
-				NameValue.create(kursConfig.getTabOrt(), parameter.getKursOrt()), //
+				NameValue.create(kursConfig.getTabOrt(), removeLeadingAndTrailingEmptyLines(parameter.getKursOrt())), //
 				NameValue.create(kursConfig.getTabDatum(), createDauerText(parameter, kursConfig)), //
-				NameValue.create(kursConfig.getTabOrganisator(), parameter.getOrganisator()));
+				NameValue.create(kursConfig.getTabOrganisator(), TranslateOrganizerPBSIntoRequiredLanguage(lang, parameter.getOrganisator())));
 		document.addEmptyParagraph();
 		document.addText(kursbeschreibung.getDescription());
 		document.addH2(kursConfig.getInhalt());
@@ -87,6 +95,27 @@ public class KursDokumentGenerator {
 		} else {
 			return dauer;
 		}
+	}
+
+	protected String TranslateOrganizerPBSIntoRequiredLanguage(Language lang, String organizer){
+		String translation = translations.get(lang);
+		if (translation != null && Objects.equals(organizer, "Pfadibewegung Schweiz (PBS)")) {
+			return translation;
+		}
+		return organizer;
+	}
+
+	protected String removeLeadingAndTrailingEmptyLines(String str) {
+		return new BufferedReader(new StringReader(str)).lines().dropWhile(String::isBlank).collect(Collectors.collectingAndThen(
+				Collectors.toList(),
+				list -> {
+					int endIndex = list.size();
+					while (endIndex > 0 && list.get(endIndex - 1).isBlank()) {
+						endIndex--;
+					}
+					return String.join("\n", list.subList(0, endIndex));
+				}
+		));
 	}
 
 	protected String processWohnort(final String wohnort, final Language lang) {

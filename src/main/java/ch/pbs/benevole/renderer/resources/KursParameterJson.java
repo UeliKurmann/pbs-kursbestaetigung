@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.ws.rs.FormParam;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-
-
 public class KursParameterJson {
 
 	private String name;
@@ -16,7 +14,7 @@ public class KursParameterJson {
 	private String organisator;
 	private String geburtstag;
 	private String anrede;
-	
+
 
 	@JsonProperty
 	public String getName() {
@@ -97,7 +95,7 @@ public class KursParameterJson {
 	public void setAnrede(String anrede) {
 		this.anrede = anrede;
 	}
-	
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
