@@ -31,3 +31,5 @@ Visualizations/d3-heatmap/data/data*.csv
 Visualizations/scroll_demo
 tmp/starter-template
 starter-template.zip
+.idea/
+dependency-reduced-pom.xml
