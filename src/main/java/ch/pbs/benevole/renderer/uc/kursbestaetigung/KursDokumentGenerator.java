@@ -8,7 +8,6 @@ import ch.pbs.benevole.renderer.core.PdfDocument;
 import ch.pbs.benevole.renderer.core.PdfText;
 import ch.pbs.benevole.renderer.core.PdfText.Alignement;
 import ch.pbs.benevole.renderer.core.PdfText.Style;
-import ch.pbs.benevole.renderer.resources.KursParameterJson;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursConfig;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung.InhaltElement;
@@ -30,7 +29,7 @@ import java.util.stream.Collectors;
 
 public class KursDokumentGenerator {
 
-	private static final Map<Language, String> translations = Map.of(Language.it, "Movimento Scout Svizzero (MSS)",
+	private final Map<Language, String> translations = Map.of(Language.it, "Movimento Scout Svizzero (MSS)",
 			Language.fr, "Mouvement Scout de Suisse (MSdS)");
 
 	private static final Logger LOG = LoggerFactory.getLogger(KursDokumentGenerator.class);
@@ -98,7 +97,7 @@ public class KursDokumentGenerator {
 		}
 	}
 
-	protected static String TranslateOrganizerPBSIntoRequiredLanguage(Language lang, String organizer){
+	protected String TranslateOrganizerPBSIntoRequiredLanguage(Language lang, String organizer){
 		String translation = translations.get(lang);
 		if (translation != null && Objects.equals(organizer, "Pfadibewegung Schweiz (PBS)")) {
 			return translation;
