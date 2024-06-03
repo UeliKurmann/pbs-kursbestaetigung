@@ -109,7 +109,7 @@ public class ElementFactory {
 
 	public static Image createSignature(final Alignement alignement) throws Exception {
 
-		final URL resource = ElementFactory.class.getClassLoader().getResource("pbsassets/signature.png");
+		final URL resource = ElementFactory.class.getClassLoader().getResource("pbsassets/signature.jpg");
 		Objects.requireNonNull(resource, "signature not found.");
 		final Image image = Image.getInstance(resource);
 		if (alignement == Alignement.left) {
