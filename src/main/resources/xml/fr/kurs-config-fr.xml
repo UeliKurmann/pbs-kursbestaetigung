@@ -19,5 +19,5 @@
 	   <text newline="true" alignement="right">Berne, le ${todayFrench}</text>
 	   <text newline="true"></text>
 	   <text alignement="right">Responsable Formation &amp; Encadrement,</text></abschluss>
-	<verantwortlicher alignement="right">Keller Philippe</verantwortlicher>
+	<verantwortlicher alignement="right">Guillaume Broillet</verantwortlicher>
 </kurs-config>

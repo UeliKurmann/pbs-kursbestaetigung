@@ -20,5 +20,5 @@
 	   <text newline="true">${today}, Movimento Scout Svizzero,</text>
 	   <text>Responsabile del Compito principale formazione e accompagnamento</text>
 	</abschluss>
-	<verantwortlicher alignement="left">Philippe Keller</verantwortlicher>
+	<verantwortlicher alignement="left">Guillaume Broillet</verantwortlicher>
 </kurs-config>
