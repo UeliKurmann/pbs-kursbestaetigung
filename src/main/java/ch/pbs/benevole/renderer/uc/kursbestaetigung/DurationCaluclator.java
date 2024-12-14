@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class DurationCaluclator {
 
 	public int calculateDuration(String dates) {
-		String[] split = dates.split("\n");
+		String[] split = dates.split("[\n]");
 		return Arrays.stream(split).map(this::processLine).reduce(0, Integer::sum);
 	}
 

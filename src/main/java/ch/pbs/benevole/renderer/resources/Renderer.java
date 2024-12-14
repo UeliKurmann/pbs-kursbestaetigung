@@ -13,7 +13,7 @@ public class Renderer {
 
 	public static byte[] renderPdf(String kurs, String lang, KursParameterJson kpj) throws Exception {
 		XMLKursConfig config = XMLAccessor.readKursConfig(loadConfing(lang));
-		String name = createKursTemplateName(kurs, lang);
+		String name = createKursTemplateName(kurs.toLowerCase().trim(), lang.toLowerCase().trim());
 		XMLKursbeschreibung beschreibung = XMLAccessor.readKursbeschreibung(loadKursTemplate(name));
 
 		KursParameter parameter = new KursParameter();
