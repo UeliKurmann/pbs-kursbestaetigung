@@ -19,7 +19,7 @@ public class XMLText {
 	private XMLTextStyle style;
 	
 	@XmlAttribute()
-	private XMLTextAlignement alignement;
+	private XMLTextAlignment alignment;
 	
 	@XmlAttribute()
 	private boolean newline;
@@ -32,8 +32,8 @@ public class XMLText {
 		this.style = style;
 	}
 	
-	public void setAlignement(XMLTextAlignement alignement) {
-		this.alignement = alignement;
+	public void setAlignment(XMLTextAlignment alignment) {
+		this.alignment = alignment;
 	}
 
 	public String getValue() {
@@ -44,8 +44,8 @@ public class XMLText {
 		return style;
 	}
 	
-	public XMLTextAlignement getAlignement() {
-		return alignement;
+	public XMLTextAlignment getAlignment() {
+		return alignment;
 	}
 	
 	public boolean isNewline() {

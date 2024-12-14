@@ -3,7 +3,6 @@ package ch.pbs.benevole.renderer.pdf;
 import ch.pbs.benevole.renderer.core.ListElement;
 import ch.pbs.benevole.renderer.core.NameValue;
 import ch.pbs.benevole.renderer.core.PdfText;
-import ch.pbs.benevole.renderer.core.PdfText.Alignement;
 import ch.pbs.benevole.renderer.core.PdfText.Style;
 import com.lowagie.text.BadElementException;
 import com.lowagie.text.Cell;
@@ -107,12 +106,12 @@ public class ElementFactory {
 		return image;
 	}
 
-	public static Image createSignature(final Alignement alignement) throws Exception {
+	public static Image createSignature(final PdfText.Alignment alignment) throws Exception {
 
 		final URL resource = ElementFactory.class.getClassLoader().getResource("pbsassets/signature.jpg");
 		Objects.requireNonNull(resource, "signature not found.");
 		final Image image = Image.getInstance(resource);
-		if (alignement == Alignement.left) {
+		if (alignment == PdfText.Alignment.left) {
 			image.setAlignment(Image.LEFT);
 		} else {
 			image.setAlignment(Image.RIGHT);
@@ -161,7 +160,7 @@ public class ElementFactory {
 			} else {
 				p.add(new Phrase(t.getValue(), createAbsatzFont()));
 			}
-			if (t.getAlignement() == Alignement.left) {
+			if (t.getAlignment() == PdfText.Alignment.left) {
 				p.setAlignment(Paragraph.ALIGN_LEFT);
 			} else {
 				p.setAlignment(Paragraph.ALIGN_RIGHT);

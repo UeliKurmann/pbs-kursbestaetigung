@@ -6,7 +6,6 @@ import ch.pbs.benevole.renderer.core.NameValue;
 import ch.pbs.benevole.renderer.core.PdfDocument;
 import ch.pbs.benevole.renderer.core.PdfDocumentException;
 import ch.pbs.benevole.renderer.core.PdfText;
-import ch.pbs.benevole.renderer.core.PdfText.Alignement;
 import ch.pbs.benevole.renderer.core.PdfText.Style;
 import ch.pbs.benevole.renderer.core.TemplateEngine;
 import com.google.common.collect.Lists;
@@ -106,9 +105,9 @@ public class PdfDocumentImpl implements PdfDocument {
 	}
 
 	@Override
-	public void addSignatureLogo(final Alignement alignement) throws PdfDocumentException {
+	public void addSignatureLogo(final PdfText.Alignment alignment) throws PdfDocumentException {
 		try {
-			document.add(ElementFactory.createSignature(alignement));
+			document.add(ElementFactory.createSignature(alignment));
 		} catch (final Exception e) {
 			throw PdfDocumentException.create("Could not create logo.", e);
 		}

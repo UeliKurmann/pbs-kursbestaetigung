@@ -1,6 +1,6 @@
 package ch.pbs.benevole.renderer.core;
 
-import ch.pbs.benevole.renderer.core.PdfText.Alignement;
+import ch.pbs.benevole.renderer.core.PdfText.Alignment;
 
 import java.io.ByteArrayOutputStream;
 import java.util.List;
@@ -28,6 +28,6 @@ public interface PdfDocument {
 	
 	void addContext(String name, Supplier<String> valueSupplier);
 
-	void addSignatureLogo(Alignement right) throws PdfDocumentException;
+	void addSignatureLogo(Alignment right) throws PdfDocumentException;
 
 }

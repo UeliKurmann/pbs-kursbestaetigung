@@ -6,28 +6,28 @@ public class PdfText {
 		normal, bold, italic
 	};
 	
-	public enum Alignement {
+	public enum Alignment {
 		left, right
 	}
 	
 	private String value;
-	private Alignement alignement;
-	private Style style;
-	private boolean newline;
+	private final Alignment alignment;
+	private final Style style;
+	private final boolean newline;
 	
-	private PdfText(String value, Style style, Alignement alignement, boolean newline){
+	private PdfText(String value, Style style, Alignment alignment, boolean newline){
 		this.value = value;
 		this.style = style;
 		this.newline = newline;
-		this.alignement = alignement;
+		this.alignment = alignment;
 	}
 	
 	public static PdfText create(String value, Style style, boolean newline){
-		return new PdfText(value, style, Alignement.left, newline);
+		return new PdfText(value, style, Alignment.left, newline);
 	}
 	
-	public static PdfText create(String value, Style style, Alignement alignement, boolean newline){
-		return new PdfText(value, style, alignement, newline);
+	public static PdfText create(String value, Style style, Alignment alignment, boolean newline){
+		return new PdfText(value, style, alignment, newline);
 	}
 	
 	public String getValue() {
@@ -46,8 +46,8 @@ public class PdfText {
 		return newline;
 	}
 	
-	public Alignement getAlignement() {
-		return alignement;
+	public Alignment getAlignment() {
+		return alignment;
 	}
 
 }

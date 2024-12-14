@@ -6,13 +6,12 @@ import ch.pbs.benevole.renderer.core.ListElement;
 import ch.pbs.benevole.renderer.core.NameValue;
 import ch.pbs.benevole.renderer.core.PdfDocument;
 import ch.pbs.benevole.renderer.core.PdfText;
-import ch.pbs.benevole.renderer.core.PdfText.Alignement;
 import ch.pbs.benevole.renderer.core.PdfText.Style;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursConfig;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLKursbeschreibung.InhaltElement;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLText;
-import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLTextAlignement;
+import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLTextAlignment;
 import ch.pbs.benevole.renderer.uc.kursbestaetigung.xml.XMLTextStyle;
 import com.google.common.collect.Lists;
 import org.slf4j.Logger;
@@ -70,9 +69,9 @@ public class KursDokumentGenerator {
 		document.addEmptyParagraph();
 
 		if (lang == Language.fr) {
-			document.addSignatureLogo(Alignement.right);
+			document.addSignatureLogo(PdfText.Alignment.right);
 		} else {
-			document.addSignatureLogo(Alignement.left);
+			document.addSignatureLogo(PdfText.Alignment.left);
 		}
 
 		document.addText(toPdfText(Lists.newArrayList(kursConfig.getVerantwortlicher())));
@@ -148,7 +147,7 @@ public class KursDokumentGenerator {
 	private static List<PdfText> toPdfText(final List<XMLText> texts) {
 		final List<PdfText> result = Lists.newArrayList();
 		for (final XMLText text : texts) {
-			result.add(PdfText.create(text.getValue(), toStyle(text.getStyle()), toAlignement(text.getAlignement()), text.isNewline()));
+			result.add(PdfText.create(text.getValue(), toStyle(text.getStyle()), toAlignment(text.getAlignment()), text.isNewline()));
 		}
 		return result;
 
@@ -162,11 +161,11 @@ public class KursDokumentGenerator {
 		}
 	}
 
-	private static Alignement toAlignement(final XMLTextAlignement s) {
+	private static PdfText.Alignment toAlignment(final XMLTextAlignment s) {
 		if (s == null) {
-			return Alignement.left;
+			return PdfText.Alignment.left;
 		} else {
-			return Alignement.valueOf(s.name());
+			return PdfText.Alignment.valueOf(s.name());
 		}
 	}
 
