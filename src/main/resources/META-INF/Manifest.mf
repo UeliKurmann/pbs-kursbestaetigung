@@ -1,1 +1,1 @@
-Build-Time: ${build.time}
+Build-Time: ${timestamp}
