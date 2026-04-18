@@ -107,11 +107,18 @@
 								<include>version.properties</include>
 								<include>banner.txt</include>
 								<include>assets/demo.html</include>
+								<include>META-INF/Manifest.mf</include>
 							</includes>
 						</resource>
 						<resource>
 							<directory>src/main/resources</directory>
 							<filtering>false</filtering>
+							<excludes>
+								<exclude>version.properties</exclude>
+								<exclude>banner.txt</exclude>
+								<exclude>assets/demo.html</exclude>
+								<exclude>META-INF/Manifest.mf</exclude>
+							</excludes>
 						</resource>
 					</resources>
 				</configuration>
