@@ -7,4 +7,4 @@ FROM eclipse-temurin:17-jre-alpine
 COPY --from=build /app/target/benevole-renderer.jar /app/benevole-renderer.jar
 COPY --from=build /app/config.yml /app/config.yml
 WORKDIR /app
-CMD ["java", "-jar", "benevole-renderer.jar", "server", "config.yml"]
+CMD ["java", "-XX:MaxRAMPercentage=75.0", "-jar", "benevole-renderer.jar", "server", "config.yml"]

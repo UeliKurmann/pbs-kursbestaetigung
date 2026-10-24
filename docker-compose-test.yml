@@ -2,6 +2,7 @@ services:
   app:
     build: .
     restart: always
+    mem_limit: 512m
     ports:
       - "9081:8081"
       - "9080:8080"
