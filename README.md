@@ -24,8 +24,31 @@ Service
     GET   /benevole/demo/pdf/{kurs}/{lang} (ch.pbs.benevole.renderer.resources.BenevoleDemoResource)
     POST  /kurs/renderer/pdf/{kurs}/{lang} (ch.pbs.benevole.renderer.resources.BenevoleRendererResource)
 
-Docker
+Docker / Deployment
 ---
-Start mit `docker-compose -p benevole up -d`
+Auf dem Server laufen eine Test- und eine Produktiv-Instanz nebeneinander:
 
-Die Ports sind in docker-compose.yml definiert.
+| Instanz | Compose-File | Projekt | Ports (App/Admin) |
+|---|---|---|---|
+| Test | `docker-compose-test.yml` | `benevole-test` | 9080 / 9081 |
+| Produktiv | `docker-compose.yml` | `benevole-prod` | 8080 / 8081 |
+
+Ablauf:
+
+1. `git pull`
+1. `./stage.sh` baut den aktuellen Commit als Image `benevole-renderer:<commit>` und startet ihn als Test-Instanz.
+   Bricht ab, wenn es uncommittete Änderungen gibt oder der Healthcheck nicht grün wird.
+1. Test-Instanz prüfen, z.B. `http://<server>:9080/benevole/demo/index`
+1. `./promote.sh` startet genau dieses Image als Produktiv-Instanz, ohne neu zu bauen.
+   Wird die neue Version nicht gesund, startet das Skript automatisch wieder die bisherige.
+1. Bei Problemen: `./promote.sh --rollback` startet wieder die vorherige Produktivversion.
+
+Die Versionen merken sich die Skripte in `.deploy/` (`staged`, `current`, `previous`).
+Zusätzlich zeigen die Tags `benevole-renderer:test` und `benevole-renderer:prod` auf die laufenden Versionen,
+deshalb funktionieren `docker compose -f docker-compose.yml logs` usw. auch ohne `TAG`.
+
+Voraussetzung: Docker Compose v2.17 oder neuer (für `up --wait --wait-timeout`).
+
+Einmalige Umstellung vom alten Setup: Die bisherige Instanz läuft im Projekt `benevole` und belegt die Ports.
+Vor dem ersten `./promote.sh` stoppen mit `docker compose -p benevole down`
+(Projektname bei Bedarf mit `docker compose ls` prüfen).

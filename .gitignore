@@ -33,3 +33,4 @@ tmp/starter-template
 starter-template.zip
 .idea/
 dependency-reduced-pom.xml
+.deploy/
