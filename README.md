@@ -30,15 +30,15 @@ Auf dem Server laufen eine Test- und eine Produktiv-Instanz nebeneinander:
 
 | Instanz | Compose-File | Projekt | Ports (App/Admin) |
 |---|---|---|---|
-| Test | `docker-compose-test.yml` | `benevole-test` | 9080 / 9081 |
-| Produktiv | `docker-compose.yml` | `benevole-prod` | 8080 / 8081 |
+| Test | `docker-compose-test.yml` | `benevole-test` | 13090 / 13091 |
+| Produktiv | `docker-compose.yml` | `benevole-prod` | 13080 / 13081 |
 
 Ablauf:
 
 1. `git pull`
 1. `./stage.sh` baut den aktuellen Commit als Image `benevole-renderer:<commit>` und startet ihn als Test-Instanz.
    Bricht ab, wenn es uncommittete Änderungen gibt oder der Healthcheck nicht grün wird.
-1. Test-Instanz prüfen, z.B. `http://<server>:9080/benevole/demo/index`
+1. Test-Instanz prüfen, z.B. `http://<server>:13090/benevole/demo/index`
 1. `./promote.sh` startet genau dieses Image als Produktiv-Instanz, ohne neu zu bauen.
    Wird die neue Version nicht gesund, startet das Skript automatisch wieder die bisherige.
 1. Bei Problemen: `./promote.sh --rollback` startet wieder die vorherige Produktivversion.
@@ -49,6 +49,7 @@ deshalb funktionieren `docker compose -f docker-compose.yml logs` usw. auch ohne
 
 Voraussetzung: Docker Compose v2.17 oder neuer (für `up --wait --wait-timeout`).
 
-Einmalige Umstellung vom alten Setup: Die bisherige Instanz läuft im Projekt `benevole` und belegt die Ports.
-Vor dem ersten `./promote.sh` stoppen mit `docker compose -p benevole down`
+Einmalige Umstellung vom alten Setup: Die bisherige Instanz läuft im Projekt `benevole` auf den Ports 8080/8081.
+Da die neuen Ports andere sind, kann sie weiterlaufen, bis Reverse-Proxy, Clients und Prometheus auf 13080/13081
+umgestellt sind. Danach stoppen mit `docker compose -p benevole down`
 (Projektname bei Bedarf mit `docker compose ls` prüfen).

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Starts the version staged by stage.sh as production instance (ports 8080/8081), without building.
+# Starts the version staged by stage.sh as production instance (ports 13080/13081), without building.
 # With --rollback, the previous production version is started again.
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -50,4 +50,4 @@ if [[ -n "$CURRENT" ]]; then
 fi
 echo "$TAG" > "$STATE/current"
 
-echo "Produktiv läuft jetzt $TAG auf Port 8080 (Admin 8081)."
+echo "Produktiv läuft jetzt $TAG auf Port 13080 (Admin 13081)."

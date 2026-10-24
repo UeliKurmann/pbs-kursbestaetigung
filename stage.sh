@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Builds the current commit as benevole-renderer:<commit> and starts it as test instance
-# (ports 9080/9081). The version is remembered for promote.sh.
+# (ports 13090/13091). The version is remembered for promote.sh.
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -27,5 +27,5 @@ docker tag "benevole-renderer:$TAG" benevole-renderer:test
 mkdir -p "$STATE"
 echo "$TAG" > "$STATE/staged"
 
-echo "Test-Instanz läuft mit $TAG auf Port 9080 (Admin 9081)."
+echo "Test-Instanz läuft mit $TAG auf Port 13090 (Admin 13091)."
 echo "Produktiv stellen mit: ./promote.sh"
