@@ -1,103 +1,337 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Kurs Renderer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bénévole Renderer</title>
+<!-- Note: this file is filtered by Maven. Do not use dollar-brace expressions in JS. -->
 <style>
-  label { border-width:1px; width: 100px;  }
-  input { width: 200px;}
-</style>
-<script type="text/javascript">
-  function OnSubmitForm()
-  {
-    var languageSelect = document.getElementById("lang");
-    var language = languageSelect.options[languageSelect.selectedIndex].value;
-    var kursSelect = document.getElementById("kurs");
-    var kurs = kursSelect.options[kursSelect.selectedIndex].value;
-    document.testform.action ="/benevole/renderer/pdf/"+kurs+"/"+language;
-    return true;
+  :root {
+    --bg: #f4f5f7;
+    --surface: #ffffff;
+    --surface-2: #f8f9fb;
+    --border: #e3e6eb;
+    --text: #1c2330;
+    --muted: #5d6778;
+    --accent: #1f5fbf;
+    --accent-hover: #184c99;
+    --accent-soft: #e8f0fc;
+    --on-accent: #ffffff;
+    --code-bg: #1c2330;
+    --code-text: #e6e9ef;
+    --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 1px 3px rgba(16, 24, 40, .08);
+    --radius: 10px;
   }
-  </script>
-  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b;
+      --surface: #1a1e26;
+      --surface-2: #20252f;
+      --border: #2d3340;
+      --text: #e6e9ef;
+      --muted: #9aa3b2;
+      --accent: #5b9bf0;
+      --accent-hover: #7cb0f5;
+      --accent-soft: #1f2d44;
+      --on-accent: #0d1420;
+      --code-bg: #0d1016;
+      --code-text: #d6dbe4;
+      --shadow: none;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+
+  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 28px; }
+  header h1 { margin: 0; font-size: 26px; font-weight: 650; letter-spacing: -.01em; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+  .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+    font-size: 12px; font-weight: 600; white-space: nowrap;
+  }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    margin-bottom: 24px; overflow: hidden;
+  }
+  .card-head { padding: 18px 22px 14px; border-bottom: 1px solid var(--border); }
+  .card-head h2 { margin: 0; font-size: 17px; font-weight: 620; }
+  .card-head p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+  .card-body { padding: 18px 22px 22px; }
+
+  /* Course matrix */
+  .matrix { width: 100%; border-collapse: collapse; }
+  .matrix th, .matrix td { padding: 9px 22px; text-align: left; }
+  .matrix thead th {
+    font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--muted); background: var(--surface-2); border-bottom: 1px solid var(--border);
+  }
+  .matrix tbody tr + tr td { border-top: 1px solid var(--border); }
+  .matrix tbody tr:hover td { background: var(--surface-2); }
+  .matrix td:first-child { font-weight: 550; }
+  .matrix .langs { text-align: right; white-space: nowrap; }
+  .pill {
+    display: inline-block; min-width: 44px; margin-left: 6px; padding: 4px 10px;
+    border: 1px solid var(--border); border-radius: 6px;
+    color: var(--accent); text-decoration: none; text-align: center;
+    font-size: 13px; font-weight: 600; text-transform: uppercase;
+    transition: background-color .12s, border-color .12s, color .12s;
+  }
+  .pill:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .pill:focus-visible, .btn:focus-visible, .seg input:focus-visible + span,
+  input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px;
+  }
+
+  /* Form */
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+  .field > label, .field > .label { font-size: 13px; font-weight: 600; color: var(--muted); }
+  input[type=text], select, textarea {
+    width: 100%; padding: 9px 11px; font: inherit; color: var(--text);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 7px;
+  }
+  textarea { resize: vertical; min-height: 64px; }
+  input[type=text]:hover, select:hover, textarea:hover { border-color: var(--muted); }
+
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; }
+  .seg label { position: relative; cursor: pointer; }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg span { display: block; padding: 8px 18px; font-weight: 600; font-size: 14px; color: var(--muted); }
+  .seg label + label span { border-left: 1px solid var(--border); }
+  .seg input:checked + span { background: var(--accent); color: var(--on-accent); }
+
+  .divider { grid-column: 1 / -1; height: 1px; background: var(--border); margin: 4px 0; }
+
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 22px; }
+  .btn {
+    appearance: none; border: 1px solid var(--accent); border-radius: 7px;
+    background: var(--accent); color: var(--on-accent);
+    padding: 10px 20px; font: inherit; font-weight: 600; cursor: pointer;
+  }
+  .btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .btn.ghost { background: transparent; color: var(--accent); }
+  .btn.ghost:hover { background: var(--accent-soft); }
+  .hint { color: var(--muted); font-size: 13px; }
+
+  /* API snippet */
+  details { margin-top: 22px; border-top: 1px solid var(--border); padding-top: 16px; }
+  summary { cursor: pointer; font-weight: 600; color: var(--muted); font-size: 14px; }
+  summary:hover { color: var(--text); }
+  .code-wrap { position: relative; margin-top: 12px; }
+  pre {
+    margin: 0; padding: 14px 16px; overflow-x: auto;
+    background: var(--code-bg); color: var(--code-text); border-radius: 8px;
+    font: 13px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: pre-wrap; word-break: break-all;
+  }
+  .copy { position: absolute; top: 8px; right: 8px; padding: 4px 10px; font-size: 12px; }
+
+  footer { color: var(--muted); font-size: 13px; text-align: center; }
+  footer a { color: inherit; }
+
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: 1fr; }
+    .matrix th, .matrix td { padding: 9px 14px; }
+    .card-head, .card-body { padding-left: 16px; padding-right: 16px; }
+    .pill { min-width: 38px; margin-left: 4px; padding: 4px 8px; }
+  }
+</style>
 </head>
 <body>
-<h1>Benevole Renderer (Version: ${timestamp})</h1>
-<h2>Deutsch</h2>
-<ul>
-  <li><a href="pdf/leitpfadikurs/de">Leitpfadikurs</a></li>
-  <li><a href="pdf/futurakurs/de">Futurakurs</a></li>
-  <li><a href="pdf/basiskurs/de">Basiskurs</a></li>
-  <li><a href="pdf/aufbaukurs/de">Aufbaukurs</a></li>
-  <li><a href="pdf/al-kurs/de">AL-Kurs</a></li>
-  <li><a href="pdf/panoramakurs/de">Panoramakurs</a></li>
-  <li><a href="pdf/coachkurs/de">Coachkurs</a></li>
-  <li><a href="pdf/spektrumkurs/de">Spektrumkurs</a></li>
-  <li><a href="pdf/topkurs/de">Topkurs</a></li>
-</ul>
-<h2>Französisch</h2>
-<ul>
-  <li><a href="pdf/leitpfadikurs/fr">Leitpfadikurs</a></li>
-  <li><a href="pdf/futurakurs/fr">Futurakurs</a></li>
-  <li><a href="pdf/basiskurs/fr">Basiskurs</a></li>
-  <li><a href="pdf/aufbaukurs/fr">Aufbaukurs</a></li>
-  <li><a href="pdf/al-kurs/fr">AL-Kurs</a></li>
-  <li><a href="pdf/panoramakurs/fr">Panoramakurs</a></li>
-  <li><a href="pdf/coachkurs/fr">Coachkurs</a></li>
-  <li><a href="pdf/spektrumkurs/fr">Spektrumkurs</a></li>
-  <li><a href="pdf/topkurs/fr">Topkurs</a></li>
-</ul>
-<h2>Italienisch</h2>
-<ul>
-  <li><a href="pdf/leitpfadikurs/it">Leitpfadikurs</a></li>
-  <li><a href="pdf/futurakurs/it">Futurakurs</a></li>
-  <li><a href="pdf/basiskurs/it">Basiskurs</a></li>
-  <li><a href="pdf/aufbaukurs/it">Aufbaukurs</a></li>
-  <li><a href="pdf/al-kurs/it">AL-Kurs</a></li>
-  <li><a href="pdf/spektrumkurs/it">Spektrumkurs</a></li>
-  <li><a href="pdf/coachkurs/it">Coachkurs</a></li>
-  <li><a href="pdf/panoramakurs/it">Panoramakurs</a></li>
-  <li><a href="pdf/topkurs/it">Topkurs</a></li>
-</ul>
-<h2>Forumlar</h2>
-<form action="../renderer/pdf/basiskurs/de" id="testform" name="testform" target="_blank" method="POST" onsubmit="return OnSubmitForm();">
-    <label for="lang">Sprache</label>
-    <select name="lang" id="lang">
-      <option>de</option>
-      <option>fr</option>
-      <option>it</option>
-    </select>
-    <br>
-    <label for="lang">Kurs</label>
-    <select name="kurs" id="kurs">
-      <option>leitpfadikurs</option>
-      <option>futurakurs</option>
-      <option>basiskurs</option>
-      <option>aufbaukurs</option>
-      <option>panoramakurs</option>
-      <option>al-kurs</option>
-      <option>coachkurs</option>
-      <option>spektrumkurs</option>
-      <option>topkurs</option>
-    </select>
-    <br>
-    <label for="anrede">Anrede</label>&nbsp;<input type="text" id="anrede" name="anrede" value="Herr">
-    <br>
-    <label for="name">Name</label>&nbsp;<input type="text" id="name" name="name" value="Rengel">
-    <br>
-    <label for="vorname">Vorname</label>&nbsp;<input type="text" id="vorname" name="vorname" value="Heinrich">
-    <br>
-    <label for="geburtstag">Geburtstag</label>&nbsp;<input type="text" id="geburtstag" name="geburtstag" value="09.08.1977">
-    <br>
-    <label for="wohnort">Wohnort</label>&nbsp;<input type="text" id="wohnort" name="wohnort" value="Oberdorf">
-    <br>
-    <label for="dauer">Kursdauer</label>&nbsp;<input type="text" id="dauer" name="dauer" value="28.09.2017 - 29.09.2017">
-    <br>
-    <label for="kursOrt">Kursort</label>&nbsp;<textarea type="text" id="kursOrt" name="kursOrt">Solothurn</textarea>
-    <br>
-    <label for="organisator">Organisator</label>&nbsp;<input type="text" id="organisator" name="organisator" value="Pfadibewegung Schweiz (PBS)">
-    <br>
-    <div><button type="submit">Absenden</button></div>
-</form>
+<div class="wrap">
 
+  <header>
+    <div>
+      <h1>Bénévole Renderer</h1>
+      <p>Kursbestätigungen der Pfadibewegung Schweiz als PDF</p>
+    </div>
+    <span class="badge" title="Build-Zeitpunkt">Build ${timestamp}</span>
+  </header>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>Beispiel-PDFs</h2>
+      <p>Kursbestätigung mit Testdaten pro Kurs und Sprache. Öffnet in einem neuen Tab.</p>
+    </div>
+    <table class="matrix">
+      <thead>
+        <tr><th>Kurs</th><th class="langs">Sprache</th></tr>
+      </thead>
+      <tbody id="matrix-body"></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>Eigene Daten</h2>
+      <p>Kursbestätigung mit eigenen Angaben erzeugen.</p>
+    </div>
+    <div class="card-body">
+      <form id="testform" name="testform" target="_blank" method="POST" action="/benevole/renderer/pdf/basiskurs/de">
+        <div class="grid">
+          <div class="field">
+            <span class="label" id="lang-label">Sprache</span>
+            <div class="seg" role="radiogroup" aria-labelledby="lang-label">
+              <label><input type="radio" name="lang" value="de" checked><span>DE</span></label>
+              <label><input type="radio" name="lang" value="fr"><span>FR</span></label>
+              <label><input type="radio" name="lang" value="it"><span>IT</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="kurs">Kurs</label>
+            <select name="kurs" id="kurs"></select>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="field">
+            <label for="anrede">Anrede</label>
+            <input type="text" id="anrede" name="anrede" value="Herr">
+          </div>
+          <div class="field">
+            <label for="geburtstag">Geburtstag</label>
+            <input type="text" id="geburtstag" name="geburtstag" value="09.08.1977">
+          </div>
+          <div class="field">
+            <label for="vorname">Vorname</label>
+            <input type="text" id="vorname" name="vorname" value="Heinrich">
+          </div>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="Rengel">
+          </div>
+          <div class="field">
+            <label for="wohnort">Wohnort</label>
+            <input type="text" id="wohnort" name="wohnort" value="Oberdorf">
+          </div>
+          <div class="field">
+            <label for="dauer">Kursdauer</label>
+            <input type="text" id="dauer" name="dauer" value="28.09.2017 - 29.09.2017">
+          </div>
+          <div class="field">
+            <label for="organisator">Organisator</label>
+            <input type="text" id="organisator" name="organisator" value="Pfadibewegung Schweiz (PBS)">
+          </div>
+          <div class="field">
+            <label for="kursOrt">Kursort</label>
+            <textarea id="kursOrt" name="kursOrt" rows="2">Solothurn</textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">PDF erzeugen</button>
+          <span class="hint" id="target-hint"></span>
+        </div>
+
+        <details>
+          <summary>Als API-Aufruf (JSON)</summary>
+          <div class="code-wrap">
+            <pre id="curl"></pre>
+            <button type="button" class="btn ghost copy" id="copy">Kopieren</button>
+          </div>
+        </details>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <a href="/benevole/demo/json">Testdaten als JSON</a> · <a href="/benevole/check/ping">Ping</a>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var COURSES = [
+      ["leitpfadikurs", "Leitpfadikurs"],
+      ["futurakurs", "Futurakurs"],
+      ["basiskurs", "Basiskurs"],
+      ["aufbaukurs", "Aufbaukurs"],
+      ["al-kurs", "AL-Kurs"],
+      ["panoramakurs", "Panoramakurs"],
+      ["coachkurs", "Coachkurs"],
+      ["spektrumkurs", "Spektrumkurs"],
+      ["topkurs", "Topkurs"]
+    ];
+    var LANGS = ["de", "fr", "it"];
+    var FIELDS = ["anrede", "vorname", "name", "geburtstag", "wohnort", "dauer", "kursOrt", "organisator"];
+
+    var body = document.getElementById("matrix-body");
+    var select = document.getElementById("kurs");
+    COURSES.forEach(function (c) {
+      var tr = document.createElement("tr");
+      var name = document.createElement("td");
+      name.textContent = c[1];
+      var langs = document.createElement("td");
+      langs.className = "langs";
+      LANGS.forEach(function (l) {
+        var a = document.createElement("a");
+        a.className = "pill";
+        a.href = "pdf/" + c[0] + "/" + l;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = l;
+        a.title = c[1] + " (" + l.toUpperCase() + ")";
+        langs.appendChild(a);
+      });
+      tr.appendChild(name);
+      tr.appendChild(langs);
+      body.appendChild(tr);
+
+      var opt = document.createElement("option");
+      opt.value = c[0];
+      opt.textContent = c[1];
+      select.appendChild(opt);
+    });
+    select.value = "basiskurs";
+
+    var form = document.getElementById("testform");
+    var curl = document.getElementById("curl");
+    var hint = document.getElementById("target-hint");
+
+    function lang() {
+      return form.querySelector("input[name=lang]:checked").value;
+    }
+    function path() {
+      return "/benevole/renderer/pdf/" + select.value + "/" + lang();
+    }
+    function update() {
+      form.action = path();
+      hint.textContent = "POST " + path();
+      var data = {};
+      FIELDS.forEach(function (f) { data[f] = form.elements[f].value; });
+      var json = JSON.stringify(data, null, 2).replace(/'/g, "'\\''");
+      curl.textContent = "curl -X POST '" + location.origin + path() + "' \\\n"
+        + "  -H 'Content-Type: application/json' \\\n"
+        + "  -d '" + json + "' \\\n"
+        + "  -o kursbestaetigung.pdf";
+    }
+
+    form.addEventListener("input", update);
+    form.addEventListener("change", update);
+    form.addEventListener("submit", update);
+    update();
+
+    document.getElementById("copy").addEventListener("click", function () {
+      var btn = this;
+      navigator.clipboard.writeText(curl.textContent).then(function () {
+        btn.textContent = "Kopiert";
+        setTimeout(function () { btn.textContent = "Kopieren"; }, 1500);
+      });
+    });
+  })();
+</script>
 </body>
 </html>
