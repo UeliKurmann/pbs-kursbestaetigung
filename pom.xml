@@ -20,6 +20,7 @@
 		<dropwizard.version>5.0.2</dropwizard.version>
 		<prometheus.version>1.10.0</prometheus.version>
 		<bouncycastle.version>1.86</bouncycastle.version>
+		<junit.version>6.1.3</junit.version>
 		<timestamp>${maven.build.timestamp}</timestamp>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
 		<mainClass>ch.pbs.benevole.renderer.PBSBenevoleRenderApplication</mainClass>
@@ -27,6 +28,14 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- before dropwizard-dependencies, which imports junit-bom 5 -->
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>${junit.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>io.dropwizard</groupId>
 				<artifactId>dropwizard-dependencies</artifactId>
@@ -100,7 +109,6 @@
 		 <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.14.3</version>
             <scope>test</scope>
         </dependency>
          <dependency>
