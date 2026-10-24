@@ -1,8 +1,17 @@
+# Production instance. Started by promote.sh with an image built by stage.sh; never builds itself.
+name: benevole-prod
 services:
   app:
-    build: .
+    image: benevole-renderer:${TAG:-prod}
+    pull_policy: never
     restart: always
     mem_limit: 512m
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:8081/healthcheck"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
     ports:
-      - "8081:8081"
-      - "8080:8080"
+      - "13081:8081"
+      - "13080:8080"

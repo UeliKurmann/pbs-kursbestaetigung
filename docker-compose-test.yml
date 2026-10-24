@@ -1,8 +1,17 @@
+# Test instance. Built and started by stage.sh.
+name: benevole-test
 services:
   app:
     build: .
+    image: benevole-renderer:${TAG:-test}
     restart: always
     mem_limit: 512m
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:8081/healthcheck"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
     ports:
-      - "9081:8081"
-      - "9080:8080"
+      - "13091:8081"
+      - "13090:8080"
