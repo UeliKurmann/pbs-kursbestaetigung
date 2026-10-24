@@ -17,7 +17,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.release>25</maven.compiler.release>
-		<dropwizard.version>4.0.14</dropwizard.version>
+		<dropwizard.version>5.0.2</dropwizard.version>
+		<prometheus.version>1.10.0</prometheus.version>
 		<timestamp>${maven.build.timestamp}</timestamp>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
 		<mainClass>ch.pbs.benevole.renderer.PBSBenevoleRenderApplication</mainClass>
@@ -27,8 +28,22 @@
 		<dependencies>
 			<dependency>
 				<groupId>io.dropwizard</groupId>
+				<artifactId>dropwizard-dependencies</artifactId>
+				<version>${dropwizard.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.dropwizard</groupId>
 				<artifactId>dropwizard-bom</artifactId>
 				<version>${dropwizard.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.prometheus</groupId>
+				<artifactId>prometheus-metrics-bom</artifactId>
+				<version>${prometheus.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -66,9 +81,20 @@
 			<version>1.84</version>
 		</dependency>
 		<dependency>
-			<groupId>org.dhatim</groupId>
-			<artifactId>dropwizard-prometheus</artifactId>
-			<version>4.0.1-2</version>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>prometheus-metrics-instrumentation-dropwizard</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>prometheus-metrics-exporter-servlet-jakarta</artifactId>
 		</dependency>
 		 <dependency>
             <groupId>org.junit.jupiter</groupId>

@@ -14,7 +14,7 @@ To see your applications health enter url `http://localhost:8081/healthcheck`
 
 Prometheus
 ---
-Prometheus scrap url `http://localhost:8081/prometheus`
+Prometheus scrap url `http://localhost:8081/prometheus-metrics`
 
 Service 
 ---
