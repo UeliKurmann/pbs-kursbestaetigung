@@ -33,12 +33,14 @@ Auf dem Server laufen eine Test- und eine Produktiv-Instanz nebeneinander:
 | Test | `docker-compose-test.yml` | `benevole-test` | 13090 / 13091 |
 | Produktiv | `docker-compose.yml` | `benevole-prod` | 13080 / 13081 |
 
+Die Ports sind nur an `127.0.0.1` gebunden. Von aussen ist der Dienst nur über den Reverse-Proxy auf dem Server erreichbar.
+
 Ablauf:
 
 1. `git pull`
 1. `./stage.sh` baut den aktuellen Commit als Image `benevole-renderer:<commit>` und startet ihn als Test-Instanz.
    Bricht ab, wenn es uncommittete Änderungen gibt oder der Healthcheck nicht grün wird.
-1. Test-Instanz prüfen, z.B. `http://<server>:13090/benevole/demo/index`
+1. Test-Instanz prüfen, z.B. per SSH-Tunnel `ssh -L 13090:localhost:13090 <server>` und dann `http://localhost:13090/benevole/demo/index`
 1. `./promote.sh` startet genau dieses Image als Produktiv-Instanz, ohne neu zu bauen.
    Wird die neue Version nicht gesund, startet das Skript automatisch wieder die bisherige.
 1. Bei Problemen: `./promote.sh --rollback` startet wieder die vorherige Produktivversion.
